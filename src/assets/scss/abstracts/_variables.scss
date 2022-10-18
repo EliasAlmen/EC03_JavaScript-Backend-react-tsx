@@ -1,0 +1,30 @@
+// COLORS
+$color-grey-dark: #616365;
+$color-grey: #BEBEBE; // zero objects use this color? hm.
+$color-grey-dont-use: #E6E6E6;
+$color-grey-light: #F5F5F5;
+$color-white: #FFFFFF;
+$color-black: #23262A;
+$color-black-hover: #23262a34;
+// $color-black2: #222529; This color was also used in wireframe, but screw it. I assume the wireframe creator made an error?
+$color-theme: #FF7373;
+$color-green: #50ca45;
+
+// COLOR GRADIENTS
+$color-grey-gradient-light: linear-gradient(to right, $color-grey-dont-use, $color-grey-light);
+
+// FONTS
+$font-poppins: 'Poppins', sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold-semi: 600;
+$font-weight-bold: 700;
+$font-weight-bold-extra: 800;
+$font-size-13: 0.813rem;
+$font-size-14: 0.875rem;
+$font-size-16: 1.00rem;
+$font-size-18: 1.125rem;
+$font-size-20: 1.25em;
+$font-size-24: 1.5rem;
+$font-size-45: 2.813rem;
+$font-size-65: 4.063rem;

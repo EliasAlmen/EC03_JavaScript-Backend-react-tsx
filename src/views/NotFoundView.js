@@ -1,8 +1,12 @@
 import React from 'react'
+import HeaderSection from '../sections/HeaderSection'
 
 const NotFoundView = () => {
   return (
-    <div>404 - Page not found</div>
+    <>
+      <HeaderSection />
+      <h1>404 - Page not found</h1>
+    </>
   )
 }
 

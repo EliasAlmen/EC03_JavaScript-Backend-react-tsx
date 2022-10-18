@@ -1,23 +1,25 @@
 import React from 'react'
 import NavIconComponent from '../components/NavIconComponent'
 import fixxo from '../assets/img/logo/logo_Fixxo.svg'
+import { NavLink } from 'react-router-dom'
+import NavTextLinkComponent from '../components/NavTextLinkComponent'
 
 const HeaderSection = () => {
   return (
-    <header class="container">
-        <div class="header">
-            <img src={fixxo} alt="Brand logotype" />
-            <nav class="nav-text">
-                <a href="index.html">Home</a>
-                <a href="#">Categories</a>
-                <a href="#">Products</a>
-                <a href="contact.html">Contacts</a>
+    <header className="container">
+        <div className="header">
+            <NavLink to="/"><img src={fixxo} alt="Brand logotype" /></NavLink>
+            <nav className="nav-text">
+              <NavTextLinkComponent adress="" name="Home" />
+              <NavTextLinkComponent adress="categories" name="Categories" />
+              <NavTextLinkComponent adress="products" name="Products" />
+              <NavTextLinkComponent adress="contacts" name="Contacts" />
             </nav>
-            <nav class="nav-icons">
-                <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
-                <NavIconComponent link="/compare" icon="fa-regular fa-repeat" />
-                <NavIconComponent link="/wishlist" icon="fa-regular fa-heart" />
-                <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+            <nav className="nav-icons">
+              <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
+              <NavIconComponent link="/compare" icon="fa-regular fa-repeat" />
+              <NavIconComponent link="/wishlist" icon="fa-regular fa-heart" />
+              <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
             </nav>
         </div>
     </header>

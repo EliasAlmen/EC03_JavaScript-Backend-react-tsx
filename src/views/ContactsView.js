@@ -1,8 +1,12 @@
 import React from 'react'
+import HeaderSection from '../sections/HeaderSection'
 
 const ContactsView = () => {
   return (
-    <div>ContactsView</div>
+    <>
+      <HeaderSection />
+      <h1>Contacts</h1>
+    </>
   )
 }
 

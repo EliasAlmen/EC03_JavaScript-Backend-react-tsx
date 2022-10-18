@@ -1,0 +1,18 @@
+html, body{
+    font-family: $font-poppins;
+    font-size: $font-size-16;
+    font-weight: $font-weight-regular;
+    color: $color-black;
+}
+
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
