@@ -8,10 +8,10 @@
 
     .sale{
         text-align: center;
+        // @include font-size(2.2rem);
         padding: 1rem;
         h1{
             @include font-65-bold;
-            @include font-size(4rem);
             margin: 0;
             padding: 0;
             line-height: 5rem;
