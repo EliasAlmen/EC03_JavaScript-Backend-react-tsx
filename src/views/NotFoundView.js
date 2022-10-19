@@ -1,11 +1,17 @@
 import React from 'react'
+import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
 const NotFoundView = () => {
   return (
     <>
       <HeaderSection />
-      <h1>404 - Page not found</h1>
+      <div className='container d-flex justify-content-center align-items-center' style={ { height: "500px" } }>
+        <h1>404 - Page not found</h1>
+      </div>
+      <div style={{position: "fixed", bottom: "0"}}>
+        <FooterSection />
+      </div>
     </>
   )
 }

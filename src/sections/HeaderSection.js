@@ -17,9 +17,9 @@ const HeaderSection = () => {
             </nav>
             <nav className="nav-icons">
               <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
-              <NavIconComponent link="/compare" icon="fa-regular fa-repeat" />
-              <NavIconComponent link="/wishlist" icon="fa-regular fa-heart" />
-              <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
+              <NavIconComponent link="/compare" icon="fa-regular fa-code-compare" />
+              <NavIconComponent link="/wishlist" icon="fa-regular fa-heart" quantity="3" />
+              <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" quantity="4" />
             </nav>
         </div>
     </header>

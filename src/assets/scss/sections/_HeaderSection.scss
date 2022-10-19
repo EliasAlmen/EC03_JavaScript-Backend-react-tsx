@@ -18,6 +18,9 @@
         .text-link ~ .text-link {
             margin-left: 1.875rem;
         }
+        .active{
+            color: $color-theme;
+        }
     }
     .nav-icons{
         @include font-16-medium;
@@ -46,6 +49,10 @@
         }
         .nav-icon ~ .nav-icon {
             margin-left: 1.875rem;
+        }
+        .active{
+            color: $color-white;
+            background-color: $color-black;
         }
     }
 }

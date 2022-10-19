@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-grey-light;
+    color: $color-grey-dark;
+    padding: 2rem;
+    border-top: 2px $color-grey solid;
+    .socials{
+        margin-bottom: 1rem;
+        a{
+            color: $color-black;
+            transition: all 0.2s;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            font-size: larger;
+            &:hover{
+                color: $color-theme;
+            }
+        }
+    }
+}

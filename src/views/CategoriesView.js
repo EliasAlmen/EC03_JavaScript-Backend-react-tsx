@@ -2,7 +2,7 @@ import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
-const HomeView = () => {
+const CategoriesView = () => {
   return (
     <>
       <HeaderSection />
@@ -12,4 +12,4 @@ const HomeView = () => {
   )
 }
 
-export default HomeView
+export default CategoriesView

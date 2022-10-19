@@ -16,3 +16,9 @@ ul, ol, li{
     list-style-type: none;
 }
 
+.bg-theme{
+    background-color: $color-theme;
+}
+.bg-dark{
+    background-color: $color-black !important;
+}

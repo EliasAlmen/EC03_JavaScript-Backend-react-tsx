@@ -1,11 +1,13 @@
 import React from 'react'
+import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
 const ContactsView = () => {
   return (
     <>
       <HeaderSection />
-      <h1>Contacts</h1>
+      
+      <FooterSection />
     </>
   )
 }
