@@ -8,7 +8,7 @@ const HeaderSection = () => {
   return (
     <header className="container">
         <div className="header">
-            <NavLink to="/"><img src={fixxo} alt="Brand logotype" /></NavLink>
+            <NavLink className="logo" to="/"><img src={fixxo} alt="Brand logotype" /></NavLink>
             <nav className="nav-text">
               <NavTextLinkComponent adress="" name="Home" />
               <NavTextLinkComponent adress="categories" name="Categories" />

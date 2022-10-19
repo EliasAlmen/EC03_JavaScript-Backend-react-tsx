@@ -1,0 +1,27 @@
+.showcase{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    border: 1px black solid;
+
+    .sale{
+        text-align: center;
+        padding: 1rem;
+        h1{
+            @include font-65-bold;
+            @include font-size(4rem);
+            margin: 0;
+            padding: 0;
+            line-height: 5rem;
+            letter-spacing: 0.25rem;
+        }
+
+        p{
+            @include font-20;
+            padding: 0;
+            margin: 2rem 0;
+        }
+    }
+}

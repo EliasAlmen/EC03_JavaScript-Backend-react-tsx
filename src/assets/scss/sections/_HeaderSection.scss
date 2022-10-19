@@ -1,13 +1,17 @@
 .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3.063rem;
-    padding: 2.5rem 0;
-    border: 1px black solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo navtext navicons";
+    padding: 1rem 0;
+    .logo{
+        grid-area: logo;
+    }
     .nav-text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         @include font-16-medium;
-        border: 1px black solid;
+        grid-area: navtext;
         .text-link{
             color: $color-black;
             transition: all 0.2s;
@@ -25,9 +29,9 @@
     .nav-icons{
         @include font-16-medium;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        border: 1px black solid;
+        grid-area: navicons;
         .nav-icon{
             background-color: $color-white;
             color: $color-black;

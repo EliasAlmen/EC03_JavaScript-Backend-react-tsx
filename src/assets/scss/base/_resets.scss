@@ -22,3 +22,8 @@ ul, ol, li{
 .bg-dark{
     background-color: $color-black !important;
 }
+@media (min-width: 1600px) {
+    .container {
+        max-width: $max-width;
+    }
+}
