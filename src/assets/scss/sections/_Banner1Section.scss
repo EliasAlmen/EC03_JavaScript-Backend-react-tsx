@@ -1,0 +1,37 @@
+.banner{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    h2{
+        @include font-45-bold;
+        margin-bottom: 1rem;
+    }
+
+    .banner-big{
+        display: flex;
+        align-items: center;
+        position: relative;
+        .clearance{
+            position: absolute;
+            padding-left: 3.125rem;
+            margin-top: 4rem;
+            width: 55%;
+        }
+    }
+
+    .banner-small{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        position: relative;
+        height: 35rem;
+        margin: 0;
+        .arrivals{
+            position: absolute;
+            margin-top: 9rem;
+            padding-left: 3.125rem;
+        }
+    }
+}

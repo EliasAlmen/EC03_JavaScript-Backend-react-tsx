@@ -1,7 +1,6 @@
 // abstracts
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
-// @import '/node_modules/rfs/scss';
 
 // base
 @import 'base/resets';
@@ -15,3 +14,5 @@
 @import "./sections/HeaderSection";
 @import "./sections/FooterSection";
 @import "./sections/ShowCaseSection";
+@import "./sections/Banner1Section";
+@import "./sections/Banner2Section";
