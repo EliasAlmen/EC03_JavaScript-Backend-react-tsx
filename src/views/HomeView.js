@@ -6,6 +6,7 @@ import FlashSaleLeftSection from '../sections/FlashSaleLeftSection'
 import FlashSaleRightSection from '../sections/FlashSaleRightSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
+import ProductFeaturedSection from '../sections/ProductFeaturedSection'
 import ProductRankingSection from '../sections/ProductRankingSection'
 import PromisesSection from '../sections/PromisesSection'
 import ShowCaseSection from '../sections/ShowCaseSection'
@@ -17,6 +18,7 @@ const HomeView = () => {
       <HeaderSection />
       <ShowCaseSection />
       <Banner1Section />
+      <ProductFeaturedSection />
       <Banner2Section />
       <SpecialitySection />
       <FlashSaleLeftSection />

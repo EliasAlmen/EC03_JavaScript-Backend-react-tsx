@@ -85,7 +85,9 @@ const ProductRankingSection = () => {
                 </div>
             </div>
         </div>
-        <div className="border-bottom border-2"></div>
+        <div className="_border-bottom">
+            <div className="_border"></div>
+        </div>
     </section>
   )
 }

@@ -1,0 +1,12 @@
+.under-construction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $color-grey;
+    
+    @include font-65-bold;
+    h1{
+        @include font-65-bold;
+    }
+}
