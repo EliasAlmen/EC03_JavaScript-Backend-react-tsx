@@ -1,0 +1,99 @@
+.container-products-category-ranking{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 4.65rem;
+    .latest, .best, .reacted{
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .card-product{
+            display: flex;
+            flex-direction: row;
+            width: 20rem;
+            height: 8.25rem;
+            margin-bottom: 3rem;
+            .img-container{
+                background-color: $color-grey-light;
+                height: 8.25rem;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                transition: background-color 250ms;
+                .quick-view{
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                    top: 100%;
+                    transition: top 250ms;
+                }
+                .quick-menu{
+                    display: flex;
+                    position: absolute;
+                    margin-top: 1rem;
+                    right: 120%;
+                    transition: right 250ms;
+                    .nav-icon{
+                        background-color: $color-white;
+                        color: $color-black;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0 0 6px 4px $color-grey;
+                        position: relative;
+                        color: $color-black;
+                        transition: all 0.25s;
+                        &:hover{
+                            color: $color-white;
+                            box-shadow: 0 0 6px 4px $color-grey;
+                            background-color: $color-black;
+                        }
+                    }
+                    .nav-icon ~ .nav-icon {
+                        margin-left: 1rem;
+                    }
+                }
+                &:hover{
+                    background-color: $color-black-hover;
+                    .quick-view{
+                        top: 62%;
+                    }
+                    .quick-menu{
+                        right: 13%;
+                    }
+                }
+            }
+            .text{
+                text-align: left;
+                margin-left: 1rem;
+                h5{
+                    color: $color-grey-dark;
+                    @include font-13-medium;
+                    letter-spacing: 0.1rem;
+                    margin: 0.25rem 0;
+                    padding: 0;
+                }
+                h6{
+                    @include font-16-semi;
+                    letter-spacing: 0.1rem;
+                    margin: 0.25rem 0;
+                    padding: 0;
+                }
+                p{
+                    @include font-18-semi;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+    h1{
+        @include font-20-bold;
+    }
+}

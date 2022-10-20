@@ -1,0 +1,43 @@
+.promises{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 3rem 0;
+    text-align: center;
+    gap: 3.75rem;
+    .promise{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 3rem;
+        height: 11.313rem;
+        .promise-icon{
+            background-color: $color-white;
+            color: $color-black;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 10px $color-grey;
+            position: relative;
+            color: $color-black;
+            transition: all 0.25s;
+            font-size: $font-size-24;
+            &:hover{
+                color: $color-white;
+                box-shadow: 0 0 6px 4px $color-grey;
+                background-color: $color-black;
+            }
+        }
+        h1{
+            margin: 0;
+            @include font-20-bold;
+        }
+        p{
+            color: $color-grey-dark;
+            margin: 0;
+        }
+    }
+}
