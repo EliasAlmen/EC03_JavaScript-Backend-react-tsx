@@ -1,6 +1,18 @@
-.breadcrumb-not-active {
+.breadcrumb-container{
+  max-width: 1110px;
+  margin-top: 3rem;
+  ._breadcrumb{
+    @include font-16-medium;
+  }
+  .breadcrumb-not-active {
     color: #cccccc;
   }
   .breadcrumb-active {
     color: #000000;
   }
+  ._breadcrumb::before{
+    content: "\00a0>\00a0";
+    
+  }
+}
+

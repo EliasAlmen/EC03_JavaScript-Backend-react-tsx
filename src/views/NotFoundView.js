@@ -1,4 +1,5 @@
 import React from 'react'
+import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
@@ -6,6 +7,7 @@ const NotFoundView = () => {
   return (
     <>
       <HeaderSection />
+      <BreadCrumbsSection />
       <div className='container d-flex justify-content-center align-items-center' style={ { height: "500px" } }>
         <h1>404 - Page not found</h1>
       </div>

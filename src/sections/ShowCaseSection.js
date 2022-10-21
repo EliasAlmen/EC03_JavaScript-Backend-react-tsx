@@ -11,7 +11,7 @@ const ShowCaseSection = () => {
             <p>Online shopping free home delivery over $100</p>
             <button className="button bg-red">SHOP NOW</button>
         </div>
-        <img className="img-fluid" src={showcase2} alt="sitting" />
+        <img className="img-fluid d-none d-xxl-block" src={showcase2} alt="sitting" />
     </section>
   )
 }

@@ -4,7 +4,7 @@ const UnderConstructionComponent = () => {
   return (
     <div className='container under-construction vh-100'>
         <h1>This page is under construction...</h1>
-        <i class="fa-regular fa-person-digging"></i>
+        <i className="fa-regular fa-person-digging"></i>
     </div>
   )
 }

@@ -1,9 +1,11 @@
 .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include font-16-semi;
     width: 11.75rem;
     height: 3.75rem;
     border: none;
-    text-align: center;
     cursor: pointer;
     position: relative;
 
@@ -39,17 +41,23 @@
         width: calc(11.75rem - 1rem);
         height: calc(3.75rem - 1rem);
     }
+    &:hover{
+        color: $color-white;
+    }
 }
 
 .button-white{
-  &::after{
+    &::after{
         border-bottom-color: $color-black;
         border-right-color: $color-black;
     }
 
-  &::before{
+    &::before{
         border-top-color: $color-black;
         border-left-color: $color-black;
+    }
+    &:hover{
+        color: $color-black;
     }
 }
 

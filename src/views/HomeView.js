@@ -17,7 +17,7 @@ const HomeView = () => {
     <>
       <HeaderSection />
       <ShowCaseSection />
-      <Banner1Section />
+      {/* <Banner1Section /> */}
       <ProductFeaturedSection />
       <Banner2Section />
       <SpecialitySection />

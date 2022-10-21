@@ -1,15 +1,19 @@
 .showcase{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, max-content));
+    align-content: center;
+    margin: 3rem auto;
     .sale{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         padding: 1rem;
         h1{
             @include font-65-bold;
+            font-size: calc(1.525rem + 3.3vw);
             margin: 0;
             padding: 0;
             line-height: 5rem;
