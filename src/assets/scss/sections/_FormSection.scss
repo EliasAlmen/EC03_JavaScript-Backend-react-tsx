@@ -1,75 +1,49 @@
-.form-middle{
-    display: flex;
-    justify-content: center;
-    .form{
-        height: 22rem;
-        width: 85%;
-        margin-top: 3rem;
-        margin-bottom: 6.25rem;
-        .contact{
-            margin-top: 1rem;
-            .name_email{
-                display: flex;
-                justify-content: space-between;
-                height: 3.125rem;
-                div{
-                    input{
-                        border: 1px solid $color-grey;
-                        height: 100%;
-                        @include font-16;
-                        color: $color-black;
-                        font-family: 'Poppins';
-                        padding: 0.5rem;
-                        width: 33.5em;
-                    }
-                }
-                
-            }
-            .submitbutton{
-                display: flex;
-                margin-top: 1.875rem;
-            }
-            label{
-                display: none;
-            }
-            .comment{
-                margin-top: 1.875rem;
+ .form-container{
+    margin-bottom: 6rem;
+    .container{
+        max-width: 1110px;
+    }form{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        label{
+            display: none;
+        }
+        .comment{
+            grid-column: 1 / -1;
+            textarea{
+                width: 100%;
+                border: 1px solid $color-grey;
+                @include font-16;
+                color: $color-black;
+                font-family: 'Poppins';
+                padding: 0.75rem;
+                resize: none;
                 height: 8.75rem;
-                textarea{
-                    border: 1px solid $color-grey;
-                    height: 100%;
-                    @include font-16;
-                    color: $color-black;
-                    font-family: 'Poppins';
-                    padding: 0.5rem;
-                    width: 100%;
-                }
-                textarea{
-                    resize: none;
-                }
             }
         }
-        h1{
-        text-align: start;
-        @include font-18-bold;
-        }
-        
-        
-        #userComment-error, #userEmail-error, #userName-error{
-            color: $color-theme;
-            text-align: left;
-            // margin-top: 0.5rem;
-            @include font-16-medium;
-        }
-        
-        #userComment-success, #userEmail-success, #userName-success{
-            color: $color-green;
-            text-align: left;
-            // margin-top: 0.5rem;
-            @include font-16-medium;
-        }
-        #userComment-error, #userComment-success{
-            margin-top: -0.5rem;
+        div{
+            input{
+                border: 1px solid $color-grey;
+                @include font-16;
+                color: $color-black;
+                font-family: 'Poppins';
+                padding: 0.75rem;
+                width: 100%;
+            }
+            
         }
     }
-} 
+    h1{
+        text-align: start;
+        @include font-18-bold;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-container{
+        form{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
