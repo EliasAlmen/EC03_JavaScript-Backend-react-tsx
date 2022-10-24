@@ -4,8 +4,8 @@ import star from '../assets/img/icons/icon_star.svg'
 
 const ProductRankingSection = () => {
   return (
-    <section className="container">
-        <div className="container-products-category-ranking">
+    <section className="container-products-category-ranking">
+        <div className="container">
             <div className="latest">
                 <h1>Latest Product</h1>
                 <div className="card-product">

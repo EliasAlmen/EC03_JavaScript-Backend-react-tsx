@@ -5,7 +5,7 @@ import showcase2 from '../assets/img/image_showcase_2.svg'
 const ShowCaseSection = () => {
   return (
     <section className="container-fluid showcase">
-        <img className="img-fluid" src={showcase1} alt="sitting on chair" />
+        <img className="img-fluid d-none d-lg-block" src={showcase1} alt="sitting on chair" />
         <div className="sale">
             <h1>SALE UP <br /> To 50% Off</h1>
             <p>Online shopping free home delivery over $100</p>
