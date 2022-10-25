@@ -14,7 +14,9 @@
             position: absolute;
             justify-content: center;
             margin-left: 55%;
-            
+            @include sm{
+                margin-left: 45%;
+            }
             h1{
                 @include font-45-bold;
                 font-size: calc(1.525rem + 1.3vw);
@@ -31,6 +33,9 @@
         .text-button-right{
             position: absolute;
             margin-left: 7%;
+            @include sm{
+                margin-left: 17%;
+            }
             h1{
                 @include font-45-bold;
                 font-size: calc(1.525rem + 1.3vw);

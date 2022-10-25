@@ -49,6 +49,7 @@
                         position: relative;
                         color: $color-black;
                         transition: all 0.25s;
+                        border: none;
                         &:hover{
                             color: $color-white;
                             box-shadow: 0 0 6px 4px $color-grey;
@@ -88,6 +89,9 @@
                     @include font-18-semi;
                     margin: 0;
                     padding: 0;
+                }
+                i{
+                    color: $color-theme;
                 }
             }
         }

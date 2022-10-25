@@ -63,3 +63,86 @@
     font-size: $font-size-13;
     font-weight: $font-weight-medium;
 }
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin xs {
+    @media (max-width: map-get($grid-breakpoints, "xs")) {
+        @content
+    }
+}
+
+@mixin sm {
+    @media (max-width: map-get($grid-breakpoints, "sm")) {
+        @content
+    }
+}
+
+@mixin md {
+    @media (max-width: map-get($grid-breakpoints, "md")) {
+        @content
+    }
+}
+
+@mixin lg {
+    @media (max-width: map-get($grid-breakpoints, "lg")) {
+        @content
+    }
+}
+
+@mixin xl {
+    @media (max-width: map-get($grid-breakpoints, "xl")) {
+        @content
+    }
+}
+
+@mixin xxl {
+    @media (max-width: map-get($grid-breakpoints, "xxl")) {
+        @content
+    }
+}
+
+//min width
+
+@mixin xs-min {
+    @media (min-width: map-get($grid-breakpoints, "xs")) {
+        @content
+    }
+}
+
+@mixin sm-min {
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+        @content
+    }
+}
+
+@mixin md-min {
+    @media (min-width: map-get($grid-breakpoints, "md")) {
+        @content
+    }
+}
+
+@mixin lg-min {
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+        @content
+    }
+}
+
+@mixin xl-min {
+    @media (min-width: map-get($grid-breakpoints, "xl")) {
+        @content
+    }
+}
+
+@mixin xxl-min {
+    @media (min-width: map-get($grid-breakpoints, "xxl")) {
+        @content
+    }
+}

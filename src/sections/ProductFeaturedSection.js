@@ -1,41 +1,26 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import star from '../assets/img/icons/icon_star.svg'
-import NavIconComponent from '../components/NavIconComponent'
+import React, { useState } from 'react'
+import ProductFeaturedCardComponent from '../components/ProductFeaturedCardComponent'
 
-const ProductFeaturedSection = () => {
-  return (
-    <section className="container ">
-        <h3 id="featured">Featured Product</h3>
-        <div className="featured">
-            <div className="container-cards">
-                <div className="card-product">
-                    <div className="img-container">
-                        <div className="quick-menu">
-                            <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
-                            <NavIconComponent link="/compare" icon="fa-regular fa-code-compare" />
-                            <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" />
-                        </div>
-                        <div className="quick-view">
-                            <NavLink to='/products' className="button btn-hover bg-red">QUICK VIEW</NavLink>
-                        </div>
-                        {/* <!-- IMAGE GOES HERE --> */}
-                    </div>
-                    <div className="text">
-                        <h5>Cateogory</h5>
-                        <h6>Modern Black Blouse</h6>
-                        <img src={star} alt="star" />
-                        <img src={star} alt="star" />
-                        <img src={star} alt="star" />
-                        <img src={star} alt="star" />
-                        <img src={star} alt="star" />
-                        <p>$35.00</p>
-                    </div>
+const ProductFeaturedSection = ({title}) => {
+
+    const [products, setProducts] = useState([
+        { id: 1, productName: "Modern Black Blouse", category: "Fashion", price: "35.00", rating: 5},
+        { id: 2, productName: "Modern Black Blouse", category: "Fashion", price: "35.00", rating: 5},
+        { id: 3, productName: "Modern Black Blouse", category: "Fashion", price: "35.00", rating: 5},
+        { id: 4, productName: "Modern Black Blouse", category: "Fashion", price: "35.00", rating: 5},
+        { id: 5, productName: "Modern Black Blouse", category: "Fashion", price: "35.00", rating: 5}
+    ])
+
+    return (
+        <section className="container "> 
+            <h3 id="featured">{title}</h3>
+            <div className="featured">
+                <div className="container-cards">
+                    {products.map(product => <ProductFeaturedCardComponent item={product}/>)}
                 </div>
             </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default ProductFeaturedSection

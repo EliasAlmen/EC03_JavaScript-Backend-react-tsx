@@ -60,9 +60,14 @@
             color: $color-white;
             background-color: $color-black;
         }
+        .nav-icon-menu{
+            display: flex;
+            border: none;
+        }
         .hidden{
             display: none;
         }
+        
     }
 }
 
@@ -86,7 +91,7 @@
         grid-area: logo;
         }
         .nav-text{
-            display: flex;
+            display: flex !important;
             justify-content: space-evenly;
             align-items: center;
             @include font-16-medium;
@@ -131,6 +136,9 @@
                     background-color: $color-black;
                 }
             }
+            .hidden{
+                display: flex;
+            }
             .nav-icon ~ .nav-icon {
                 margin-left: 1.875rem;
             }
@@ -138,6 +146,10 @@
                 color: $color-white;
                 background-color: $color-black;
             }
+            .nav-icon-menu{
+                display: none;
+            }
+            
         }
     }
 }
