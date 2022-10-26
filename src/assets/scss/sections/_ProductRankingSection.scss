@@ -4,19 +4,20 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
         justify-content: space-evenly;
-        align-items: center;margin-top: 3rem;
+        align-items: center;
+        margin-top: 3rem;
         max-width: 1110px;
         .latest, .best, .reacted{
             display: block;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 3rem;
             align-items: center;
             .card-product{
                 display: flex;
                 flex-direction: row;
                 width: 20rem;
                 height: 8.25rem;
-                margin-bottom: 3rem;
                 .img-container{
                     background-color: $color-grey-light;
                     height: 8.25rem;
@@ -104,6 +105,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
     ._border{
         border-bottom: 2px $color-grey solid;
         width: 1110px;

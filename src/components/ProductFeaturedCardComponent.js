@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductFeaturedCardComponent = ({item}) => {
+const ProductFeaturedCardComponent = ({item, offPriceOnItem}) => {
   return (
     <div className="card-product">
         <div className="img-container">
@@ -11,19 +11,22 @@ const ProductFeaturedCardComponent = ({item}) => {
                 <button className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
             <div className="quick-view">
-                <NavLink to='/products' className="button btn-hover bg-red">QUICK VIEW</NavLink>
+                <NavLink to={`/products/${item.category}/${item.id}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>
             </div>
-            {/* <!-- IMAGE GOES HERE --> */}
+            <img src={item.img} alt={item.name} />
         </div>
         <div className="text">
             <h5>{item.category}</h5>
-            <h6>Modern Black Blouse</h6>
+            <h6>{item.productName}</h6>
             <i className="fa-sharp fa-solid fa-star"></i>
             <i className="fa-sharp fa-solid fa-star"></i>
             <i className="fa-sharp fa-solid fa-star"></i>
             <i className="fa-sharp fa-solid fa-star"></i>
             <i className="fa-sharp fa-solid fa-star"></i>
-            <p>{item.price}</p>
+            <div className="d-flex justify-content-center align-items-center">
+                <p className={offPriceOnItem ? "firstPrice me-2" : ""}>{item.price}</p>
+                <span className={offPriceOnItem ? "offPrice" : ""}>{`${offPriceOnItem ? item.offPrice : ""}`}</span>
+            </div>
         </div>
     </div>
   )
