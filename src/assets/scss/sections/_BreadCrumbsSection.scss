@@ -1,15 +1,16 @@
-.breadcrumb-container{
-  max-width: 1110px;
-  margin-top: 3rem;
-  ._breadcrumb{
+.breadcrumb-container {
+    max-width: 1110px;
+    margin-top: 1rem;
     @include font-16-medium;
-  }
-  .breadcrumb-not-active {
-    color: #cccccc;
-  }
-  .breadcrumb-active {
-    color: #000000;
-  }
-  
-}
+    
+    .active{
+        &:last-child{
+            color: $color-theme;
+        }
+    }
+    a{
+        text-decoration: none;
+        margin-right: 1rem;
+    }
 
+}
