@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductFeaturedCardComponent from '../components/ProductFeaturedCardComponent'
+import ProductCardComponent from '../components/ProductCardComponent'
 
 const FlashSaleLeftSection = ({products}) => {
   return (
@@ -10,7 +10,7 @@ const FlashSaleLeftSection = ({products}) => {
                 <button className="button button-white bg-light">FLASH SALE</button>
             </div>
             <div className="container-cards">
-              {products.map(product => <ProductFeaturedCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.id} product={product}/>)}
+              {products.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.id} product={product}/>)}
             </div>
         </div>
     </section>

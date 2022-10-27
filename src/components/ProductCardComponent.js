@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductFeaturedCardComponent = ({product, offPriceOnItem}) => {
+const ProductCardComponent = ({product, offPriceOnItem}) => {
   return (
     <div className="card-product">
         <div className="img-container">
@@ -18,13 +18,15 @@ const ProductFeaturedCardComponent = ({product, offPriceOnItem}) => {
         <div className="text">
             <h5>{product.category}</h5>
             <h6>{product.productName}</h6>
-            <i className="fa-sharp fa-solid fa-star"></i>
-            <i className="fa-sharp fa-solid fa-star"></i>
-            <i className="fa-sharp fa-solid fa-star"></i>
-            <i className="fa-sharp fa-solid fa-star"></i>
-            <i className="fa-sharp fa-solid fa-star"></i>
-            <div className="d-flex justify-content-center align-items-center">
-                <p className={offPriceOnItem ? "firstPrice me-2" : ""}>{product.price}</p>
+            <span>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+            </span>
+            <div className="bothPrices">
+                <p className={offPriceOnItem ? "firstPrice" : ""}>{product.price}</p>
                 <span className={offPriceOnItem ? "offPrice" : ""}>{`${offPriceOnItem ? product.offPrice : ""}`}</span>
             </div>
         </div>
@@ -32,4 +34,4 @@ const ProductFeaturedCardComponent = ({product, offPriceOnItem}) => {
   )
 }
 
-export default ProductFeaturedCardComponent
+export default ProductCardComponent

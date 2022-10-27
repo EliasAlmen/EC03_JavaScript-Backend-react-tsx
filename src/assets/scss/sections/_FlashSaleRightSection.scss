@@ -1,20 +1,160 @@
 .container-flashsale-right{
     display: flex;
+    flex-wrap: wrap;
     justify-content: right;
-    align-items: center;
     margin-top: 3rem;
+    @include xxxl{
+        justify-content: center;
+    }
     .flashsale{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 41.5rem;
+        width: 50.5rem;
         height: 41.5rem;
         background-color: $color-grey;
-        gap: 1rem;
+        margin-left: 1rem;
+        margin-top: 2rem;
         color: $color-white;
+        padding: 1rem;
+        @include xxxl{
+            margin-left: unset;
+        }
+        @include xxxl-min{
+            margin-top: unset;
+        }
         h1{
             @include font-45-bold;
+            margin-bottom: 2rem;
+        }
+    }
+    .container-cards{
+        display: grid;
+        grid-template-columns: 1fr(auto);
+        gap: 2rem;
+        margin-right: 1rem;
+        @include xxxl{
+            margin-right: unset;
+            margin-top: 3rem;
+        }
+        @include sm{
+            grid-template-columns: auto;
+
+        }
+        .card-product{
+            width: 16rem;
+            height: 20rem;
+            .img-container{
+                background-color: $color-grey-light;
+                height: 13rem;
+                position: relative;
+                transition: background-color 250ms;
+                @include lg-min{
+                    overflow: hidden;
+                }
+                .quick-view{
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                    top: 76%;
+                    transition: top 250ms;
+                    @include lg-min{
+                        top: 100%;
+                    }
+                }
+                .quick-menu{
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    margin-top: 0.5rem;
+                    left: 80%;
+                    transition: left 250ms;
+                    @include lg-min{
+                        left: 110%;
+                    }
+                    .nav-icon{
+                        background-color: $color-white;
+                        color: $color-black;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0 0 6px 1px $color-grey;
+                        position: relative;
+                        color: $color-black;
+                        transition: all 0.25s;
+                        border: none;
+                        &:hover{
+                            color: $color-white;
+                            box-shadow: 0 0 6px 1px $color-grey;
+                            background-color: $color-black;
+                        }
+                    }
+                    .nav-icon ~ .nav-icon {
+                        margin-top: 1rem;
+                    }
+                }
+                img{
+                    height: 13rem;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                &:hover{
+                    background-color: $color-black-hover;
+                    .quick-view{
+                        top: 76%;
+                    }
+                    .quick-menu{
+                        left: 80%;
+                    }
+                }
+            }
+            .text{
+                text-align: center;
+                
+                h5{
+                    color: $color-grey-dark;
+                    @include font-13-medium;
+                    letter-spacing: 0.1rem;
+                    margin: 0.25rem 0;
+                    padding: 0;
+                }
+                h6{
+                    @include font-16-semi;
+                    letter-spacing: 0.1rem;
+                    margin: 0.25rem 0;
+                    padding: 0;
+                }
+                p{
+                    @include font-18-semi;
+                    margin: 0;
+                    padding: 0;
+                }
+                i{
+                    color: $color-theme;
+                }
+                .bothPrices{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    .firstPrice {
+                        color: $color-grey-dark;
+                        text-decoration: line-through;
+                        @include font-16;
+                        margin: unset;
+                        margin-right: 0.5rem;
+                    }
+                    .offPrice {
+                        color: $color-black;
+                        text-decoration: none;
+                        @include font-18-semi;
+                    }
+                }
+            }
         }
     }
 }

@@ -87,15 +87,23 @@
                 i{
                     color: $color-theme;
                 }
-                .firstPrice {
-                    color: $color-grey-dark;
-                    text-decoration: line-through;
-                    @include font-16;
-                }
-                .offPrice {
-                    color: $color-black;
-                    text-decoration: none;
-                    @include font-18-semi;
+                .bothPrices{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    .firstPrice {
+                        color: $color-grey-dark;
+                        text-decoration: line-through;
+                        @include font-16;
+                        margin: unset;
+                        margin-right: 0.5rem;
+                    }
+                    .offPrice {
+                        color: $color-black;
+                        text-decoration: none;
+                        @include font-18-semi;
+                    }
                 }
             }
         }
