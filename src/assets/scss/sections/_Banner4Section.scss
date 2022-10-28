@@ -1,0 +1,14 @@
+.banner-red-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(1110px - 24px);
+    height: 40px;
+    background-color: $color-white;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 1px 17px;
+    p{
+        margin: 0;
+        color: $color-theme;
+        @include font-16-medium;
+    }
+}
