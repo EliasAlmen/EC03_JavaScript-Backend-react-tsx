@@ -19,6 +19,8 @@ const ProductCardComponent = ({product, offPriceOnItem}) => {
             <h5>{product.category}</h5>
             <h6>{product.productName}</h6>
             <span>
+                {/* https://stackoverflow.com/questions/50898165/react-render-a-certain-number-of-components-dynamically */}
+                {/* {products.rating.map(product => <i key={i} className="fa-sharp fa-solid fa-star"></i>)} */}
                 {Array(product.rating).fill(0).map((_, i) => <i key={i} className="fa-sharp fa-solid fa-star"></i>)}
             </span>
             <div className="bothPrices">

@@ -14,8 +14,13 @@ import SpecialitySection from '../sections/SpecialitySection'
 
 const HomeView = () => {
   
+  var min = 1
+  var max = 5
+  let randomNumber
+  randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
+  
   const [featuredProducts, setFeaturedProducts] = useState([
-    { id: 1, offPriceOnItemValue: false, price: "$35.00", productName: "Modern Black Blouse", category: "Fashion", rating: 2, img: "https://via.placeholder.com/208x256"},
+    { id: 1, offPriceOnItemValue: false, price: "$35.00", productName: "Modern Black Blouse", category: "Fashion", rating: randomNumber, img: "https://via.placeholder.com/208x256"},
     { id: 2, offPriceOnItemValue: true, offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
     { id: 3, offPriceOnItemValue: false, price: "$500.00", productName: "New look men's coat", category: "Casual", rating: 5, img: "https://via.placeholder.com/208x256"},
     { id: 4, offPriceOnItemValue: false, price: "$5.00", productName: "Circle pattern girls shirt", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
