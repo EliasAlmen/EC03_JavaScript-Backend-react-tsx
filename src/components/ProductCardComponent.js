@@ -11,19 +11,15 @@ const ProductCardComponent = ({product, offPriceOnItem}) => {
                 <button className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
             <div className="quick-view">
-                <NavLink to={`/products/${product.category}/${product.id}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>
+                <NavLink to={`/products/${product.category.toLowerCase().replace(/ /gi, "-")}/${product.productName.toLowerCase().replace(/ /gi, "-")}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>
             </div>
-            <img src={product.img} alt={product.name} />
+            <img src={product.img} alt={product.productName} />
         </div>
         <div className="text">
             <h5>{product.category}</h5>
             <h6>{product.productName}</h6>
             <span>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
+                {Array(product.rating).fill(0).map((_, i) => <i key={i} className="fa-sharp fa-solid fa-star"></i>)}
             </span>
             <div className="bothPrices">
                 <p className={offPriceOnItem ? "firstPrice" : ""}>{product.price}</p>

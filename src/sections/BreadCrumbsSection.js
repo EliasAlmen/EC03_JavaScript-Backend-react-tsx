@@ -3,8 +3,10 @@ import BreadCrumbsRouterComponent from '../components/BreadCrumbsRouterComponent
 
 const BreadCrumbsSection = () => {
   return (
-    <div className="breadcrumb-container container">
-      <BreadCrumbsRouterComponent />
+    <div className="breadcrumb-container">
+      <span className="container">
+        <BreadCrumbsRouterComponent />
+      </span>
     </div>
   )
 }

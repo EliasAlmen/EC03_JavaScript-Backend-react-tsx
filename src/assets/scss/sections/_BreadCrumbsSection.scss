@@ -1,16 +1,19 @@
 .breadcrumb-container {
-    max-width: 1110px;
-    margin-top: 1rem;
-    @include font-16-medium;
+    .container{
+        display: flex;
+        max-width: unset;
+        margin-top: 1rem;
+        @include font-16-medium;
+
+        @include xl-min{
+            max-width: 1110px;
+        }
     
-    .active{
-        &:last-child{
-            color: $color-theme;
+        .active{
+            color: $color-grey;
+            &:last-child{
+                color: $color-theme;
+            }
         }
     }
-    a{
-        text-decoration: none;
-        margin-right: 1rem;
-    }
-
 }
