@@ -4,10 +4,13 @@ import Banner4Section from '../sections/Banner4Section'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
+import HomeView from './HomeView'
 
 const ProductDetailsView = () => {
 
   const params = useParams()
+  
+  const singleProduct = HomeView
 
   return (
     <>

@@ -46,16 +46,16 @@ const HomeView = () => {
   ])
 
   const [flashSaleProducts, setflashSaleProducts] = useState([
-    { id: 1, offPriceOnItemValue: true, offPrice: "$15.00", price: "$35.00", productName: "Modern Black Blouse", category: "Work", rating: 5, img: "https://via.placeholder.com/208x256"},
-    { id: 2, offPriceOnItemValue: true, offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
-    { id: 3, offPriceOnItemValue: true, offPrice: "$250.00", price: "$500.00", productName: "New look men's coat", category: "Work", rating: 5, img: "https://via.placeholder.com/208x256"},
-    { id: 4, offPriceOnItemValue: true, offPrice: "$2.50", price: "$5.00", productName: "Circle pattern girls shirt", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
+    { id: 9, offPriceOnItemValue: true, offPrice: "$15.00", price: "$35.00", productName: "Modern Black Blouse", category: "Work", rating: 5, img: "https://via.placeholder.com/208x256"},
+    { id: 10, offPriceOnItemValue: true, offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
+    { id: 11, offPriceOnItemValue: true, offPrice: "$250.00", price: "$500.00", productName: "New look men's coat", category: "Work", rating: 5, img: "https://via.placeholder.com/208x256"},
+    { id: 12, offPriceOnItemValue: true, offPrice: "$2.50", price: "$5.00", productName: "Circle pattern girls shirt", category: "Fashion", rating: 5, img: "https://via.placeholder.com/208x256"},
   ])
 
   const [rankingProducts, setrankingProducts] = useState([
-    { id: 1, offPriceOnItemValue: false, offPrice: "$15.00", price: "$35.00", productName: "Modern Black Blouse", category: "Fashion", rating: 5, img: "https://via.placeholder.com/132x160"},
-    { id: 2, offPriceOnItemValue: false, offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Work", rating: 5, img: "https://via.placeholder.com/132x160"},
-    { id: 3, offPriceOnItemValue: false, offPrice: "$250.00", price: "$500.00", productName: "New look men's coat", category: "Fashion", rating: 5, img: "https://via.placeholder.com/132x160"},
+    { id: 13, offPriceOnItemValue: false, offPrice: "$15.00", price: "$35.00", productName: "Modern Black Blouse", category: "Fashion", rating: 5, img: "https://via.placeholder.com/132x160"},
+    { id: 14, offPriceOnItemValue: false, offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Work", rating: 5, img: "https://via.placeholder.com/132x160"},
+    { id: 15, offPriceOnItemValue: false, offPrice: "$250.00", price: "$500.00", productName: "New look men's coat", category: "Fashion", rating: 5, img: "https://via.placeholder.com/132x160"},
   ])
   
   
