@@ -11,7 +11,7 @@ const ProductCardComponent = ({product, offPriceOnItem}) => {
                 <button className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
             </div>
             <div className="quick-view">
-                <NavLink to={`/products/${product.category.toLowerCase().replace(/ /gi, "-")}/${product.productName.toLowerCase().replace(/ /gi, "-")}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>
+                <NavLink to={`/products/${product.id}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>
             </div>
             <img src={product.img} alt={product.productName} />
         </div>

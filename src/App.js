@@ -15,17 +15,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeView />} />
-        <Route path="/categories" element={<CategoriesView />} />
-        <Route path="/products" element={<ProductsView />} />
-        <Route path="/products/:category/:productName" element={<ProductDetailsView />} />
-        <Route path="/contacts" element={<ContactsView />} />
+        <Route exact path="/" element={<HomeView />} />
+        <Route exact path="/categories" element={<CategoriesView />} />
+        <Route exact path="/products" element={<ProductsView />} />
+        <Route exact path="/products/:id" element={<ProductDetailsView />} />
+        <Route exact path="/contacts" element={<ContactsView />} />
         
-        <Route path="/search" element={<SearchView />} />
-        <Route path="/compare" element={<CompareView />} />
-        <Route path="/wishlist" element={<WishListView />} />
-        <Route path="/shoppingcart" element={<ShoppingCartView />} />
-        <Route path="*" element={<NotFoundView />} />
+        <Route exact path="/search" element={<SearchView />} />
+        <Route exact path="/compare" element={<CompareView />} />
+        <Route exact path="/wishlist" element={<WishListView />} />
+        <Route exact path="/shoppingcart" element={<ShoppingCartView />} />
+        <Route exact path="*" element={<NotFoundView />} />
       </Routes>
     </BrowserRouter>
   );

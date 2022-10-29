@@ -4,14 +4,15 @@ import Banner4Section from '../sections/Banner4Section'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
-import HomeView from './HomeView'
+import DATA from '../DATA'
 
 const ProductDetailsView = () => {
 
-  const params = useParams()
+  const {id} = useParams()
   
-  const singleProduct = HomeView
+  const singleProduct = DATA.find(prod => prod.id == id)
 
+  
   return (
     <>
       <HeaderSection />
@@ -35,8 +36,8 @@ const ProductDetailsView = () => {
               </div>
             </div>
             <div className="shop">
-              <h1>{params.productName}</h1>
-              <p>ID:{params.id}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{params.category}</p>
+              <h1>{singleProduct.productName}</h1>
+              <p>ID:{singleProduct.id}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{singleProduct.category}</p>
               <i className="fa-sharp fa-solid fa-star"></i>
               <p>$35.00</p>
               <p>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more)</p>

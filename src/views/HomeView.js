@@ -33,7 +33,7 @@ const HomeView = () => {
     }
     return booleanValue;
   }
-  
+
   const [featuredProducts, setFeaturedProducts] = useState([
     { id: 1, offPriceOnItemValue: generateRandomBool(), offPrice: "$17.50", price: "$35.00", productName: "Modern Black Blouse", category: "Fashion", rating: generateRandomNumber(), img: "https://via.placeholder.com/208x256"},
     { id: 2, offPriceOnItemValue: generateRandomBool(), offPrice: "$150.00", price: "$250.00", productName: "Blue silk flare sleeved top", category: "Fashion", rating: generateRandomNumber(), img: "https://via.placeholder.com/208x256"},
