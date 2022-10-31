@@ -10,6 +10,7 @@ const ProductDetailsView = () => {
 
   const {id} = useParams()
   
+  //Gives warning, expected === instead of ==
   const singleProduct = DATA.find(prod => prod.id == id)
 
   

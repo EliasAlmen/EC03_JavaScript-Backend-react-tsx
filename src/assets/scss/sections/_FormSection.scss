@@ -2,7 +2,8 @@
     margin-bottom: 6rem;
     .container{
         max-width: 1110px;
-    }form{
+    }
+    form{
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -32,6 +33,14 @@
                 width: 100%;
             }
             
+        }
+        .userError{
+            color: $color-theme;
+            @include font-14;
+            padding: 0.5rem 0;
+        }
+        .errorFrame{
+            border: 2px solid $color-theme !important;
         }
     }
     h1{
