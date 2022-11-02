@@ -1,7 +1,22 @@
-.gradientBackgroundSection{
-    position: fixed;
+.gradientbackgroundsection{
     background: rgb(230,230,230);
     background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
-    height: 59.063rem;
+    height: 38rem;
     width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;   
+    @include sm-min{
+        height: 31rem;
+    }
+    @include lg-min{
+        height: 61rem;
+    }
+    @include xxl-min{
+        height: 52rem;
+    }
+    @include xxxl-min{
+        height: 61rem;
+    }
 }

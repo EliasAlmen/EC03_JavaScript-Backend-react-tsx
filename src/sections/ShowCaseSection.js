@@ -1,10 +1,13 @@
 import React from 'react'
 import showcase1 from '../assets/img/image_showcase_1.svg'
 import showcase2 from '../assets/img/image_showcase_2.svg'
+import GradientBackgroundSection from './GradientBackgroundSection'
 
 const ShowCaseSection = () => {
   return (
     <section className="container-fluid showcase">
+        <GradientBackgroundSection />
+
         <img className="img-fluid d-none d-lg-block" src={showcase1} alt="sitting on chair" />
         <div className="sale">
             <h1>SALE UP <br /> To 50% Off</h1>

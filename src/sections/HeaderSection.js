@@ -13,7 +13,8 @@ const HeaderSection = () => {
   }
 
   return (
-    <header className="container">
+    <>
+      <header className="container">
         <div className="header">
             <NavLink className="logo" to="/"><img src={fixxo} alt="Brand logotype" /></NavLink>
             <nav className={`nav-text ${showMenu ? "d-grid" : "d-none"}`}>
@@ -30,7 +31,8 @@ const HeaderSection = () => {
               <button onClick={toggleMenu} className="nav-icon nav-icon-menu"><i className="fa-regular fa-bars"></i></button>
             </nav>
         </div>
-    </header>
+      </header>
+    </>
   )
 }
 
