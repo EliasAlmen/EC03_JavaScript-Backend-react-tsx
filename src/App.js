@@ -10,23 +10,85 @@ import SearchView from './views/SearchView';
 import CompareView from './views/CompareView';
 import WishListView from './views/WishListView';
 import ShoppingCartView from './views/ShoppingCartView';
+import { useEffect, useState } from 'react';
+import { ProductContext } from './contexts/contexts'
+
 
 function App() {
+  
+  // // for science and fun
+  // function generateRandomNumber() {
+  //   var min = 1
+  //   var max = 5
+  //   let randomNumber
+  //   randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
+  //   return randomNumber;
+  // }
+  
+  // // for science and fun
+  // function generateRandomBool() {
+  //   var booleanValue;
+  //   if ( Math.random() > .5 ){
+  //     booleanValue = true;
+  //   } else {
+  //     booleanValue = false;  
+  //   }
+  //   return booleanValue;
+  // }
+
+
+  const [products, setProducts] = useState({
+    allProducts: [],
+    featuredProducts: [],
+    flashSaleProducts: [],
+    rankingProducts: []
+  })
+  
+  useEffect(() =>{
+    const fetchAllProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+      setProducts({...products, allProducts: await result.json()})
+    }
+    fetchAllProducts()
+
+    const fetchFeaturedProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
+      setProducts({...products, featuredProducts: await result.json()})
+    }
+    fetchFeaturedProducts()
+
+    const fetchFlashSaleProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+      setProducts({...products, flashSaleProducts: await result.json()})
+    }
+    fetchFlashSaleProducts()
+
+    const fetchRankingProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=3')
+      setProducts({...products, rankingProducts: await result.json()})
+    }
+    fetchRankingProducts()
+
+  }, [setProducts])
+
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<HomeView />} />
-        <Route exact path="/categories" element={<CategoriesView />} />
-        <Route exact path="/products" element={<ProductsView />} />
-        <Route exact path="/products/:id" element={<ProductDetailsView />} />
-        <Route exact path="/contacts" element={<ContactsView />} />
-        
-        <Route exact path="/search" element={<SearchView />} />
-        <Route exact path="/compare" element={<CompareView />} />
-        <Route exact path="/wishlist" element={<WishListView />} />
-        <Route exact path="/shoppingcart" element={<ShoppingCartView />} />
-        <Route exact path="*" element={<NotFoundView />} />
-      </Routes>
+      <ProductContext.Provider value={products}>
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route path="/categories" element={<CategoriesView />} />
+          <Route path="/products" element={<ProductsView />} />
+          <Route path="/products/:id" element={<ProductDetailsView />} />
+          <Route path="/contacts" element={<ContactsView />} />
+          
+          <Route path="/search" element={<SearchView />} />
+          <Route path="/compare" element={<CompareView />} />
+          <Route path="/wishlist" element={<WishListView />} />
+          <Route path="/shoppingcart" element={<ShoppingCartView />} />
+          <Route path="*" element={<NotFoundView />} />
+        </Routes>
+      </ProductContext.Provider>
     </BrowserRouter>
   );
 }
