@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
-import { ProductContext } from '../contexts/contexts'
 
-const ProductAll = ({title, items = []}) => {
+const ProductAllSection = ({title, items = []}) => {
 
 
 
@@ -21,4 +20,4 @@ const ProductAll = ({title, items = []}) => {
     )
 }
 
-export default ProductAll
+export default ProductAllSection

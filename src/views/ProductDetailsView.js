@@ -1,19 +1,45 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner4Section from '../sections/Banner4Section'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
-import { ProductContext } from '../contexts/contexts'
+import { useParams } from 'react-router-dom'
 
 const ProductDetailsView = () => {
 
-  // const {id} = useParams()
   
-  // //Gives warning, expected === instead of ==
-  // const singleProduct = DATA.find(prod => prod.id == id)
+  
+  const [singleProduct, setSingleProduct] = useState({});
+  const id = useParams()
+  console.log(id);
+  
+  
 
-  const products = useContext(ProductContext)
+  useEffect(() => {
+    const fetchDetails = () => {
+      fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`)
+      .then(res => res.json())
+      .then(data => setSingleProduct(data))
+    };
+    fetchDetails();
+  }, [id]);
   
+
+  
+
+  // const [productDetails, setProductDetail] = useState([])
+
+
+  // useEffect(() => {
+  //   const fetchDetails = async () => {
+  //     let result = await fetch(`https://win22-webapi.azurewebsites.net/api/products/${artnr}`)
+  //     setProductDetail(result.json())
+  //   }
+  //   fetchDetails();
+
+  // }, [artnr])
+  
+  // const singleProduct = productDetails.filter(prod => prod.articleNumber === artnr)
 
   return (
     <>
@@ -38,8 +64,8 @@ const ProductDetailsView = () => {
               </div>
             </div>
             <div className="shop">
-              <h1>{products.product.productName}</h1>
-              <p>ID:{products.id}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{products.category}</p>
+              <h1>{singleProduct.name}</h1>
+              <p>ID:{singleProduct.articleNumber}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{singleProduct.category}</p>
               <i className="fa-sharp fa-solid fa-star"></i>
               <p>$35.00</p>
               <p>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more)</p>

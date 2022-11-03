@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductCardComponent = ({product, offPriceOnItem}) => {
+const ProductCardComponent = ({product}) => {
   return (
     <div className="card-product">
         <div className="img-container">
@@ -24,8 +24,10 @@ const ProductCardComponent = ({product, offPriceOnItem}) => {
                 {Array(product.rating).fill(0).map((_, i) => <i key={i} className="fa-sharp fa-solid fa-star"></i>)}
             </span>
             <div className="bothPrices">
-                <p className={offPriceOnItem ? "firstPrice" : ""}>${product.price}.00</p>
-                <span className={offPriceOnItem ? "offPrice" : ""}>{`${offPriceOnItem ? product.offPrice : ""}`}</span>
+                {/* Line below was for randomly generated bool for product to have offprice or not */}
+                {/* <p className={offPriceOnItem ? "firstPrice" : ""}>${product.price}.00</p> */}
+                <p>${product.price}.00</p>
+                {/* <span className={offPriceOnItem ? "offPrice" : ""}>{`${offPriceOnItem ? product.offPrice : ""}`}</span> */}
             </div>
         </div>
     </div>

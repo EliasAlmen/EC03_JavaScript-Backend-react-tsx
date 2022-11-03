@@ -49,27 +49,27 @@ function App() {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
       setProducts({...products, allProducts: await result.json()})
     }
-    fetchAllProducts()
+    fetchAllProducts();
 
     const fetchFeaturedProducts = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
       setProducts({...products, featuredProducts: await result.json()})
     }
-    fetchFeaturedProducts()
+    fetchFeaturedProducts();
 
     const fetchFlashSaleProducts = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
       setProducts({...products, flashSaleProducts: await result.json()})
     }
-    fetchFlashSaleProducts()
+    fetchFlashSaleProducts();
 
     const fetchRankingProducts = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=3')
       setProducts({...products, rankingProducts: await result.json()})
     }
-    fetchRankingProducts()
+    fetchRankingProducts();
 
-  }, [setProducts])
+  }, [setProducts]);
 
 
   return (

@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
-import { ProductContext } from '../contexts/contexts'
 
-const ProductRankingSection = ({title1, title2, title3}) => {
+const ProductRankingSection = ({title1, title2, title3, items=[]}) => {
   
-    const products = useContext(ProductContext)
 
 
     return (
@@ -12,16 +10,22 @@ const ProductRankingSection = ({title1, title2, title3}) => {
         <div className="container">
             <div className="latest">
                 <h1>{title1}</h1>
-                {products.rankingProducts.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)}
+                {
+                items.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)
+                }
                 
             </div>
             <div className="best">
                 <h1>{title2}t</h1>
-                {products.rankingProducts.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)}
+                {
+                items.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)
+                }
             </div>
             <div className="reacted">
                 <h1>{title3}</h1>
-                {products.rankingProducts.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)}
+                {
+                items.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)
+                }
             </div>
         </div>
         <div className="_border-bottom">

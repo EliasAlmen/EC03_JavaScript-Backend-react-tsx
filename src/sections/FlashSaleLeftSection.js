@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
-import { ProductContext } from '../contexts/contexts'
 
-const FlashSaleLeftSection = () => {
+const FlashSaleLeftSection = ({items=[]}) => {
   
-  const products = useContext(ProductContext)
 
   
   return (
@@ -15,7 +13,9 @@ const FlashSaleLeftSection = () => {
                 <button className="button button-white bg-light">FLASH SALE</button>
             </div>
             <div className="container-cards">
-              {products.flashSaleProducts.map(product => <ProductCardComponent offPriceOnItem={product.offPriceOnItemValue} key={product.articleNumber} product={product}/>)}
+              {
+              items.map(product => <ProductCardComponent key={product.articleNumber} product={product}/>)
+              }
             </div>
         </div>
     </section>

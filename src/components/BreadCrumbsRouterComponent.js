@@ -16,12 +16,12 @@ const BreadCrumbsRouterComponent = () => {
   return (
     <>
       {breadcrumbs.map(({ breadcrumb, match }, index) => (
-        <>
+        <React.Fragment key={match.pathname}>
           <NavLink key={match.pathname} to={match.pathname}>
             {breadcrumb}
           </NavLink>
           {index !== breadcrumbs.length - 1 && '\u00a0\u00a0>\u00a0\u00a0'}
-        </>
+        </React.Fragment>
       ))}
     </>
   )
