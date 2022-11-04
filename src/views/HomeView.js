@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { ProductContext } from '../contexts/contexts'
+import { FeaturedContext, FlashsaleContext, RankingContext } from '../contexts/contexts'
 import Banner1Section from '../sections/Banner1Section'
 import Banner2Section from '../sections/Banner2Section'
 import Banner3Section from '../sections/Banner3Section'
@@ -15,7 +15,9 @@ import SpecialitySection from '../sections/SpecialitySection'
 
 const HomeView = () => {
   
-  const productContext = useContext(ProductContext)
+  const featuredContext = useContext(FeaturedContext)
+  const flashsaleContext = useContext(FlashsaleContext)
+  const rankingContext = useContext(RankingContext)
   
 
   return (
@@ -23,13 +25,13 @@ const HomeView = () => {
       <HeaderSection />
       <ShowCaseSection />
       <Banner1Section />
-      <ProductFeaturedSection title="Featured Products" items={productContext.featuredProducts} />
+      <ProductFeaturedSection title="Featured Products" items={featuredContext} />
       <Banner2Section />
       <SpecialitySection />
-      <FlashSaleLeftSection items={productContext.flashSaleProducts}/>
-      <FlashSaleRightSection items={productContext.flashSaleProducts} />
+      <FlashSaleLeftSection items={flashsaleContext}/>
+      <FlashSaleRightSection items={flashsaleContext} />
       <Banner3Section />
-      <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} items={productContext.rankingProducts} />
+      <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} items={rankingContext} />
       <PromisesSection />
       <FooterSection />
     </>
