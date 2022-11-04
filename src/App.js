@@ -38,18 +38,18 @@ function App() {
 
 
   const [products, setProducts] = useState({
-    allProducts: [],
+    // allProducts: [],
     featuredProducts: [],
-    flashSaleProducts: [],
-    rankingProducts: []
+    // flashSaleProducts: [],
+    // rankingProducts: []
   })
   
   useEffect(() =>{
-    const fetchAllProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts({...products, allProducts: await result.json()})
-    }
-    fetchAllProducts();
+    // const fetchAllProducts = async () => {
+    //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+    //   setProducts({...products, allProducts: await result.json()})
+    // }
+    // fetchAllProducts();
 
     const fetchFeaturedProducts = async () => {
       let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
@@ -57,19 +57,19 @@ function App() {
     }
     fetchFeaturedProducts();
 
-    const fetchFlashSaleProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
-      setProducts({...products, flashSaleProducts: await result.json()})
-    }
-    fetchFlashSaleProducts();
+    // const fetchFlashSaleProducts = async () => {
+    //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4')
+    //   setProducts({...products, flashSaleProducts: await result.json()})
+    // }
+    // fetchFlashSaleProducts();
 
-    const fetchRankingProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=3')
-      setProducts({...products, rankingProducts: await result.json()})
-    }
-    fetchRankingProducts();
+    // const fetchRankingProducts = async () => {
+    //   let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=3')
+    //   setProducts({...products, rankingProducts: await result.json()})
+    // }
+    // fetchRankingProducts();
 
-  }, [setProducts]);
+  }, [products, setProducts]);
 
 
   return (

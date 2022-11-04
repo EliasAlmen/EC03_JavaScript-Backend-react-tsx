@@ -6,40 +6,24 @@ import HeaderSection from '../sections/HeaderSection'
 import { useParams } from 'react-router-dom'
 
 const ProductDetailsView = () => {
-
   
+  const {id} = useParams()
   
-  const [singleProduct, setSingleProduct] = useState({});
-  const id = useParams()
-  console.log(id);
+  const [data, setData] = useState([])
   
-  
-
-  useEffect(() => {
-    const fetchDetails = () => {
-      fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`)
-      .then(res => res.json())
-      .then(data => setSingleProduct(data))
-    };
-    fetchDetails();
+  useEffect(() =>{
+    
+    const fetchDetails = async () => {
+      await fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`, {
+        headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+      })
+    }
+    fetchDetails()
   }, [id]);
-  
-
-  
-
-  // const [productDetails, setProductDetail] = useState([])
-
-
-  // useEffect(() => {
-  //   const fetchDetails = async () => {
-  //     let result = await fetch(`https://win22-webapi.azurewebsites.net/api/products/${artnr}`)
-  //     setProductDetail(result.json())
-  //   }
-  //   fetchDetails();
-
-  // }, [artnr])
-  
-  // const singleProduct = productDetails.filter(prod => prod.articleNumber === artnr)
 
   return (
     <>
@@ -51,7 +35,7 @@ const ProductDetailsView = () => {
           <div className="image-shop">
             <div className="images">
               <div className="big-image">
-
+                <img src={data.imageName} alt={data.name}></img>
               </div>
               <div id="small-1" className="small-image">
 
@@ -64,11 +48,11 @@ const ProductDetailsView = () => {
               </div>
             </div>
             <div className="shop">
-              <h1>{singleProduct.name}</h1>
-              <p>ID:{singleProduct.articleNumber}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{singleProduct.category}</p>
-              <i className="fa-sharp fa-solid fa-star"></i>
-              <p>$35.00</p>
-              <p>Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more)</p>
+              <h1>{data.name}</h1>
+              <p>ID:{data.articleNumber}{`\u00a0\u00a0`}Category:{`\u00a0\u00a0`}{data.category}</p>
+              <i className="fa-sharp fa-solid fa-star">{data.rating}</i>
+              <p>{data.price}</p>
+              <p>{data.description}Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more)</p>
               <div className="size">Size:</div>
               <div className="color">Color:</div>
               <div className="qty">Qty:</div>
