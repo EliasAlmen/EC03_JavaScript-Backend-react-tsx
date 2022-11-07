@@ -12,9 +12,12 @@ const ShoppingCartComponent = () => {
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-                {
-                    cartItems.map(item => (<ShoppingCartItemComponent key={item.articleNumber} item={item} />))
-                }
+                {cartItems.map(item => (<ShoppingCartItemComponent key={item.articleNumber} item={item} />))}
+
+                <div className="checkout mt-5">
+                    <div className="total">...</div>
+                    <button className="button bg-red">Check Out</button>
+                </div>
             </div>
         </div>
     )

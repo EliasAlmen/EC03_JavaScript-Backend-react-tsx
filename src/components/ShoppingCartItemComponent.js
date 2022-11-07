@@ -29,12 +29,6 @@ const ShoppingCartItemComponent = ({item}) => {
             <div>{currencyFormatter(totalSingleItem)}</div>
             <button onClick={() => removeItem(item.articleNumber)}><i className="fa-solid fa-trash"></i></button>
         </div>
-
-        <div className="item-total">
-            <div className="item-price-total">
-                
-            </div>
-        </div>
     </div>
   )
 }

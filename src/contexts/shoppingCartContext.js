@@ -9,6 +9,8 @@ export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
 
+
+
 export const ShoppingCartProvider = ({ children }) => {
 
     const [cartItems, setCartItems] = useState([])
@@ -62,7 +64,6 @@ export const ShoppingCartProvider = ({ children }) => {
             return items.filter(item => item.articleNumber !== articleNumber)
         })
     }
-
 
     return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem }}>
         {children}
