@@ -3,10 +3,13 @@ import NavIconComponent from '../components/NavIconComponent'
 import fixxo from '../assets/img/logo/logo_Fixxo.svg'
 import { NavLink } from 'react-router-dom'
 import NavTextLinkComponent from '../components/NavTextLinkComponent'
+import { useShoppingCart } from '../contexts/shoppingCartContext'
 
 const HeaderSection = () => {
 
   const [showMenu, setShowMenu] = useState(false)
+
+  const {cartQuantity} = useShoppingCart()
 
   const toggleMenu = () => {
     setShowMenu(!showMenu)
@@ -27,7 +30,13 @@ const HeaderSection = () => {
               <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
               <NavIconComponent hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" />
               <NavIconComponent hideOnMobile={true} link="/wishlist" icon="fa-regular fa-heart" quantity="3" />
-              <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" quantity="4" />
+
+              <button className="nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{cartQuantity}</span>
+                <i className="fa-regular fa-bag-shopping"></i>
+              </button>
+
+              {/* <NavIconComponent link="/shoppingcart" icon="fa-regular fa-bag-shopping" quantity="4" /> */}
               <button onClick={toggleMenu} className="nav-icon nav-icon-menu"><i className="fa-regular fa-bars"></i></button>
             </nav>
         </div>

@@ -10,7 +10,7 @@ const ProductFeaturedSection = ({title, items=[]}) => {
             <div className="featured">
                 <div className="container-cards">
                     {
-                    items.map(product => <ProductCardComponent key={product.articleNumber} product={product}/>)
+                    items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
                     }
                 </div>
             </div>

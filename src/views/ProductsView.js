@@ -14,7 +14,7 @@ const ProductsView = () => {
     <>
       <HeaderSection />
       <BreadCrumbsSection />
-      <ProductAllSection title="All products" items={productContext.productsAll}/>
+      <ProductAllSection title="All products" items={productContext}/>
       <FooterSection />
     </>
   )

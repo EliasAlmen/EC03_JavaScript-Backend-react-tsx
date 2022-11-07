@@ -12,6 +12,7 @@ import WishListView from './views/WishListView';
 import ShoppingCartView from './views/ShoppingCartView';
 import { useEffect, useState } from 'react';
 import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext } from './contexts/contexts'
+import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ShoppingCartProvider>
       <ProductContext.Provider value={productsAll}>
       <FeaturedContext.Provider value={featuredProducts}>
       <FlashsaleContext.Provider value={flashSaleProducts}>
@@ -100,6 +102,7 @@ function App() {
       </FlashsaleContext.Provider>
       </FeaturedContext.Provider>
       </ProductContext.Provider>
+      </ShoppingCartProvider>
     </BrowserRouter>
   );
 }
