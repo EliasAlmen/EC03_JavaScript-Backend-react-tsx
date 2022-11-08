@@ -109,9 +109,23 @@
             }
         }
 
-        // .text-tabs{
-
-        // }
+        .text-tabs{
+            color: $color-grey-dark;
+            .tabs{
+                @include font-16-medium;
+                button{
+                     color: $color-grey-dark;    
+                     border: none;   
+                    background-color: white;
+                    &:disabled{
+                        color: $color-theme;
+                    }
+                }
+            }
+            .content{
+                @include font-16;
+            }
+        }
         // .related-products{
 
         // }
