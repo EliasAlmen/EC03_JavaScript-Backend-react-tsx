@@ -38,13 +38,6 @@ function App() {
   // }
 
 
-  // const [products, setProducts] = useState({
-  //   // allProducts: [],
-  //   featuredProducts: [],
-  //   // flashSaleProducts: [],
-  //   // rankingProducts: []
-  // })
-
   const [productsAll, setProductsAll] = useState([])
   const [featuredProducts, setFeaturedProducts] = useState([])
   const [flashSaleProducts, setFlashSaleProducts] = useState([])
