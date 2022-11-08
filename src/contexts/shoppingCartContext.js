@@ -41,6 +41,24 @@ export const ShoppingCartProvider = ({ children }) => {
         })
     }
 
+    const incrementQuantityFromDetailed = (cartItem) => {
+        const { articleNumber, product, count } = cartItem
+
+        setCartItems(items => {
+            if (items.find(item => item.articleNumber === articleNumber) == null) {
+                return [...items, { articleNumber, product, quantity: count }]
+            } else {
+                return items.map(item => {
+                    if (item.articleNumber === articleNumber) {
+                        return { ...item, quantity: item.quantity + count }
+                    } else {
+                        return item
+                    }
+                })
+            }
+        })
+    }
+
     const decrementQuantity = (cartItem) => {
         const { articleNumber } = cartItem
 
@@ -83,7 +101,7 @@ export const ShoppingCartProvider = ({ children }) => {
     // console.log('totalUsingMap',totalUsingMap)
 
 
-    return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem }}>
+    return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem, incrementQuantityFromDetailed }}>
         {children}
         <ShoppingCartComponent />
 

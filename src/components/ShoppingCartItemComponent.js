@@ -17,6 +17,9 @@ const ShoppingCartItemComponent = ({item}) => {
             <div className="item-info-name">
                 {item.product.name}
             </div>
+            <div className="item-info-category">
+                {item.product.category}
+            </div>
             <div className="item-info-quantity">
                 <div className="item-info-quantity-box">
                     <button className="box-button-right" onClick={() => decrementQuantity(item)}>-</button>

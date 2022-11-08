@@ -11,7 +11,7 @@ import CompareView from './views/CompareView';
 import WishListView from './views/WishListView';
 import ShoppingCartView from './views/ShoppingCartView';
 import { useEffect, useState } from 'react';
-import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext } from './contexts/contexts'
+import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext, RelatedContext } from './contexts/contexts'
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 
 
@@ -49,6 +49,7 @@ function App() {
   const [featuredProducts, setFeaturedProducts] = useState([])
   const [flashSaleProducts, setFlashSaleProducts] = useState([])
   const [rankingProducts, setRankingProducts] = useState([])
+  const [relatedProducts, setRelatedProducts] = useState([])
   
   useEffect(() =>{
     const fetchAllProducts = async () => {
@@ -75,7 +76,13 @@ function App() {
     }
     fetchRankingProducts();
 
-  }, [setProductsAll, setFeaturedProducts, setFlashSaleProducts, setRankingProducts])
+    const fetchRelatedProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=1')
+      setRelatedProducts(await result.json())
+    }
+    fetchRelatedProducts();
+
+  }, [setProductsAll, setFeaturedProducts, setFlashSaleProducts, setRankingProducts, setRelatedProducts])
 
 
   return (
@@ -85,6 +92,7 @@ function App() {
       <FeaturedContext.Provider value={featuredProducts}>
       <FlashsaleContext.Provider value={flashSaleProducts}>
       <RankingContext.Provider value={rankingProducts}>
+      <RelatedContext.Provider value={relatedProducts}>
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/categories" element={<CategoriesView />} />
@@ -98,6 +106,7 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCartView />} />
           <Route path="*" element={<NotFoundView />} />
         </Routes>
+      </RelatedContext.Provider>
       </RankingContext.Provider>
       </FlashsaleContext.Provider>
       </FeaturedContext.Provider>
