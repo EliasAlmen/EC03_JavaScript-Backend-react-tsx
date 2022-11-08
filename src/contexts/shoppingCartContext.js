@@ -14,7 +14,7 @@ export const useShoppingCart = () => {
 export const ShoppingCartProvider = ({ children }) => {
 
     const [cartItems, setCartItems] = useState([])
-
+    
     const cartQuantity = cartItems.reduce(
         (quantity, item) => item.quantity + quantity, 0
     )
@@ -64,6 +64,24 @@ export const ShoppingCartProvider = ({ children }) => {
             return items.filter(item => item.articleNumber !== articleNumber)
         })
     }
+
+    // function findSumUsingReduce(){
+    //     const s = cartItems.reduce((s,{price}) => s+price,0)
+    //     return s;
+    // }
+    
+    // function findSumUsingMap(){
+    //     let t = 0;
+    //     cartItems.map(({price}) => t = t + price)
+    //     return t;
+    // }
+    
+    // const totalUsingReduce = findSumUsingReduce()
+    // const totalUsingMap = findSumUsingMap()
+    
+    // console.log('totalUsingReduce',totalUsingReduce)
+    // console.log('totalUsingMap',totalUsingMap)
+
 
     return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem }}>
         {children}

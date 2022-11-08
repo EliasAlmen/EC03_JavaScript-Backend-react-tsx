@@ -15,7 +15,7 @@ const ShoppingCartComponent = () => {
                 {cartItems.map(item => (<ShoppingCartItemComponent key={item.articleNumber} item={item} />))}
 
                 <div className="checkout mt-5">
-                    <div className="total">...</div>
+                    <div className="total">Total:</div>
                     <button className="button bg-red">Check Out</button>
                 </div>
             </div>
