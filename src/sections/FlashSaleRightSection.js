@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import ProductCardComponent from '../components/ProductCardComponent'
 
 const FlashSaleRightSection = ({items=[]}) => {
@@ -15,7 +16,7 @@ const FlashSaleRightSection = ({items=[]}) => {
             </div>
             <div className="flashsale">
                 <h1>2 FOR USD $29</h1>
-                <button className="button button-white bg-light">FLASH SALE</button>
+                <NavLink to={`/products`} className="button button-white bg-light">FLASH SALE</NavLink>
             </div>
         </div>
     </section>

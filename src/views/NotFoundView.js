@@ -11,7 +11,7 @@ const NotFoundView = () => {
       <div className='container d-flex justify-content-center align-items-center' style={ { height: "500px" } }>
         <h1>404 - Page not found</h1>
       </div>
-      <div style={{position: "fixed", bottom: "0"}}>
+      <div style={{position: "fixed", bottom: "0", width: "100%"}}>
         <FooterSection />
       </div>
     </>

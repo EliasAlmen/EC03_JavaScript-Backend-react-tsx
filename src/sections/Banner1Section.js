@@ -13,7 +13,7 @@ const Banner1Section = () => {
                         Winter Clearance <br /> Up to 70% Off!
                     </h2>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem apriam eaque ipsa quae ab illo inventore.</p>
-                    <NavLink className="button bg-dark">SHOP NOW</NavLink>
+                    <NavLink to={`/products`} className="button bg-dark">SHOP NOW</NavLink>
                 </div>
                 <img className="img d-none d-lg-block" src={clearance} alt="Clearance" />
             </article>
@@ -22,7 +22,7 @@ const Banner1Section = () => {
                     <h2>
                         New <br />arrivals
                     </h2>
-                    <button className="button bg-dark">SHOW NOW</button>
+                    <button to={`/products`} className="button bg-dark">SHOW NOW</button>
                 </div>
                 <img className="img-fluid" src={arrivals} alt="New arrivals" />
             </article>

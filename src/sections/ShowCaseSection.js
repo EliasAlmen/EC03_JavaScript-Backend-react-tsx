@@ -1,6 +1,7 @@
 import React from 'react'
-import showcase1 from '../assets/img/image_showcase_1.svg'
-import showcase2 from '../assets/img/image_showcase_2.svg'
+import { NavLink } from 'react-router-dom'
+import showcase1 from '../assets/img/On_chair.png'
+import showcase2 from '../assets/img/On_thing.png'
 import GradientBackgroundSection from './GradientBackgroundSection'
 
 const ShowCaseSection = () => {
@@ -12,9 +13,9 @@ const ShowCaseSection = () => {
         <div className="sale">
             <h1>SALE UP <br /> To 50% Off</h1>
             <p>Online shopping free home delivery over $100</p>
-            <button className="button bg-red">SHOP NOW</button>
+            <NavLink to={`/products`} className="button bg-red">SHOP NOW</NavLink>
         </div>
-        <img className="img-fluid d-none d-xxl-block" src={showcase2} alt="sitting" />
+        <img adress='' className="img-fluid d-none d-xxl-block" src={showcase2} alt="sitting" />
     </section>
   )
 }

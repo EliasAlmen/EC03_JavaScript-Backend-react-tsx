@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Banner3Section = () => {
   return (
@@ -6,7 +7,7 @@ const Banner3Section = () => {
         <div className="container-banner-flashsale">
             <h1>Up to 70% off*</h1>
             <p>Women's, Men's & Kids' Winter Fashion</p>
-            <button className="button button-white bg-light">FLASH SALE</button>
+            <NavLink to={`/products`} className="button button-white bg-light">FLASH SALE</NavLink>
         </div>
     </section>
   )

@@ -106,8 +106,9 @@
                                 border: 1px solid $color-black;
 
                                 &:disabled {
-                                    color: $color-theme;
-                                    background-color: $color-grey-light;
+                                    color: $color-white;
+                                    background-color: $color-black;
+
                                 }
                             }
                         }
