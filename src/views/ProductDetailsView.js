@@ -20,22 +20,25 @@ const ProductDetailsView = () => {
 
   const relatedContext = useContext(RelatedContext)
 
-  const {incrementQuantityFromDetailed} = useShoppingCart()
+  const { incrementQuantityFromDetailed } = useShoppingCart()
 
   const { id } = useParams()
 
   const [data, setData] = useState([])
+  const [failedFetch, setFailedFetch] = useState(false)
 
+  // To populate data with products
   useEffect(() => {
 
     const fetchDetails = async () => {
       await fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`, {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       })
-        .then((res) => res.json())
+        .then((res) => res.json()) 
         .then((data) => {
           setData(data)
         })
+        
     }
     fetchDetails()
   }, [setData]);
@@ -137,6 +140,15 @@ const ProductDetailsView = () => {
       <BreadCrumbsSection />
       <div className="productdetails-container">
         <div className="container">
+
+          {
+            failedFetch ? (
+              <div className="alert alert-danger text-center mb-5" role="alert">
+                <h3>Something went wrong!</h3>
+                <p>We couldn't submit your comment right now.</p>
+              </div>) : (<></>)
+          }
+
           <div className="image-shop">
             <div className="images">
               <div className="big-image">
@@ -179,11 +191,11 @@ const ProductDetailsView = () => {
                   </span>
                 </div>
                 <div className="qty">Qty:
-                    <span className="item-info-quantity-box">
-                      <button className="box-button-right" onClick={()=> setCount(count - 1)} disabled={count === 1}>-</button>
-                      <span className="quantity">{count}</span>
-                      <button className="box-button-left" onClick={()=> setCount(count + 1)}>+</button>
-                    </span>
+                  <span className="item-info-quantity-box">
+                    <button className="box-button-right" onClick={() => setCount(count - 1)} disabled={count === 1}>-</button>
+                    <span className="quantity">{count}</span>
+                    <button className="box-button-left" onClick={() => setCount(count + 1)}>+</button>
+                  </span>
                   <button onClick={() => incrementQuantityFromDetailed({ articleNumber: data.articleNumber, product: data, count: count }, setCount(1))} className="button bg-red">ADD TO CART</button>
                 </div>
                 <div className="share">
