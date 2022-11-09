@@ -3,3 +3,6 @@ const currencyFormat = new Intl.NumberFormat('en-US', { currency: 'USD', style: 
 export const currencyFormatter = (value) => {
     return currencyFormat.format(value)
 }
+
+
+// CODE BY HASSE

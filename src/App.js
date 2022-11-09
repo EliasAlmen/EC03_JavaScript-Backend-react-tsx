@@ -16,7 +16,9 @@ import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 
 function App() {
   
-  // // for science and fun
+  // Before API i had rnd generated ratings and OFFprice true/false on all products.
+  // soruce found on varius sites
+
   // function generateRandomNumber() {
   //   var min = 1
   //   var max = 5
@@ -24,8 +26,7 @@ function App() {
   //   randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
   //   return randomNumber;
   // }
-  
-  // // for science and fun
+  // for science and fun
   // function generateRandomBool() {
   //   var booleanValue;
   //   if ( Math.random() > .5 ){
@@ -36,7 +37,7 @@ function App() {
   //   return booleanValue;
   // }
 
-
+  // UseStates to fetch and set with data from API
   const [productsAll, setProductsAll] = useState([])
   const [featuredProducts, setFeaturedProducts] = useState([])
   const [flashSaleProducts, setFlashSaleProducts] = useState([])

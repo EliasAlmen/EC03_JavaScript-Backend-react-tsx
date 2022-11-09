@@ -18,27 +18,36 @@ import { useShoppingCart } from '../contexts/shoppingCartContext'
 
 const ProductDetailsView = () => {
 
+  let currentPage = "Details"
+  window.top.document.title = `${currentPage} || Fixxo`
+
+  // Tried in many ways to use Swiper to generate dynamic amount of slides. No succsess. 
+  // As of now I made a custom fetch for ?take=1
   const relatedContext = useContext(RelatedContext)
 
-  const { incrementQuantityFromDetailed } = useShoppingCart()
+  // Function to add a specified amount of product in one click. Based on counter VALUE.
+  const {incrementQuantityFromDetailed} = useShoppingCart()
 
+  // Counter should start with 1. Amount of product
+  const [count, setCount] = useState(1);
+
+  // Used as placeholder to implement in fetch to get API according to articleNumber.
   const { id } = useParams()
 
+  // Product details stored in data array
   const [data, setData] = useState([])
-  const [failedFetch, setFailedFetch] = useState(false)
 
-  // To populate data with products
+  // To populate data with array of products
   useEffect(() => {
 
     const fetchDetails = async () => {
       await fetch(`https://win22-webapi.azurewebsites.net/api/products/${id}`, {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       })
-        .then((res) => res.json()) 
+        .then((res) => res.json())
         .then((data) => {
           setData(data)
         })
-        
     }
     fetchDetails()
   }, [setData]);
@@ -91,7 +100,7 @@ const ProductDetailsView = () => {
     setCurrentTab(e.target.id);
   }
 
-
+  // Sizes, built from tabs
   const [currentSize, setCurrentSize] = useState('1')
   const sizes = [
     {
@@ -124,14 +133,12 @@ const ProductDetailsView = () => {
 
   const [value, setValue] = useState(getInitialState);
 
+  // Eventhandler for Size options
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  const [count, setCount] = useState(1);
-
-  let currentPage = "Details"
-  window.top.document.title = `${currentPage} || Fixxo`
+  
 
   return (
     <>
@@ -140,15 +147,6 @@ const ProductDetailsView = () => {
       <BreadCrumbsSection />
       <div className="productdetails-container">
         <div className="container">
-
-          {
-            failedFetch ? (
-              <div className="alert alert-danger text-center mb-5" role="alert">
-                <h3>Something went wrong!</h3>
-                <p>We couldn't submit your comment right now.</p>
-              </div>) : (<></>)
-          }
-
           <div className="image-shop">
             <div className="images">
               <div className="big-image">
@@ -191,11 +189,11 @@ const ProductDetailsView = () => {
                   </span>
                 </div>
                 <div className="qty">Qty:
-                  <span className="item-info-quantity-box">
-                    <button className="box-button-right" onClick={() => setCount(count - 1)} disabled={count === 1}>-</button>
-                    <span className="quantity">{count}</span>
-                    <button className="box-button-left" onClick={() => setCount(count + 1)}>+</button>
-                  </span>
+                    <span className="item-info-quantity-box">
+                      <button className="box-button-right" onClick={()=> setCount(count - 1)} disabled={count === 1}>-</button>
+                      <span className="quantity">{count}</span>
+                      <button className="box-button-left" onClick={()=> setCount(count + 1)}>+</button>
+                    </span>
                   <button onClick={() => incrementQuantityFromDetailed({ articleNumber: data.articleNumber, product: data, count: count }, setCount(1))} className="button bg-red">ADD TO CART</button>
                 </div>
                 <div className="share">
@@ -225,6 +223,7 @@ const ProductDetailsView = () => {
           </div>
           <div className="related-products mt-5">
             <div id="related">Related Products</div>
+            {/* SWIPER IS NICE */}
             <Swiper
               slidesPerView={4}
               spaceBetween={30}

@@ -1,3 +1,6 @@
+
+// CODE BY HASSE, ADDED regex validation for '''contain numbers or special characters''' in name etc.
+
 export const submitData = async (url, method, data, contentType = 'application/json') => {
     
     const res = await fetch(url, {

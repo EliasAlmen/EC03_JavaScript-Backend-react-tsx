@@ -7,10 +7,12 @@ import { useShoppingCart } from '../contexts/shoppingCartContext'
 
 const HeaderSection = () => {
 
+  
   const [showMenu, setShowMenu] = useState(false)
 
   const {cartQuantity} = useShoppingCart()
 
+  // Function toggle menu show hide
   const toggleMenu = () => {
     setShowMenu(!showMenu)
   }

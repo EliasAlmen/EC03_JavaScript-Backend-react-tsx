@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
 
+// Props for titles 
 const ProductRankingSection = ({title1, title2, title3, items=[]}) => {
   
 
