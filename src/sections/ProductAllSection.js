@@ -3,9 +3,6 @@ import ProductCardComponent from '../components/ProductCardComponent'
 
 const ProductAllSection = ({title, items = []}) => {
 
-
-
-
     return (
         <section className="container "> 
             <h3 id="featured">{title}</h3>

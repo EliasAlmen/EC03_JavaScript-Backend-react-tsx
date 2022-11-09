@@ -6,6 +6,9 @@ import MapSection from '../sections/MapSection'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 
 const ContactsView = () => {
+  let currentPage = "Contact Us"
+  window.top.document.title = `${currentPage} || Fixxo`
+  
   return (
     <>
       <HeaderSection />

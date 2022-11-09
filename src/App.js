@@ -9,7 +9,6 @@ import ProductDetailsView from './views/ProductDetailsView';
 import SearchView from './views/SearchView';
 import CompareView from './views/CompareView';
 import WishListView from './views/WishListView';
-import ShoppingCartView from './views/ShoppingCartView';
 import { useEffect, useState } from 'react';
 import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext, RelatedContext } from './contexts/contexts'
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
@@ -96,7 +95,6 @@ function App() {
           <Route path="/search" element={<SearchView />} />
           <Route path="/compare" element={<CompareView />} />
           <Route path="/wishlist" element={<WishListView />} />
-          <Route path="/shoppingcart" element={<ShoppingCartView />} />
           <Route path="*" element={<NotFoundView />} />
         </Routes>
       </RelatedContext.Provider>

@@ -5,6 +5,9 @@ import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
 const SearchView = () => {
+  let currentPage = "Search"
+  window.top.document.title = `${currentPage} || Fixxo`
+  
   return (
     <>
       <HeaderSection />

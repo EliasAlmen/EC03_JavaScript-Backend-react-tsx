@@ -15,6 +15,9 @@ import SpecialitySection from '../sections/SpecialitySection'
 
 const HomeView = () => {
   
+  let currentPage = "Home"
+  window.top.document.title = `${currentPage} || Fixxo`
+
   const featuredContext = useContext(FeaturedContext)
   const flashsaleContext = useContext(FlashsaleContext)
   const rankingContext = useContext(RankingContext)

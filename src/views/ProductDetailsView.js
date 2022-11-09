@@ -127,6 +127,9 @@ const ProductDetailsView = () => {
 
   const [count, setCount] = useState(1);
 
+  let currentPage = "Details"
+  window.top.document.title = `${currentPage} || Fixxo`
+
   return (
     <>
       <HeaderSection />

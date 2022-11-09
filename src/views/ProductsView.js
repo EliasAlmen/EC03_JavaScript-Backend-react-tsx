@@ -6,10 +6,9 @@ import HeaderSection from '../sections/HeaderSection'
 import ProductAllSection from '../sections/ProductAllSection'
 
 const ProductsView = () => {
-
   const productContext = useContext(ProductContext)
-
-
+  let currentPage = "All Products"
+  window.top.document.title = `${currentPage} || Fixxo`
   return (
     <>
       <HeaderSection />
