@@ -1,0 +1,54 @@
+.searchProductContainer {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid $color-black;
+    width: 700px;
+    padding: 5px;
+    margin: 10px;
+    background-color: $color-grey-light;
+    border-radius: 3px;
+
+    .image {
+        margin-right: 5px;
+
+        img {
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    .data {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        .product-name{
+            grid-area: 1 / 1 / 2 / 2;
+            width: 240px;
+            text-align: left;
+            @include font-16-medium;
+        }
+        .product-category{
+            grid-area: 1 / 2 / 2 / 3;
+            text-align: left;
+        }
+        .product-price{
+            grid-area: 1 / 3 / 2 / 4;
+            text-align: right;
+            @include font-16-medium;
+        }
+        .product-rating{
+            grid-area: 2 / 1 / 3 / 2;
+            text-align: left;
+            color: $color-theme;
+        }
+        .product-artnum{
+            grid-area: 2 / 2 / 3 / 4;
+            text-align: left;
+            color: $color-grey;
+        }
+
+    }
+}

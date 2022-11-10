@@ -9,7 +9,6 @@ const ProductAllSection = ({title, items = []}) => {
             <div className="featured">
                 <div className="container-cards">
                     {
-                        // 
                     items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
                     }
                 </div>
