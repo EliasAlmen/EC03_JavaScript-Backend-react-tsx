@@ -25,6 +25,7 @@ const SearchProductComponent = ({ item }) => {
                         {item.articleNumber}
                     </span>
                 </div>
+                <span className="product-quickmenu"></span>
             </div>
         </div>
     )
