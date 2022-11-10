@@ -194,6 +194,7 @@ const ProductDetailsView = () => {
                       <span className="quantity">{count}</span>
                       <button className="box-button-left" onClick={()=> setCount(count + 1)}>+</button>
                     </span>
+                  {/* this button add specified amount of itmes to cart. Also resets the counter to 1 */}
                   <button onClick={() => incrementQuantityFromDetailed({ articleNumber: data.articleNumber, product: data, count: count }, setCount(1))} className="button bg-red">ADD TO CART</button>
                 </div>
                 <div className="share">

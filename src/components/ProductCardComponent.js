@@ -11,9 +11,9 @@ const ProductCardComponent = ({ item }) => {
         <div className="card-product">
             <div className="img-container">
                 <div className="quick-menu">
-                    <button className="nav-icon"><i className="fa-regular fa-magnifying-glass"></i></button>
-                    <button className="nav-icon"><i className="fa-regular fa-code-compare"></i></button>
-                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
+                    <button className="nav-icon"><i title="magnifying glass" className="fa-regular fa-magnifying-glass"></i></button>
+                    <button className="nav-icon"><i title="compare" className="fa-regular fa-code-compare"></i></button>
+                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} title="Shopping" className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
                 </div>
                 <div className="quick-view">
                     <NavLink to={`/products/${item.articleNumber}`} className="button btn-hover bg-red">QUICK VIEW</NavLink>

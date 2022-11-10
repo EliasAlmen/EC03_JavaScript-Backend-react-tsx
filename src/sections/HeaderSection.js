@@ -31,13 +31,13 @@ const HeaderSection = () => {
             <nav className="nav-icons">
               <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
               <NavIconComponent hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" />
-              <NavIconComponent hideOnMobile={true} link="/wishlist" icon="fa-regular fa-heart" quantity="" />
+              <NavIconComponent hideOnMobile={true} link="/wishlist" icon="fa-regular fa-heart"  />
 
               <button className="nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{cartQuantity}</span>
                 <i className="fa-regular fa-bag-shopping"></i>
               </button>
-              <button onClick={toggleMenu} className="nav-icon nav-icon-menu"><i className="fa-regular fa-bars"></i></button>
+              <button title="menu" onClick={toggleMenu} className="nav-icon nav-icon-menu"><i className="fa-regular fa-bars"></i></button>
             </nav>
         </div>
       </header>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const ExternalLinkIconComponent = ({link, icon}) => {
   return (
-    <a href={link} target="blank">
+    <a href={link} title="link" target="blank">
       <i className={"fa-brands "+ icon}></i>
     </a>
   )
