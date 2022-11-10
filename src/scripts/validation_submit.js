@@ -1,5 +1,6 @@
-
-// CODE BY HASSE, ADDED regex validation for '''contain numbers or special characters''' in name etc.
+// CODE BY HASSE, 
+// ADDED regex validation for ***contain numbers or special characters*** in name etc.
+// ADDED Validation for Whitespace at start 
 
 export const submitData = async (url, method, data, contentType = 'application/json') => {
     

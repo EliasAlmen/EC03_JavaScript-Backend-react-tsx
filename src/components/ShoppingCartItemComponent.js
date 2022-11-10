@@ -17,6 +17,7 @@ const ShoppingCartItemComponent = ({item}) => {
             <div className="item-info-name">
                 {item.product.name}
             </div>
+            {/* ADDED category */}
             <div className="item-info-category">
                 {item.product.category}
             </div>

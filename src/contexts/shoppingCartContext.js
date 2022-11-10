@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import ShoppingCartComponent from "../components/ShoppingCartComponent";
 
+// CODE BY HASSE, SOME STUFF ADDED eg. cartTotal AND
+// incrementQuantityFromDetailed
 
 const ShoppingCartContext = createContext()
 
@@ -83,6 +85,7 @@ export const ShoppingCartProvider = ({ children }) => {
         })
     }
 
+    // FOR TOTAL PRICE OF CART 
     const cartTotal = cartItems.reduce(
         (quantity, item) => item.product.price * item.quantity + quantity, 0
     )

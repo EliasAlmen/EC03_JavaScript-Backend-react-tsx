@@ -5,11 +5,8 @@ import useBreadcrumbs from "use-react-router-breadcrumbs";
 // Research at https://www.npmjs.com/package/use-react-router-breadcrumbs
 // Combined with https://stackblitz.com/edit/github-fiw8uj?file=src%2FApp.tsx 
 // Custom made breadcrumbs
+//Apparently there should be a easier way? Recommended to use createBrowerRouter instead of BrowserRouter in documentation
 
-//Apparently there should be a easier way? Recommended to use createBrowerRouter instead of BrowserRouter
-
-//Getting error for uniqe key prop... can be solved if key moved up one lvl.
-// but then i cant control the SCSS...
 
 const BreadCrumbsRouterComponent = () => {
   const breadcrumbs = useBreadcrumbs();

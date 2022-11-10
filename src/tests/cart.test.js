@@ -10,7 +10,7 @@ it('Test to see if headings for FormSection is rendering', () => {
 })
 
 
-// Test if there are any inputs
+// Test if there are any inputs in the form seciton
 it('Test to see if inputs for form is rendering', () => {
     render(<FormSection />);
     const inputElement = screen.getAllByRole("textbox")
@@ -18,7 +18,7 @@ it('Test to see if inputs for form is rendering', () => {
 
 })
 
-// Test to see if the array has three elements
+// Test to see if the array has three elements (inputs)
 it('Test to see if ALL three inputs for form is rendering', () => {
     render(<FormSection />);
     const inputElements = screen.getAllByRole("textbox")
