@@ -11,89 +11,19 @@
                 }
             }
         }
-    }
-
-    .shoppingcart-item {
-        margin: 30px 20px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        .item-image {
-            height: 65px;
-            width: 65px;
-            margin-right: 20px;
-            background-color: $color-grey-light;
-
-            img {
-                height: 75px;
-                width: 75px;
-            }
-        }
-
-        .item-info {
-            flex: 3;
-
-            .item-info-name {
-                @include font-16-medium;
-                margin: none;
-                padding: none;
-            }
-
-            .item-info-category {
-                @include font-13-medium;
-                margin-bottom: 0;
-                color: $color-grey-dark;
-            }
-
-
-            .item-info-quantity-box {
-                border: 1px solid $color-grey;
-                display: inline-block;
-                border-radius: 5px;
-
-                .quantity {
-                    padding-left: 15px;
-                    padding-right: 15px;
-                    border-left: 1px solid $color-grey;
-                    border-right: 1px solid $color-grey;
-                }
-
-                .box-button-left {
-                    border: none;
-                    border-radius: 5px 0 0 5px;
-
-                    &:hover {
-                        background-color: $color-grey-dark;
-                        color: $color-white
-                    }
-                }
-
-                .box-button-right {
-                    border: none;
-                    border-radius: 0 5px 5px 0;
-
-                    &:hover {
-                        background-color: $color-grey-dark;
-                        color: $color-white
-                    }
-                }
-            }
-        }
-
-        .item-price {
-            flex: 1;
-            @include font-16-medium;
-            text-align: right;
-
-            button {
-                background-color: transparent;
-                border: none;
-                color: $color-black;
-                padding: 0;
-            }
+        .emptyAll{
+            margin: 10px 10px 10px 0;
+            color: $color-theme;
+            border: none;
+            background-color: white;
+            font-size: xx-large;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            background: rgb(254, 254, 254);
+            background: linear-gradient(180deg, rgba(254, 254, 254, 1) 0%, rgba(245, 245, 245, 1) 100%);
         }
     }
+
+    
 
     @include xl-min {
         width: 500px !important;

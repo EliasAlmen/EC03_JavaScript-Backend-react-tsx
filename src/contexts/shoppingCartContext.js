@@ -85,12 +85,16 @@ export const ShoppingCartProvider = ({ children }) => {
         })
     }
 
+    const removeAllItem = () => {
+        setCartItems([])
+    }
+
     // FOR TOTAL PRICE OF CART 
     const cartTotal = cartItems.reduce(
         (quantity, item) => item.product.price * item.quantity + quantity, 0
     )
     
-    return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem, incrementQuantityFromDetailed, cartTotal }}>
+    return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem, incrementQuantityFromDetailed, cartTotal, removeAllItem }}>
         {children}
         <ShoppingCartComponent />
 

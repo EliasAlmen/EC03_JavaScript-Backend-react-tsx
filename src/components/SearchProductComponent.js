@@ -31,7 +31,7 @@ const SearchProductComponent = ({ item }) => {
                     </span>
                 </div>
                 <span className="product-quickmenu">
-                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} title="Shopping" className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
+                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} title="Buy" className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
 
                 </span>
             </div>

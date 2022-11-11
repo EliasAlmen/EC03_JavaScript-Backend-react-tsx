@@ -4,7 +4,7 @@ import { currencyFormatter } from '../utils/currencyFormatter'
 import ShoppingCartItemComponent from './ShoppingCartItemComponent'
 
 const ShoppingCartComponent = () => {
-    const { cartItems, cartTotal, cartQuantity } = useShoppingCart()
+    const { cartItems, cartTotal, cartQuantity, removeAllItem } = useShoppingCart()
 
     return (
         <div className="shoppingcart offcanvas offcanvas-end" tabIndex="-1" id="shoppingCart" aria-labelledby="shoppingCartLabel">
@@ -25,6 +25,8 @@ const ShoppingCartComponent = () => {
                     <div className="total mb-3">Total:<span className="ms-2">{currencyFormatter(cartTotal)}</span></div>
                     <button className="button bg-red">Check Out</button>
                 </div>
+                <button className="emptyAll" onClick={removeAllItem}><i className="fa-solid fa-trash"></i></button>
+
             </div>
         </div>
     )
