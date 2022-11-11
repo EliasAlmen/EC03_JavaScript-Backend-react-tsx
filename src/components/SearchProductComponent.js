@@ -1,7 +1,12 @@
 import React from 'react'
+import { useShoppingCart } from '../contexts/shoppingCartContext'
 import { currencyFormatter } from '../utils/currencyFormatter'
 
 const SearchProductComponent = ({ item }) => {
+   
+    const { incrementQuantity } = useShoppingCart()
+   
+
     return (
         <div className="container">
             <div className="searchProductContainer">
@@ -25,7 +30,10 @@ const SearchProductComponent = ({ item }) => {
                         {item.articleNumber}
                     </span>
                 </div>
-                <span className="product-quickmenu"></span>
+                <span className="product-quickmenu">
+                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} title="Shopping" className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
+
+                </span>
             </div>
         </div>
     )
