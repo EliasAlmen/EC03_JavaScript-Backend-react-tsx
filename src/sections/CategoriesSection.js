@@ -1,6 +1,5 @@
 import React from 'react'
 import CategoriesProductComponent from '../components/CategoriesProductComponent'
-import SearchProductComponent from '../components/SearchProductComponent'
 
 const CategoriesSection = ({ items = [] }) => {
 
