@@ -1,7 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const NavTextLinkComponent = ({adress, name}) => {
+
+interface Props {
+  adress: string
+  name: string
+}
+
+
+const NavTextLinkComponent: React.FC<Props>  = ({adress, name}) => {
   return (
     <NavLink className="text-link" to={"/" + adress} end>{name}</NavLink>
   )

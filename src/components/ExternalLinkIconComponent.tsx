@@ -1,6 +1,11 @@
 import React from 'react'
 
-const ExternalLinkIconComponent = ({link, icon}) => {
+interface Props {
+  link: string;
+  icon: string;
+}
+
+const ExternalLinkIconComponent: React.FC<Props> = ({link, icon}) => {
   return (
     <a href={link} title="link" target="blank">
       <i className={"fa-brands "+ icon}></i>

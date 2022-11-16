@@ -1,8 +1,9 @@
 import React from 'react'
 import { useShoppingCart } from '../contexts/shoppingCartContext'
+import { ItemProp } from '../interfaces/ItemInterface'
 import { currencyFormatter } from '../utils/currencyFormatter'
 
-const SearchProductComponent = ({ item }) => {
+const SearchProductComponent: React.FC<ItemProp> = ({ item }) => {
    
     const { incrementQuantity } = useShoppingCart()
    

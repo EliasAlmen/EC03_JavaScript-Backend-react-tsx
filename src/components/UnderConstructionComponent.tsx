@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UnderConstructionComponent = () => {
+const UnderConstructionComponent: React.FC = () => {
   return (
     <div className='container under-construction vh-100'>
         <h1>This page is under construction...</h1>

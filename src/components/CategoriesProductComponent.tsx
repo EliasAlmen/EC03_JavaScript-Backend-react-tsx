@@ -1,7 +1,8 @@
 import React from 'react'
+import { ItemProp } from '../interfaces/ItemInterface'
 import { currencyFormatter } from '../utils/currencyFormatter'
 
-const CategoriesProductComponent = ({ item }) => {
+const CategoriesProductComponent: React.FC<ItemProp> = ({ item }) => {
     return (
         <div className="categoriesProductContainer">
             <div className="image">

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import ShoppingCartComponent from "../components/ShoppingCartComponent";
+import ShoppingCartComponent from "../components/ShoppingCartComponent.tsx";
 
 // CODE BY HASSE, SOME STUFF ADDED eg. cartTotal AND
 // incrementQuantityFromDetailed
