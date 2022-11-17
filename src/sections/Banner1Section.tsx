@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import clearance from '../assets/img/image_clearance.svg'
 import arrivals from '../assets/img/image_new-arrival.svg'
 
-const Banner1Section = () => {
+const Banner1Section: React.FC = () => {
   return (
     <section className="container">
         <div className="banner">
