@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ProductCardComponent from '../components/ProductCardComponent'
+import { Props } from '../interfaces/ProductCardInterface'
 
-const FlashSaleLeftSection = ({items=[]}) => {
+const FlashSaleLeftSection: React.FC<Props> = ({items=[]}) => {
   
 
   

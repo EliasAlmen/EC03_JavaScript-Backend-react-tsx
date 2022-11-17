@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PromisesSection = () => {
+const PromisesSection: React.FC = () => {
   return (
     <section className="container">
         <div className="promises">

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import SearchProductComponent from '../components/SearchProductComponent';
+import { Props } from '../interfaces/ProductCardInterface';
 
-const SearchSection = ({items = []}) => {
+const SearchSection: React.FC<Props> = ({items = []}) => {
 
     const [query, setQuery] = useState("");
     

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Banner3Section = () => {
+const Banner3Section: React.FC = () => {
   return (
     <section className="container banner-flashsale ">
         <div className="container-banner-flashsale">

@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
+import { Props } from '../interfaces/ProductCardInterface'
 
-const ProductFeaturedSection = ({title, items=[]}) => {
+const ProductFeaturedSection: React.FC<Props> = ({title, items=[]}) => {
 
 
     return (

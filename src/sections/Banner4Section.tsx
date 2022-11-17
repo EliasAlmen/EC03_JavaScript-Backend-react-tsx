@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Banner4Section = () => {
+const Banner4Section: React.FC = () => {
   return (
     <div className="container d-flex justify-content-center">
         <div className="banner-red-text">

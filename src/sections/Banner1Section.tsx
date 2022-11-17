@@ -22,7 +22,7 @@ const Banner1Section: React.FC = () => {
                     <h2>
                         New <br />arrivals
                     </h2>
-                    <button to={`/products`} className="button bg-dark">SHOW NOW</button>
+                    <NavLink to={`/products`} className="button bg-dark">SHOW NOW</NavLink>
                 </div>
                 <img className="img-fluid" src={arrivals} alt="New arrivals" />
             </article>

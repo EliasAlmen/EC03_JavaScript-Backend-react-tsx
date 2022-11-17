@@ -1,7 +1,21 @@
 import React from 'react'
 import CategoriesProductComponent from '../components/CategoriesProductComponent'
 
-const CategoriesSection = ({ items = [] }) => {
+interface IProduct {
+    imageName: string;
+    name: string;
+    category: string;
+    price: number;
+    articleNumber: string;
+    rating: number;
+    quantity: number;
+}
+
+interface Props {
+    items: IProduct[];
+}
+
+const CategoriesSection: React.FC<Props> = ({ items = [] }) => {
 
     // Categories 
     const cat1 = "coats"

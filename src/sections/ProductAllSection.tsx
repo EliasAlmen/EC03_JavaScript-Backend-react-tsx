@@ -1,15 +1,17 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
+import { Props } from '../interfaces/ProductCardInterface'
 
-const ProductAllSection = ({title, items = []}) => {
+
+const ProductAllSection: React.FC<Props> = ({ title, items = [] }) => {
 
     return (
-        <section className="container "> 
+        <section className="container ">
             <h3 id="featured">{title}</h3>
             <div className="featured">
                 <div className="container-cards">
                     {
-                    items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
+                        items.map(item => <ProductCardComponent key={item.articleNumber} item={item} />)
                     }
                 </div>
             </div>

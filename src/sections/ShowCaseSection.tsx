@@ -4,7 +4,7 @@ import showcase1 from '../assets/img/On_chair.png'
 import showcase2 from '../assets/img/On_thing.png'
 import GradientBackgroundSection from './GradientBackgroundSection'
 
-const ShowCaseSection = () => {
+const ShowCaseSection: React.FC = () => {
   return (
     <section className="container-fluid showcase">
         <GradientBackgroundSection />
@@ -15,7 +15,7 @@ const ShowCaseSection = () => {
             <p>Online shopping free home delivery over $100</p>
             <NavLink to={`/products`} className="button bg-red">SHOP NOW</NavLink>
         </div>
-        <img adress='' className="img-fluid d-none d-xxl-block" src={showcase2} alt="sitting" />
+        <img className="img-fluid d-none d-xxl-block" src={showcase2} alt="sitting" />
     </section>
   )
 }

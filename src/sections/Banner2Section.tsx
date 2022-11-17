@@ -4,7 +4,7 @@ import conscious from '../assets/img/image_conscious.svg'
 import { NavLink } from 'react-router-dom'
 
 
-const Banner2Section = () => {
+const Banner2Section: React.FC = () => {
   return (
     <section className="container">
         <div className="banner-even">

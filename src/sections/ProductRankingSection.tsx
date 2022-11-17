@@ -1,8 +1,9 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
+import { Props } from '../interfaces/ProductCardInterface'
 
 // Props for titles 
-const ProductRankingSection = ({title1, title2, title3, items=[]}) => {
+const ProductRankingSection: React.FC<Props> = ({title1, title2, title3, items=[]}) => {
   
 
 
@@ -12,20 +13,20 @@ const ProductRankingSection = ({title1, title2, title3, items=[]}) => {
             <div className="latest">
                 <h1>{title1}</h1>
                 {
-                items.map(item => <ProductCardComponent offPriceOnItem={item.offPriceOnItemValue} key={item.articleNumber} item={item}/>)
+                items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
                 }
                 
             </div>
             <div className="best">
                 <h1>{title2}t</h1>
                 {
-                items.map(item => <ProductCardComponent offPriceOnItem={item.offPriceOnItemValue} key={item.articleNumber} item={item}/>)
+                items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
                 }
             </div>
             <div className="reacted">
                 <h1>{title3}</h1>
                 {
-                items.map(item => <ProductCardComponent offPriceOnItem={item.offPriceOnItemValue} key={item.articleNumber} item={item}/>)
+                items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
                 }
             </div>
         </div>

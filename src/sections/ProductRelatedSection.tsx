@@ -1,7 +1,10 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
+import { Props } from '../interfaces/ProductCardInterface'
 
-const ProductRelatedSection = ({ title, items = [] }) => {
+
+
+const ProductRelatedSection: React.FC<Props> = ({ title, items = [] }) => {
     return (
         <section className="container">
             <h3 id="related">{title}</h3>

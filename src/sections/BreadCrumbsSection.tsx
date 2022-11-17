@@ -1,7 +1,7 @@
 import React from 'react'
 import BreadCrumbsRouterComponent from '../components/BreadCrumbsRouterComponent'
 
-const BreadCrumbsSection = () => {
+const BreadCrumbsSection: React.FC = () => {
   return (
     <div className="breadcrumb-container">
       <span className="container">

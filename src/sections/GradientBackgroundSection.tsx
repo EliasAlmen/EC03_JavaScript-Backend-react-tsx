@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GradientBackgroundSection = () => {
+const GradientBackgroundSection: React.FC = () => {
   return (
     <>
         <div className="gradientbackgroundsection"></div>
