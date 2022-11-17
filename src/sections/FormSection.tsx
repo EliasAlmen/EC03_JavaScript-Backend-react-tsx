@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { submitData, validate  } from '../scripts/validation_submit'
+import { submitData, validate } from '../scripts/validation_submit'
 
-const FormSection = () => {
-  
+
+const FormSection: React.FC = () => {
+
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
