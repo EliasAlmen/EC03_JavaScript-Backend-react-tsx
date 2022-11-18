@@ -1,4 +1,4 @@
-export const submitData = async (url, method, data, contentType = 'application/json') => {
+export const submitData = async (url: RequestInfo | URL, method: string, data: string, contentType = 'application/json') => {
     
     const res = await fetch(url, {
         method: method,
@@ -16,9 +16,9 @@ export const submitData = async (url, method, data, contentType = 'application/j
 
 
 
-export const validate = (e, form = null) => {
+export const validate = (e:any, form?:any) => {
     if (e.type === 'submit') {
-        const errors = {}
+        const errors:any = {}
         errors.name = validate_name_length(form.name)
         errors.email = validate_email(form.email)
         errors.comments = validate_comments(form.comments)
@@ -41,7 +41,7 @@ export const validate = (e, form = null) => {
 }
 
 
-const validate_name_length = (value) => {
+const validate_name_length = (value: string) => {
     const regEx_valid_name = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u
     const regEx_white_space = /^\s/
 
@@ -58,7 +58,7 @@ const validate_name_length = (value) => {
 }
 
 
-const validate_email = (value) => {
+const validate_email = (value: string) => {
     const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
     if (!value)
@@ -69,7 +69,7 @@ const validate_email = (value) => {
         return null
 }
 
-const validate_comments = (value) => {
+const validate_comments = (value:string) => {
     if (!value)
         return 'You must enter a comment'
     else if (value.length < 5)

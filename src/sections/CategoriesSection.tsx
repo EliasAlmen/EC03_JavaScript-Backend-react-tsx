@@ -12,7 +12,7 @@ interface IProduct {
 }
 
 interface Props {
-    items: IProduct[];
+    items: IProduct[] | null;
 }
 
 const CategoriesSection: React.FC<Props> = ({ items = [] }) => {

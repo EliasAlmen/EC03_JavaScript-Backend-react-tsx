@@ -8,11 +8,11 @@ const FormSection: React.FC = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [comments, setComments] = useState('')
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({comments, name, email})
   const [submitted, setSubmitted] = useState(false)
   const [failedSubmit, setFailedSubmit] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { id: string; value: string } }) => {
     const { id, value } = e.target
 
     switch (id) {
@@ -33,7 +33,7 @@ const FormSection: React.FC = () => {
     setErrors({ ...errors, [id]: validate(e) })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setFailedSubmit(false)
     setSubmitted(false)
@@ -48,7 +48,11 @@ const FormSection: React.FC = () => {
       setName('')
       setEmail('')
       setComments('')
-      setErrors({})
+      setErrors({
+        name: '',
+        email: '',
+        comments: ''
+      })
 
       if (await submitData('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', json,)) {
         setSubmitted(true)
@@ -102,7 +106,7 @@ const FormSection: React.FC = () => {
           </div>
           <div className="comment">
             <label id="comment-label" htmlFor="comment">Comment</label>
-            <textarea className={(errors.comments ? 'errorFrame' : '')} id="comments" type="text" name="comment" placeholder="Comments" value={comments} onChange={handleChange}></textarea>
+            <textarea className={(errors.comments ? 'errorFrame' : '')} id="comments" name="comment" placeholder="Comments" value={comments} onChange={handleChange}></textarea>
             <div className="userError">{errors.comments}</div>
             <div className="userSuccess"></div>
           </div>

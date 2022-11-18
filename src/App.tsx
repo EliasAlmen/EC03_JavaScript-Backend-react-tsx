@@ -15,27 +15,6 @@ import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 
 
 function App() {
-  
-  // Before API i had rnd generated ratings and OFFprice true/false on all products.
-  // soruce found on varius sites
-
-  // function generateRandomNumber() {
-  //   var min = 1
-  //   var max = 5
-  //   let randomNumber
-  //   randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
-  //   return randomNumber;
-  // }
-  // for science and fun
-  // function generateRandomBool() {
-  //   var booleanValue;
-  //   if ( Math.random() > .5 ){
-  //     booleanValue = true;
-  //   } else {
-  //     booleanValue = false;  
-  //   }
-  //   return booleanValue;
-  // }
 
   // UseStates to fetch and set with data from API
   const [productsAll, setProductsAll] = useState([])

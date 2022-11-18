@@ -1,8 +1,6 @@
-import { createContext, useContext, useState } from "react";
-import ShoppingCartComponent from "../components/ShoppingCartComponent.tsx";
+import React, { createContext, ReactNode, useContext, useState } from "react";
+import ShoppingCartComponent from "../components/ShoppingCartComponent";
 
-// CODE BY HASSE, SOME STUFF ADDED eg. cartTotal AND
-// incrementQuantityFromDetailed
 
 const ShoppingCartContext = createContext()
 
@@ -25,7 +23,7 @@ export const ShoppingCartProvider = ({ children }) => {
         return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
     }
 
-    const incrementQuantity = (cartItem) => {
+    const incrementQuantity = (cartItem: { articleNumber: string; product: string; }) => {
         const { articleNumber, product } = cartItem
 
         setCartItems(items => {
@@ -42,7 +40,6 @@ export const ShoppingCartProvider = ({ children }) => {
             }
         })
     }
-    // Customized from 'incrementQuantity'. function will add specified amount of items in detailsView.
     const incrementQuantityFromDetailed = (cartItem) => {
         const { articleNumber, product, count } = cartItem
 
@@ -88,8 +85,7 @@ export const ShoppingCartProvider = ({ children }) => {
     const removeAllItem = () => {
         setCartItems([])
     }
-
-    // FOR TOTAL PRICE OF CART 
+ 
     const cartTotal = cartItems.reduce(
         (quantity, item) => item.product.price * item.quantity + quantity, 0
     )

@@ -1,5 +1,5 @@
 import FormSection from '../sections/FormSection'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 // Test if form headings is displayed
 it('Test to see if headings for FormSection is rendering', () => {

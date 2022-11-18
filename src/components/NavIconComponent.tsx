@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 
 interface Props {
-  link: string
-  icon: string
-  quantity?: number
-  hideOnMobile?: boolean
+  link: string;
+  icon: string;
+  quantity?: number;
+  hideOnMobile?: boolean;
 }
 
 

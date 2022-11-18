@@ -6,8 +6,9 @@ import CategoriesSection from '../sections/CategoriesSection'
 import { ProductContext } from '../contexts/contexts'
 
 const CategoriesView = () => {
+  
   let currentPage = "Categories"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
   const productContext = useContext(ProductContext)
   
   

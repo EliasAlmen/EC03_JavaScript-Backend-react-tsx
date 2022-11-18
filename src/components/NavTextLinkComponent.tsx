@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 
 interface Props {
-  adress: string
-  name: string
+  adress: string;
+  name: string;
 }
 
 
