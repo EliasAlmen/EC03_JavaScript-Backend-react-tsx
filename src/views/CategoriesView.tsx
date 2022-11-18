@@ -5,11 +5,11 @@ import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import CategoriesSection from '../sections/CategoriesSection'
 import { ProductContext } from '../contexts/contexts'
 
-const CategoriesView = () => {
+const CategoriesView: React.FC = () => {
   
   let currentPage = "Categories"
   document.title = `${currentPage} || Fixxo`
-  const productContext = useContext(ProductContext)
+  const productContext: any = useContext(ProductContext)
   
   
   return (

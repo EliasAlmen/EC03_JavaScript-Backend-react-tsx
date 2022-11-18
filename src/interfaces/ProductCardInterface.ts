@@ -9,7 +9,10 @@ export interface IProduct {
 }
 
 export interface Props {
-    items: IProduct[];
+    product: any;
+    quantity: number;
+    articleNumber: string;
+    items?: IProduct[];
     title?: string;
     title1?: string;
     title2?: string;

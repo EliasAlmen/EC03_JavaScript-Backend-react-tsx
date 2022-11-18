@@ -5,7 +5,7 @@ import ShoppingCartItemComponent from './ShoppingCartItemComponent'
 
 
 
-const ShoppingCartComponent = () => {
+const ShoppingCartComponent: React.FC = () => {
     const { cartItems, cartTotal, cartQuantity, removeAllItem } = useShoppingCart()
 
     return (
