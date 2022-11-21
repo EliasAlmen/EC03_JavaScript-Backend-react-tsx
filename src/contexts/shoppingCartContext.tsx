@@ -1,42 +1,42 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 import ShoppingCartComponent from "../components/ShoppingCartComponent";
-import { Props } from "../interfaces/ProductCardInterface";
 
-// interface ICartItem {
-//     quantity: number;
-//     articleNumber?: string;
-//     product?: any;
-// }
 
 interface IShoppingCartProvider {
-    children: any;
+    children: ReactNode;
 }
 
-export interface IShoppingCartContext {
+interface ICartItemProp {
+    quantity: number;
+    articleNumber: string;
+    product: any;
+    item?: any;
+    items?: any;
+    count?: any;
+}
+
+interface IShoppingCartProductContext {
     getItemQuantity: (articleNumber: string) => void;
-    incrementQuantity: (take: any) => void;
-    decrementQuantity: (cartItem: any) => any;
+    incrementQuantity: (item: any) => void;
+    decrementQuantity: (item: any) => void;
+    removeItem: (item: any) => void;
+    incrementQuantityFromDetailed: (cartItem: any, articleNumber: string, product: any, count: any) => void;
     removeAllItem: () => void;
-    removeItem: (articleNumber: any) => void;
-    cartItems: any;
-    cartQuantity: any;
-    incrementQuantityFromDetailed: (cartItem: any) => any;
-    cartTotal: any;
-    children: any;
+    cartItems: ICartItemProp[];
+    cartQuantity: number;
+    cartTotal: number;
 }
 
-export const ShoppingCartContext = createContext<IShoppingCartContext | null>(null)
-
+const ShoppingCartContext = createContext({} as IShoppingCartProductContext)
+//const ShoppingCartContext = createContext<IShoppingCartProductContext | null>(null)
 
 export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
 
+export const ShoppingCartProvider: React.FC<IShoppingCartProvider> = ({ children }) => {
 
-
-export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvider) => {
-
-    const [cartItems, setCartItems] = useState<Props[]>([])
+    const [cartItems, setCartItems] = useState<ICartItemProp[]>([])
 
     const cartQuantity = cartItems.reduce(
         (quantity, item) => item.quantity + quantity, 0
@@ -46,7 +46,7 @@ export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvid
         return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
     }
 
-    const incrementQuantity = (cartItem: { articleNumber: string; product: any; }) => {
+    const incrementQuantity = (cartItem: ICartItemProp) => {
         const { articleNumber, product } = cartItem
 
         setCartItems(items => {
@@ -63,7 +63,7 @@ export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvid
             }
         })
     }
-    const incrementQuantityFromDetailed = (cartItem: { articleNumber: string; product: any; count: number; }) => {
+    const incrementQuantityFromDetailed = (cartItem: ICartItemProp) => {
         const { articleNumber, product, count } = cartItem
 
         setCartItems(items => {
@@ -81,11 +81,11 @@ export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvid
         })
     }
 
-    const decrementQuantity = (cartItem: { articleNumber: string; }) => {
+    const decrementQuantity = (cartItem: ICartItemProp) => {
         const { articleNumber } = cartItem
 
         setCartItems(items => {
-            if (items.find(item => item.articleNumber === articleNumber).quantity === 1) {
+            if (items.find(item => item.articleNumber === articleNumber)?.quantity === 1) {
                 return items.filter(item => item.articleNumber !== articleNumber)
             } else {
                 return items.map(item => {
@@ -108,11 +108,11 @@ export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvid
     const removeAllItem = () => {
         setCartItems([])
     }
- 
+
     const cartTotal = cartItems.reduce(
         (quantity, item) => item.product.price * item.quantity + quantity, 0
     )
-    
+
     return <ShoppingCartContext.Provider value={{ cartItems, cartQuantity, getItemQuantity, incrementQuantity, decrementQuantity, removeItem, incrementQuantityFromDetailed, cartTotal, removeAllItem }}>
         {children}
         <ShoppingCartComponent />

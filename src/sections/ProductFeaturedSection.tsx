@@ -2,6 +2,9 @@ import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
 import { Props } from '../interfaces/ProductCardInterface'
 
+
+
+
 const ProductFeaturedSection: React.FC<Props> = ({title, items=[]}) => {
 
 

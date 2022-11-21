@@ -1,5 +1,5 @@
 import React from 'react'
-import { ItemProp } from '../interfaces/ItemInterface'
+import { ItemProp } from '../interfaces/ItemProp'
 import { currencyFormatter } from '../utils/currencyFormatter'
 
 const CategoriesProductComponent: React.FC<ItemProp> = ({ item }) => {

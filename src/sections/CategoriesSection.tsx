@@ -9,6 +9,7 @@ interface IProduct {
     articleNumber: string;
     rating: number;
     quantity: number;
+    description: string;
 }
 
 interface Props {

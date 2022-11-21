@@ -5,15 +5,11 @@ export interface Iitem {
     price: number;
     articleNumber: string;
     rating: number;
-    quantity: number; 
-}
-
-export interface Iproduct {
-    product: string;
+    quantity: number;
+    description: string; 
 }
 
 export interface ItemProp {
     item: Iitem;
-    product?: Iproduct;
 }
 
