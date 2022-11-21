@@ -14,7 +14,7 @@ interface IShoppingCartProvider {
 
 export interface IShoppingCartContext {
     getItemQuantity: (articleNumber: string) => void;
-    incrementQuantity: (cartItem: any) => any;
+    incrementQuantity: (take: any) => void;
     decrementQuantity: (cartItem: any) => any;
     removeAllItem: () => void;
     removeItem: (articleNumber: any) => void;
@@ -22,6 +22,7 @@ export interface IShoppingCartContext {
     cartQuantity: any;
     incrementQuantityFromDetailed: (cartItem: any) => any;
     cartTotal: any;
+    children: any;
 }
 
 export const ShoppingCartContext = createContext<IShoppingCartContext | null>(null)
@@ -33,7 +34,7 @@ export const useShoppingCart = () => {
 
 
 
-export const ShoppingCartProvider:React.FC<IShoppingCartProvider> = ({ children }) => {
+export const ShoppingCartProvider: React.FC = ({ children }: IShoppingCartProvider) => {
 
     const [cartItems, setCartItems] = useState<Props[]>([])
 
