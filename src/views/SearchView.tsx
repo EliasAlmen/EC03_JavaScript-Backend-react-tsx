@@ -3,20 +3,21 @@ import { ProductContext } from '../contexts/contexts'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
-import ProductAllSection from '../sections/ProductAllSection'
+import SearchSection from '../sections/SearchSection'
 
-const ProductsView = () => {
-  const productContext = useContext(ProductContext)
-  let currentPage = "All Products"
-  window.top.document.title = `${currentPage} || Fixxo`
+const SearchView = () => {
+  let currentPage = "Search"
+  document.title = `${currentPage} || Fixxo`
+  const productContext: any = useContext(ProductContext)
+  
   return (
     <>
       <HeaderSection />
       <BreadCrumbsSection />
-      <ProductAllSection title="All products" items={productContext}/>
+      <SearchSection items={productContext} />
       <FooterSection />
     </>
   )
 }
 
-export default ProductsView
+export default SearchView

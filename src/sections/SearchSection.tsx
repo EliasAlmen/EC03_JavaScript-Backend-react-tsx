@@ -1,6 +1,23 @@
 import React, { useState } from 'react'
 import SearchProductComponent from '../components/SearchProductComponent';
-import { Props } from '../interfaces/ProductCardInterface';
+
+
+interface IProduct {
+    imageName: string;
+    name: string;
+    category: string;
+    price: number;
+    articleNumber: string;
+    rating: number;
+    quantity: number;
+    description: string;
+}
+
+interface Props {
+    items: IProduct[];
+}
+
+
 
 const SearchSection: React.FC<Props> = ({items = []}) => {
 

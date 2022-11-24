@@ -6,7 +6,7 @@ import HeaderSection from '../sections/HeaderSection'
 
 const WishListView = () => {
   let currentPage = "Wishlist"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
   return (
     <>
       <HeaderSection />
