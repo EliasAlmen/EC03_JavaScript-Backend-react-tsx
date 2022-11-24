@@ -12,6 +12,7 @@ import WishListView from './views/WishListView';
 import { useEffect, useState } from 'react';
 import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext, RelatedContext } from './contexts/contexts'
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
+import CrudView from './views/CrudView';
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetailsView />} />
           <Route path="/contacts" element={<ContactsView />} />
           
+          <Route path="/crud" element={<CrudView />} />
           <Route path="/search" element={<SearchView />} />
           <Route path="/compare" element={<CompareView />} />
           <Route path="/wishlist" element={<WishListView />} />

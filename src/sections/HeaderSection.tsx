@@ -29,6 +29,7 @@ const HeaderSection = () => {
               <NavTextLinkComponent adress="contacts" name="Contacts" />
             </nav>
             <nav className="nav-icons">
+              <NavIconComponent link="/crud" icon="fa-regular fa-database" />
               <NavIconComponent link="/search" icon="fa-regular fa-magnifying-glass" />
               <NavIconComponent hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" />
               <NavIconComponent hideOnMobile={true} link="/wishlist" icon="fa-regular fa-heart"  />
