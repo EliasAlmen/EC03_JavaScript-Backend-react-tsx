@@ -50,7 +50,7 @@ const ProductDetailsView: React.FC = () => {
         })
     }
     fetchDetails()
-  }, []);
+  }, [setData]);
 
 
   //TABS
