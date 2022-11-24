@@ -1,8 +1,24 @@
 import React from 'react'
 import ProductCardComponent from '../components/ProductCardComponent'
-import { Props } from '../interfaces/ProductCardInterface'
 
-// Props for titles 
+interface IProduct {
+    imageName: string;
+    name: string;
+    category: string;
+    price: number;
+    articleNumber: string;
+    rating: number;
+    quantity: number;
+    description: string;
+}
+
+interface Props {
+    items: IProduct[];
+    title1: string;
+    title2: string;
+    title3: string;
+}
+
 const ProductRankingSection: React.FC<Props> = ({title1, title2, title3, items=[]}) => {
   
 

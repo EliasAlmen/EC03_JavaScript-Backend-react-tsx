@@ -4,9 +4,11 @@ import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 import FooterSection from '../sections/FooterSection'
 import HeaderSection from '../sections/HeaderSection'
 
-const CompareView = () => {
+
+
+const CompareView: React.FC = () => {
   let currentPage = "Compare"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
   return (
     <>
       <HeaderSection />

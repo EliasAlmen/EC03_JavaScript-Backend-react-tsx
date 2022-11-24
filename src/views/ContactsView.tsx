@@ -7,7 +7,7 @@ import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 
 const ContactsView = () => {
   let currentPage = "Contact Us"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
   
   return (
     <>

@@ -13,14 +13,14 @@ import PromisesSection from '../sections/PromisesSection'
 import ShowCaseSection from '../sections/ShowCaseSection'
 import SpecialitySection from '../sections/SpecialitySection'
 
-const HomeView = () => {
+const HomeView: React.FC = () => {
   
   let currentPage = "Home"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
 
-  const featuredContext = useContext(FeaturedContext)
-  const flashsaleContext = useContext(FlashsaleContext)
-  const rankingContext = useContext(RankingContext)
+  const featuredContext: any = useContext(FeaturedContext)
+  const flashsaleContext: any = useContext(FlashsaleContext)
+  const rankingContext: any = useContext(RankingContext)
   
 
   return (

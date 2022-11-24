@@ -20,7 +20,7 @@ interface IShoppingCartProductContext {
     incrementQuantity: (item: any) => void;
     decrementQuantity: (item: any) => void;
     removeItem: (item: any) => void;
-    incrementQuantityFromDetailed: (cartItem: any, articleNumber: string, product: any, count: any) => void;
+    incrementQuantityFromDetailed: (item: any, setCount: any) => void;
     removeAllItem: () => void;
     cartItems: ICartItemProp[];
     cartQuantity: number;

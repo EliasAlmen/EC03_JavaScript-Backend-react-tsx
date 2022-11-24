@@ -6,7 +6,7 @@ import HeaderSection from '../sections/HeaderSection'
 const NotFoundView = () => {
   
   let currentPage = "404 - Page not found"
-  window.top.document.title = `${currentPage} || Fixxo`
+  document.title = `${currentPage} || Fixxo`
   
   return (
     <>
