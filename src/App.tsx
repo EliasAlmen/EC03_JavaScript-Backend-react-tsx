@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext, RelatedContext } from './contexts/contexts'
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 import CrudView from './views/CrudView';
+import CrudProvider from './contexts/CrudContext';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CrudProvider>
       <ShoppingCartProvider>
       <ProductContext.Provider value={productsAll}>
       <FeaturedContext.Provider value={featuredProducts}>
@@ -85,6 +87,7 @@ function App() {
       </FeaturedContext.Provider>
       </ProductContext.Provider>
       </ShoppingCartProvider>
+      </CrudProvider>
     </BrowserRouter>
   );
 }
