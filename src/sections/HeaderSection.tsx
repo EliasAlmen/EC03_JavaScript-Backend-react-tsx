@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import NavTextLinkComponent from '../components/NavTextLinkComponent'
 import { useShoppingCart } from '../contexts/shoppingCartContext'
 
-const HeaderSection = () => {
+const HeaderSection: React.FC = () => {
 
   
   const [showMenu, setShowMenu] = useState(false)

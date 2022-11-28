@@ -14,6 +14,7 @@ import { ProductContext, FeaturedContext, FlashsaleContext, RankingContext, Rela
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 import CrudView from './views/CrudView';
 import CrudProvider from './contexts/CrudContext';
+import CrudDetailView from './views/CrudDetailView';
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetailsView />} />
           <Route path="/contacts" element={<ContactsView />} />
           
+          <Route path="/crud/:id" element={<CrudDetailView />} />
           <Route path="/crud" element={<CrudView />} />
           <Route path="/search" element={<SearchView />} />
           <Route path="/compare" element={<CompareView />} />
