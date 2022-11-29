@@ -16,14 +16,14 @@ interface ICartItemProp {
 }
 
 interface IShoppingCartProductContext {
+    cartQuantity: number;
     getItemQuantity: (articleNumber: string) => void;
     incrementQuantity: (item: any) => void;
+    incrementQuantityFromDetailed: (item: any, setCount: any) => void;
     decrementQuantity: (item: any) => void;
     removeItem: (item: any) => void;
-    incrementQuantityFromDetailed: (item: any, setCount: any) => void;
     removeAllItem: () => void;
     cartItems: ICartItemProp[];
-    cartQuantity: number;
     cartTotal: number;
 }
 

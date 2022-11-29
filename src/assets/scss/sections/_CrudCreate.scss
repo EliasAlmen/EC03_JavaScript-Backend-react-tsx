@@ -1,0 +1,15 @@
+.create{
+    .form-group{
+        gap: 1rem;
+    }
+}
+
+.random-container{
+    margin-top: 70px;
+    .random{
+        height: 100px;
+        width: 100px;
+        font-size: xx-large;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
