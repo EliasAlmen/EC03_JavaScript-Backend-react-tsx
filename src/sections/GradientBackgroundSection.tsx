@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const GradientBackgroundSection: React.FC = () => {
-  return (
-    <>
-        <div className="gradientbackgroundsection"></div>
-    </>
-  )
-}
+    return (
+        <>
+            <div className="gradientbackgroundsection"></div>
+        </>
+    );
+};
 
-export default GradientBackgroundSection
+export default GradientBackgroundSection;

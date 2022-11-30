@@ -1,12 +1,12 @@
-import React from 'react'
-import BreadCrumbsSection from '../sections/BreadCrumbsSection'
-import CrudSection from '../sections/CrudSection'
-import FooterSection from '../sections/FooterSection'
-import HeaderSection from '../sections/HeaderSection'
+import React from "react";
+import BreadCrumbsSection from "../sections/BreadCrumbsSection";
+import CrudSection from "../sections/CrudSection";
+import FooterSection from "../sections/FooterSection";
+import HeaderSection from "../sections/HeaderSection";
 
 const CrudView: React.FC = () => {
-    let currentPage = "CRUD"
-    document.title = `${currentPage} || Fixxo`
+    let currentPage = "CRUD";
+    document.title = `${currentPage} || Fixxo`;
 
     return (
         <>
@@ -15,7 +15,7 @@ const CrudView: React.FC = () => {
             <CrudSection />
             <FooterSection />
         </>
-    )
-}
+    );
+};
 
-export default CrudView
+export default CrudView;

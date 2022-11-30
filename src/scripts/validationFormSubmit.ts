@@ -1,14 +1,14 @@
 export const submitData = async (url: RequestInfo | URL, method: string, data: string, contentType = 'application/json') => {
-    
+
     const res = await fetch(url, {
         method: method,
         headers: {
-        'Content-Type': contentType
+            'Content-Type': contentType
         },
         body: data
     })
 
-    if (res.status === 200) 
+    if (res.status === 200)
         return true
 
     return false
@@ -16,9 +16,9 @@ export const submitData = async (url: RequestInfo | URL, method: string, data: s
 
 
 
-export const validate = (e:any, form?:any) => {
+export const validate = (e: any, form?: any) => {
     if (e.type === 'submit') {
-        const errors:any = {}
+        const errors: any = {}
         errors.name = validate_name_length(form.name)
         errors.email = validate_email(form.email)
         errors.comments = validate_comments(form.comments)
@@ -35,7 +35,7 @@ export const validate = (e:any, form?:any) => {
                 return validate_comments(value)
             default:
                 // Expected a default case
-            break
+                break
         }
     }
 }
@@ -69,7 +69,7 @@ const validate_email = (value: string) => {
         return null
 }
 
-const validate_comments = (value:string) => {
+const validate_comments = (value: string) => {
     if (!value)
         return 'You must enter a comment'
     else if (value.length < 5)

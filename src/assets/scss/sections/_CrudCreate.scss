@@ -1,15 +1,32 @@
-.create{
-    .form-group{
-        gap: 1rem;
+.create {
+    max-width: 1110px;
+    margin: auto auto;
+
+    .form-control {
+        margin-left: 10px;
+        margin-right: 10px;
+        [aria-invalid] {
+            background-color: #f5b2b2;
+        }
     }
 }
 
-.random-container{
-    margin-top: 70px;
-    .random{
-        height: 100px;
-        width: 100px;
+.random-container {
+    margin-left: 20px;
+    .random {
+        height: 60px;
+        width: 60px;
         font-size: xx-large;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+            rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        background: rgb(254, 254, 254);
+        background: linear-gradient(
+            180deg,
+            rgba(254, 254, 254, 1) 0%,
+            rgba(245, 245, 245, 1) 100%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

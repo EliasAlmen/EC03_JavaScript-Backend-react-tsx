@@ -1,12 +1,10 @@
-import React from 'react'
-import { useShoppingCart } from '../contexts/shoppingCartContext'
-import { ItemProp } from '../interfaces/ItemProp'
-import { currencyFormatter } from '../utils/currencyFormatter'
+import React from "react";
+import { useShoppingCart } from "../contexts/shoppingCartContext";
+import { ItemPropModel } from "../models/ItemPropModel";
+import { currencyFormatter } from "../utils/currencyFormatter";
 
-const SearchProductComponent: React.FC<ItemProp> = ({ item }) => {
-   
-    const { incrementQuantity } = useShoppingCart()
-   
+const SearchProductComponent: React.FC<ItemPropModel> = ({ item }) => {
+    const { incrementQuantity } = useShoppingCart();
 
     return (
         <div className="container">
@@ -15,29 +13,40 @@ const SearchProductComponent: React.FC<ItemProp> = ({ item }) => {
                     <img src={item.imageName} alt={item.name} />
                 </div>
                 <div className="data">
-                    <span className="product-name">
-                        {item.name}
-                    </span>
-                    <span className="product-category">
-                        {item.category}
-                    </span>
+                    <span className="product-name">{item.name}</span>
+                    <span className="product-category">{item.category}</span>
                     <span className="product-price">
                         {currencyFormatter(item.price)}
                     </span>
                     <span className="product-rating">
-                        {Array(item.rating).fill(0).map((_, i) => <i key={i} className="fa-sharp fa-solid fa-star"></i>)}
+                        {Array(item.rating)
+                            .fill(0)
+                            .map((_, i) => (
+                                <i
+                                    key={i}
+                                    className="fa-sharp fa-solid fa-star"
+                                ></i>
+                            ))}
                     </span>
-                    <span className="product-artnum">
-                        {item.articleNumber}
-                    </span>
+                    <span className="product-artnum">{item.articleNumber}</span>
                 </div>
                 <span className="product-quickmenu">
-                    <button onClick={() => incrementQuantity({ articleNumber: item.articleNumber, product: item })} title="Buy" className="nav-icon"><i className="fa-regular fa-bag-shopping"></i></button>
-
+                    <button
+                        onClick={() =>
+                            incrementQuantity({
+                                articleNumber: item.articleNumber,
+                                product: item,
+                            })
+                        }
+                        title="Buy"
+                        className="nav-icon"
+                    >
+                        <i className="fa-regular fa-bag-shopping"></i>
+                    </button>
                 </span>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SearchProductComponent
+export default SearchProductComponent;

@@ -1,4 +1,4 @@
-export interface IFetch {
+export interface Iitem {
     imageName: string;
     name: string;
     category: string;
@@ -8,3 +8,8 @@ export interface IFetch {
     quantity: number;
     description: string; 
 }
+
+export interface ItemPropModel {
+    item: Iitem;
+}
+

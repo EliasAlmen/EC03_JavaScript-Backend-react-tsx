@@ -5,7 +5,7 @@ import HeaderSection from '../sections/HeaderSection'
 import MapSection from '../sections/MapSection'
 import BreadCrumbsSection from '../sections/BreadCrumbsSection'
 
-const ContactsView = () => {
+const ContactsView: React.FC = () => {
   let currentPage = "Contact Us"
   document.title = `${currentPage} || Fixxo`
   

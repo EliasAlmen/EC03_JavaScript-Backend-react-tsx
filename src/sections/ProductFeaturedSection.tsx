@@ -1,38 +1,26 @@
-import React from 'react'
-import ProductCardComponent from '../components/ProductCardComponent'
+import React from "react";
+import ProductCardComponent from "../components/ProductCardComponent";
+import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
 
-
-interface IProduct {
-    imageName: string;
-    name: string;
-    category: string;
-    price: number;
-    articleNumber: string;
-    rating: number;
-    quantity: number;
-    description: string;
-}
-
-interface Props {
-    items: IProduct[];
-    title?: string;
-}
-
-const ProductFeaturedSection: React.FC<Props> = ({title, items=[]}) => {
-
-
+const ProductFeaturedSection: React.FC<ItemPropArrayModel> = ({
+    title,
+    items = [],
+}) => {
     return (
-        <section className="container "> 
+        <section className="container ">
             <h3 id="featured">{title}</h3>
             <div className="featured">
                 <div className="container-cards">
-                    {
-                    items.map(item => <ProductCardComponent key={item.articleNumber} item={item}/>)
-                    }
+                    {items.map((item) => (
+                        <ProductCardComponent
+                            key={item.articleNumber}
+                            item={item}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ProductFeaturedSection
+export default ProductFeaturedSection;
