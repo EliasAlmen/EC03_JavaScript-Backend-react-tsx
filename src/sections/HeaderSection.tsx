@@ -3,7 +3,7 @@ import NavIconComponent from "../components/NavIconComponent";
 import fixxo from "../assets/img/logo/logo_Fixxo.svg";
 import { NavLink } from "react-router-dom";
 import NavTextLinkComponent from "../components/NavTextLinkComponent";
-import { useShoppingCart } from "../contexts/shoppingCartContext";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
 
 const HeaderSection: React.FC = () => {
     const [showMenu, setShowMenu] = useState(false);

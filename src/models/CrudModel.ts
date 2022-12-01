@@ -5,6 +5,7 @@ export interface CrudProduct {
     category: string;
     price: number;
     rating: number;
+    imageName: string;
 }
 
 export interface CrudProductRequest {
@@ -13,4 +14,5 @@ export interface CrudProductRequest {
     category: string;
     price: number;
     rating: number;
+    imageName: string;
 }

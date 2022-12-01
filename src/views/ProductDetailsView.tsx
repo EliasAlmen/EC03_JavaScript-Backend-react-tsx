@@ -6,14 +6,14 @@ import HeaderSection from "../sections/HeaderSection";
 import { useParams } from "react-router-dom";
 import ExternalLinkIconComponent from "../components/ExternalLinkIconComponent";
 import ProductRelatedSection from "../sections/ProductRelatedSection";
-import { RelatedContext } from "../contexts/contexts";
+import { RelatedContext } from "../contexts/SwaggerApicontexts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination } from "swiper";
-import { useShoppingCart } from "../contexts/shoppingCartContext";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
 
 const ProductDetailsView: React.FC = () => {
     let currentPage = "Details";

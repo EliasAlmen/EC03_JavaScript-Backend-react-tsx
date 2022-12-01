@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { useShoppingCart } from "../contexts/shoppingCartContext";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { ItemPropModel } from "../models/ItemPropModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 

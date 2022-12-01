@@ -10,7 +10,8 @@ const CrudSection: React.FC = () => {
                     <CrudCreate />
                 </div>
                 <div className="read">
-                    <ul className="list-group my-5">
+                    <h3 className="mb-2 mt-5 text-center fw-bold">Products list</h3>
+                    <ul className="list-group mb-5">
                         <CrudList />
                     </ul>
                 </div>

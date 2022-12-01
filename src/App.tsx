@@ -16,8 +16,8 @@ import {
     FlashsaleContext,
     RankingContext,
     RelatedContext,
-} from "./contexts/contexts";
-import { ShoppingCartProvider } from "./contexts/shoppingCartContext";
+} from "./contexts/SwaggerApicontexts";
+import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
 import CrudView from "./views/CrudView";
 import CrudProvider from "./contexts/CrudContext";
 import CrudDetailView from "./views/CrudDetailView";

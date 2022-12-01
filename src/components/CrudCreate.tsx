@@ -13,13 +13,13 @@ const CrudCreate: React.FC = () => {
         var max = 999;
         let randomNumber;
         randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        return randomNumber;
+        return randomNumber; 
     }
     function generateRandomRating() {
         var min = 1;
         var max = 5;
         let randomNumber;
-        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; 
         return randomNumber;
     }
 

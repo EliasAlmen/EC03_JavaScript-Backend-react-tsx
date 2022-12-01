@@ -18,7 +18,6 @@ const CrudList = () => {
 
     return (
         <>
-            <h3 className="mb-4 text-center fw-bold">Products list</h3>
             <div className="featured">
                 <div className="container-cards">
                     {crudProducts.map((crudProduct: CrudProduct) => (
@@ -50,7 +49,7 @@ const CrudList = () => {
                                         </NavLink>
                                     </div>
                                     <img
-                                        src="https://via.placeholder.com/256x208"
+                                        src={crudProduct.imageName}
                                         alt={crudProduct.name}
                                     />
                                 </div>

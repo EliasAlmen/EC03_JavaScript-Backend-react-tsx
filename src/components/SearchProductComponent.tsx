@@ -1,5 +1,5 @@
 import React from "react";
-import { useShoppingCart } from "../contexts/shoppingCartContext";
+import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { ItemPropModel } from "../models/ItemPropModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 

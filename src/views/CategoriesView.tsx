@@ -3,7 +3,7 @@ import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";
 import BreadCrumbsSection from "../sections/BreadCrumbsSection";
 import CategoriesSection from "../sections/CategoriesSection";
-import { ProductContext } from "../contexts/contexts";
+import { ProductContext } from "../contexts/SwaggerApicontexts";
 
 const CategoriesView: React.FC = () => {
     let currentPage = "Categories";

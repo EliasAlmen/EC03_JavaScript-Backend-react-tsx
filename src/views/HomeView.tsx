@@ -3,7 +3,7 @@ import {
     FeaturedContext,
     FlashsaleContext,
     RankingContext,
-} from "../contexts/contexts";
+} from "../contexts/SwaggerApicontexts";
 import Banner1Section from "../sections/Banner1Section";
 import Banner2Section from "../sections/Banner2Section";
 import Banner3Section from "../sections/Banner3Section";

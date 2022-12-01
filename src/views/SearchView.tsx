@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../contexts/contexts";
+import { ProductContext } from "../contexts/SwaggerApicontexts";
 import BreadCrumbsSection from "../sections/BreadCrumbsSection";
 import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";

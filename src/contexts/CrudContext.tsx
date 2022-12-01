@@ -6,9 +6,7 @@ export interface ICrudProductContext {
     crudProduct: CrudProduct;
     setCrudProduct: React.Dispatch<React.SetStateAction<CrudProduct>>;
     crudProductRequest: CrudProductRequest;
-    setCrudProductRequest: React.Dispatch<
-        React.SetStateAction<CrudProductRequest>
-    >;
+    setCrudProductRequest: React.Dispatch<React.SetStateAction<CrudProductRequest>>;
     crudProducts: CrudProduct[];
     create: (e: React.FormEvent) => void;
     get: (id: number) => void;
@@ -17,9 +15,7 @@ export interface ICrudProductContext {
     remove: (id: number) => void;
 }
 
-export const CrudProductContext = createContext<ICrudProductContext | null>(
-    null
-);
+export const CrudProductContext = createContext<ICrudProductContext | null>(null);
 export const useCrudProductContext = () => {
     return useContext(CrudProductContext);
 };
@@ -34,6 +30,7 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
         category: "",
         price: 0,
         rating: 0,
+        imageName: "",
     };
     const crudProductRequest_default: CrudProductRequest = {
         name: "",
@@ -41,6 +38,7 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
         category: "",
         price: 0,
         rating: 0,
+        imageName: "",
     };
 
     const [crudProduct, setCrudProduct] =
