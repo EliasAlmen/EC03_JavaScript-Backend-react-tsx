@@ -1,16 +1,11 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import {
-    CrudProductContext,
-    ICrudProductContext,
-} from "../contexts/CrudContext";
+import { CrudProductContext, ICrudProductContext, } from "../contexts/CrudContext";
 import { CrudProduct } from "../models/CrudModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 
 const CrudList = () => {
-    const { crudProducts, getAll, remove } = React.useContext(
-        CrudProductContext
-    ) as ICrudProductContext;
+    const { crudProducts, getAll, remove } = React.useContext(CrudProductContext) as ICrudProductContext;
 
     useEffect(() => {
         getAll();
@@ -49,7 +44,7 @@ const CrudList = () => {
                                         </NavLink>
                                     </div>
                                     <img
-                                        src={crudProduct.imageName}
+                                        src='https://via.placeholder.com/256x208'
                                         alt={crudProduct.name}
                                     />
                                 </div>

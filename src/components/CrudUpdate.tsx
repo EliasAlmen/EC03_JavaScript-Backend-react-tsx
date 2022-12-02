@@ -14,7 +14,7 @@ const CrudUpdate = () => {
 
     useEffect(() => {
         get(Number(id));
-    }, [get, id, setCrudProduct]);
+    }, [setCrudProduct]);
 
     return (
         <form onSubmit={update} className="create form-group">

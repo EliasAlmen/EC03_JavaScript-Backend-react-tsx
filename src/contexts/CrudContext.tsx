@@ -21,7 +21,7 @@ export const useCrudProductContext = () => {
 };
 
 const CrudProvider = ({ children }: CrudProviderProps) => {
-    const baseUrl = "http://localhost:5000/api/products";
+    const baseUrl = "http://localhost:5000/api/crudproducts";
 
     const crudProduct_default: CrudProduct = {
         id: 0,
@@ -30,7 +30,6 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
         category: "",
         price: 0,
         rating: 0,
-        imageName: "",
     };
     const crudProductRequest_default: CrudProductRequest = {
         name: "",
@@ -38,14 +37,12 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
         category: "",
         price: 0,
         rating: 0,
-        imageName: "",
     };
 
-    const [crudProduct, setCrudProduct] =
-        useState<CrudProduct>(crudProduct_default);
-    const [crudProductRequest, setCrudProductRequest] =
-        useState<CrudProductRequest>(crudProductRequest_default);
+    const [crudProduct, setCrudProduct] = useState<CrudProduct>(crudProduct_default);
+    const [crudProductRequest, setCrudProductRequest] = useState<CrudProductRequest>(crudProductRequest_default);
     const [crudProducts, setCrudProducts] = useState<CrudProduct[]>([]);
+
 
     const create = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -61,14 +58,20 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
             setCrudProductRequest(crudProductRequest_default);
         }
     };
+
+
     const get = async (id: number) => {
         const result = await fetch(`${baseUrl}/${id}`);
         if (result.status === 200) setCrudProduct(await result.json());
     };
+
+
     const getAll = async () => {
         const result = await fetch(`${baseUrl}`);
         if (result.status === 200) setCrudProducts(await result.json());
     };
+
+
     const update = async (e: React.FormEvent) => {
         e.preventDefault();
         const result = await fetch(`${baseUrl}/${crudProduct.id}`, {
@@ -83,6 +86,8 @@ const CrudProvider = ({ children }: CrudProviderProps) => {
             setCrudProduct(await result.json());
         }
     };
+
+
     const remove = async (id: number) => {
         const result = await fetch(`${baseUrl}/${id}`, { method: "delete" });
 
