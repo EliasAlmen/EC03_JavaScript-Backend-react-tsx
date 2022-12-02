@@ -1,22 +1,23 @@
 import React from "react";
 import ProductCardComponent from "../components/ProductCardComponent";
-import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+import { ProductItem } from "../models/PredefinedProductModel";
+// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+// import { ProductItem } from "../models/PredefinedProductModel";
 
-const ProductFeaturedSection: React.FC<ItemPropArrayModel> = ({
-    title,
-    items = [],
-}) => {
+interface ProductCardType {
+    title: string;
+    items: ProductItem[]
+};
+
+const ProductFeaturedSection: React.FC<ProductCardType> = ({ title, items = [] }) => {
     return (
         <section className="container ">
             <h3 id="featured">{title}</h3>
             <div className="featured">
                 <div className="container-cards">
-                    {items.map((item) => (
-                        <ProductCardComponent
-                            key={item.articleNumber}
-                            item={item}
-                        />
-                    ))}
+                    {
+                    items.map( product => <ProductCardComponent key={product.articleNumber} item={product} /> )
+                    }
                 </div>
             </div>
         </section>

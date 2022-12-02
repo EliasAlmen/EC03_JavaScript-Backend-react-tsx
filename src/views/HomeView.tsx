@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import {
-    FeaturedContext,
-    FlashsaleContext,
-    RankingContext,
-} from "../contexts/SwaggerApicontexts";
+import React, { useEffect } from "react";
+import { ProductContextType, useProductContext } from "../contexts/PredefinedProductContext";
+// import { FeaturedContext, FlashsaleContext, RankingContext, } from "../contexts/SwaggerApicontexts";
 import Banner1Section from "../sections/Banner1Section";
 import Banner2Section from "../sections/Banner2Section";
 import Banner3Section from "../sections/Banner3Section";
@@ -21,30 +18,40 @@ const HomeView: React.FC = () => {
     let currentPage = "Home";
     document.title = `${currentPage} || Fixxo`;
 
-    const featuredContext: any = useContext(FeaturedContext);
-    const flashsaleContext: any = useContext(FlashsaleContext);
-    const rankingContext: any = useContext(RankingContext);
+    // const featuredContext: any = useContext(FeaturedContext);
+    // const flashsaleContext: any = useContext(FlashsaleContext);
+    // const rankingContext: any = useContext(RankingContext);
+
+    const { 
+        featured, 
+        flashsaleOne,
+        flashsaleTwo,
+        rankingOne,
+        getFeatured,
+        getFlashsaleOne,
+        getFlashsaleTwo,
+        getRankingOne,
+    } = useProductContext() as ProductContextType
+
+    useEffect(() => {
+        getFeatured(2)
+        getFlashsaleOne(4)
+        getFlashsaleTwo(4)
+        getRankingOne(3)
+    }, [])
 
     return (
         <>
             <HeaderSection />
             <ShowCaseSection />
             <Banner1Section />
-            <ProductFeaturedSection
-                title="Featured Products"
-                items={featuredContext}
-            />
+            <ProductFeaturedSection title={"Featured Products"} items={featured} />
             <Banner2Section />
             <SpecialitySection />
-            <FlashSaleLeftSection items={flashsaleContext} />
-            <FlashSaleRightSection items={flashsaleContext} />
+            <FlashSaleLeftSection items={flashsaleOne} />
+            <FlashSaleRightSection items={flashsaleTwo} />
             <Banner3Section />
-            <ProductRankingSection
-                title1={"Latest Product"}
-                title2={"Best Selling Product"}
-                title3={"Top Reacted Product"}
-                items={rankingContext}
-            />
+            <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} items={rankingOne} />
             <PromisesSection />
             <FooterSection />
         </>

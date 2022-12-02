@@ -14,10 +14,17 @@ import "swiper/css/navigation";
 
 import { Pagination } from "swiper";
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
+import { ProductContextType, useProductContext } from "../contexts/PredefinedProductContext";
 
 const ProductDetailsView: React.FC = () => {
     let currentPage = "Details";
     document.title = `${currentPage} || Fixxo`;
+
+    const {featured, getFeatured} = useProductContext() as ProductContextType
+
+    useEffect(() => {
+        getFeatured(2)
+    }, [])
 
     // Tried in many ways to use Swiper to generate dynamic amount of slides. No succsess.
     // As of now I made a custom fetch for ?take=1
@@ -334,31 +341,31 @@ const ProductDetailsView: React.FC = () => {
                             className="mySwiper"
                         >
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductRelatedSection items={relatedContext} />
+                                <ProductRelatedSection items={featured} />
                             </SwiperSlide>
                         </Swiper>
                     </div>

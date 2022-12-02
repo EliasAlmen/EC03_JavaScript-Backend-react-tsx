@@ -1,10 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
-import { ItemPropModel } from "../models/ItemPropModel";
+// import { ItemPropModel } from "../models/ItemPropModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 
-const ProductCardComponent: React.FC<ItemPropModel> = ({ item }) => {
+interface ProductCardType {
+    item: ProductItem
+};
+
+
+const ProductCardComponent: React.FC<ProductCardType> = ({ item }) => {
     const { incrementQuantity } = useShoppingCart();
 
     return (

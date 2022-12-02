@@ -1,14 +1,16 @@
 import React from "react";
 import ProductCardComponent from "../components/ProductCardComponent";
-import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 
-const ProductRelatedSection: React.FC<ItemPropArrayModel> = ({
-    title,
-    items = [],
-}) => {
+interface ProductCardType {
+    items: ProductItem[]
+};
+
+const ProductRelatedSection: React.FC<ProductCardType> = ({ items = [], }) => {
     return (
         <section className="container">
-            <h3 id="related">{title}</h3>
+            <h3 id="related">wtf</h3>
             <div className="related">
                 <div className="container-cards">
                     {items.map((item) => (

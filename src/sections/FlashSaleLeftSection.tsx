@@ -1,9 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ProductCardComponent from "../components/ProductCardComponent";
-import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 
-const FlashSaleLeftSection: React.FC<ItemPropArrayModel> = ({ items = [] }) => {
+interface ProductCardType {
+    items: ProductItem[]
+};
+
+const FlashSaleLeftSection: React.FC<ProductCardType> = ({ items = [] }) => {
     return (
         <section className="container">
             <div className="container-flashsale-left">

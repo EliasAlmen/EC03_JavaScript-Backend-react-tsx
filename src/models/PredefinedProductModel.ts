@@ -7,4 +7,5 @@ export interface ProductItem {
     price: number;
     rating: number;
     imageName: string;
+    title?: string;
 }

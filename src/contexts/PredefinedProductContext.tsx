@@ -15,13 +15,17 @@ export interface ProductContextType {
     rankingTwo: ProductItem[];
     rankingThree: ProductItem[];
     get: (articleNumber?: string) => void;
-    getAll: (take?: number) => void;
+    getAll: () => void;
     getFeatured: (take?: number) => void;
     getFlashsaleOne: (take?: number) => void;
+    getFlashsaleTwo: (take?: number) => void;
+    getRankingOne: (take?: number) => void;
+    getRankingTwo: (take?: number) => void;
+    getRankingThree: (take?: number) => void;
 };
 
 export const ProductContext = createContext<ProductContextType | null>(null);
-export const usePRoductContext = () => { return useContext(ProductContext) };
+export const useProductContext = () => { return useContext(ProductContext) };
 
 
 const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
@@ -43,12 +47,10 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
             setProduct(await res.json())
         }
     }
-
     const getAll = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
     }
-
     const getFeatured = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
         if (take !== 0)
@@ -62,6 +64,34 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
             url += `/${take}`
         const res = await fetch(url)
         setFlashsaleOne(await res.json())
+    }
+    const getFlashsaleTwo = async (take: number = 0) => {
+        let url = `${baseUrl}/featured`
+        if (take !== 0)
+            url += `/${take}`
+        const res = await fetch(url)
+        setFlashsaleTwo(await res.json())
+    }
+    const getRankingOne = async (take: number = 0) => {
+        let url = `${baseUrl}/featured`
+        if (take !== 0)
+            url += `/${take}`
+        const res = await fetch(url)
+        setRankingOne(await res.json())
+    }
+    const getRankingTwo = async (take: number = 0) => {
+        let url = `${baseUrl}/featured`
+        if (take !== 0)
+            url += `/${take}`
+        const res = await fetch(url)
+        setRankingTwo(await res.json())
+    }
+    const getRankingThree = async (take: number = 0) => {
+        let url = `${baseUrl}/featured`
+        if (take !== 0)
+            url += `/${take}`
+        const res = await fetch(url)
+        setRankingThree(await res.json())
     }
 
     return (
@@ -78,7 +108,11 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
                 get,
                 getAll,
                 getFeatured,
-                getFlashsaleOne
+                getFlashsaleOne,
+                getFlashsaleTwo,
+                getRankingOne,
+                getRankingTwo,
+                getRankingThree
             }}>
             {children}
         </ProductContext.Provider>

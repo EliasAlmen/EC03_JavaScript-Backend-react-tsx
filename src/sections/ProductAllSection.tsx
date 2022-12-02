@@ -1,11 +1,14 @@
 import React from "react";
 import ProductCardComponent from "../components/ProductCardComponent";
-import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 
-const ProductAllSection: React.FC<ItemPropArrayModel> = ({
-    title,
-    items = [],
-}) => {
+interface ProductCardType {
+    title: string;
+    items: ProductItem[]
+};
+
+const ProductAllSection: React.FC<ProductCardType> = ({ title, items = [], }) => {
     return (
         <section className="container ">
             <h3 id="featured">{title}</h3>

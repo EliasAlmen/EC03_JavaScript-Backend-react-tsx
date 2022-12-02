@@ -23,6 +23,7 @@ import CrudProvider from "./contexts/CrudContext";
 import ScrollToTop from "./components/ScrollToTop";
 import CrudUpdateView from "./views/CrudUpdateView";
 import CrudDetailView from "./views/CrudDetailView";
+import ProductProvider from "./contexts/PredefinedProductContext";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -84,6 +85,7 @@ function App() {
         <BrowserRouter>
             <ScrollToTop />
             <CrudProvider>
+                <ProductProvider>
                 <ShoppingCartProvider>
                     <ProductContext.Provider value={productsAll}>
                         <FeaturedContext.Provider value={featuredProducts}>
@@ -153,6 +155,8 @@ function App() {
                         </FeaturedContext.Provider>
                     </ProductContext.Provider>
                 </ShoppingCartProvider>
+                </ProductProvider>
+
             </CrudProvider>
         </BrowserRouter>
     );
