@@ -20,6 +20,8 @@ import {
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
 import CrudView from "./views/CrudView";
 import CrudProvider from "./contexts/CrudContext";
+import ScrollToTop from "./components/ScrollToTop";
+import CrudUpdateView from "./views/CrudUpdateView";
 import CrudDetailView from "./views/CrudDetailView";
 
 function App() {
@@ -80,6 +82,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <CrudProvider>
                 <ShoppingCartProvider>
                     <ProductContext.Provider value={productsAll}>
@@ -116,7 +119,11 @@ function App() {
                                             />
 
                                             <Route
-                                                path="/crud/:id"
+                                                path="/crudupdate/:id"
+                                                element={<CrudUpdateView />}
+                                            />
+                                            <Route
+                                                path="/cruddetail/:id"
                                                 element={<CrudDetailView />}
                                             />
                                             <Route

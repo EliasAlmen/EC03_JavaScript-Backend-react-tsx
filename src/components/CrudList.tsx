@@ -22,7 +22,7 @@ const CrudList = () => {
                                     <div className="quick-menu">
                                         <NavLink
                                             className="linkUpdate nav-icon"
-                                            to={`/crud/${crudProduct.id}`}
+                                            to={`/crudupdate/${crudProduct.id}`}
                                         >
                                             <i className="fa-regular fa-gears"></i>
                                         </NavLink>
@@ -37,7 +37,7 @@ const CrudList = () => {
                                     </div>
                                     <div className="quick-view">
                                         <NavLink
-                                            to={`/products/${crudProduct.id}`}
+                                            to={`/cruddetail/${crudProduct.id}`}
                                             className="button btn-hover bg-red"
                                         >
                                             QUICK VIEW
