@@ -35,9 +35,6 @@ const HomeView: React.FC = () => {
 
     useEffect(() => {
         getFeatured(2)
-        getFlashsaleOne(4)
-        getFlashsaleTwo(4)
-        getRankingOne(3)
     }, [])
 
     return (

@@ -53,41 +53,45 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
     }
     const getFeatured = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
+
         if (take !== 0)
             url += `/${take}`
+
         const res = await fetch(url)
+        console.log(res);
+        
         setFeatured(await res.json())
     }
     const getFlashsaleOne = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/flashone`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
         setFlashsaleOne(await res.json())
     }
     const getFlashsaleTwo = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/flashtwo`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
         setFlashsaleTwo(await res.json())
     }
     const getRankingOne = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/rankingone`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
         setRankingOne(await res.json())
     }
     const getRankingTwo = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/rankingtwo`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
         setRankingTwo(await res.json())
     }
     const getRankingThree = async (take: number = 0) => {
-        let url = `${baseUrl}/featured`
+        let url = `${baseUrl}/rankingthree`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
