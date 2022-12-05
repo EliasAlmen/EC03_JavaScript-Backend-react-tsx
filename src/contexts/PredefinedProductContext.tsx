@@ -53,13 +53,9 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
     }
     const getFeatured = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
-
         if (take !== 0)
             url += `/${take}`
-
         const res = await fetch(url)
-        console.log(res);
-        
         setFeatured(await res.json())
     }
     const getFlashsaleOne = async (take: number = 0) => {

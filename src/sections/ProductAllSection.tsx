@@ -8,18 +8,15 @@ interface ProductCardType {
     items: ProductItem[]
 };
 
-const ProductAllSection: React.FC<ProductCardType> = ({ title, items = [], }) => {
+const ProductAllSection: React.FC<ProductCardType> = ({ title, items = [] }) => {
     return (
         <section className="container ">
             <h3 id="featured">{title}</h3>
             <div className="featured">
                 <div className="container-cards">
-                    {items.map((item) => (
-                        <ProductCardComponent
-                            key={item.articleNumber}
-                            item={item}
-                        />
-                    ))}
+                    {
+                        items.map(product => <ProductCardComponent key={product.articleNumber} item={product} />)
+                    }
                 </div>
             </div>
         </section>

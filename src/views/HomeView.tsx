@@ -34,7 +34,10 @@ const HomeView: React.FC = () => {
     } = useProductContext() as ProductContextType
 
     useEffect(() => {
-        getFeatured(2)
+        getFeatured(8)
+        getFlashsaleOne(4)
+        getFlashsaleTwo(4)
+        getRankingOne(3)
     }, [])
 
     return (
