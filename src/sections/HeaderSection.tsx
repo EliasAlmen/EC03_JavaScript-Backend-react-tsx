@@ -42,11 +42,11 @@ const HeaderSection: React.FC = () => {
                     <nav className="nav-icons">
                         <NavIconComponent
                             link="/mongo"
-                            icon="fa-regular fa-server"
+                            icon="fa-regular fa-cloud"
                         />
                         <NavIconComponent
                             link="/crud"
-                            icon="fa-regular fa-database"
+                            icon="fa-regular fa-server"
                         />
                         <NavIconComponent
                             link="/search"

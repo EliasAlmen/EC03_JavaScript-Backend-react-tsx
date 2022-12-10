@@ -3,104 +3,27 @@ import {
     CrudProductContext,
     ICrudProductContext,
 } from "../contexts/CrudContext";
+import {
+    generateRandomRating,
+    generateRandomCategory,
+    generateRandomDescription,
+    generateRandomName,
+    generateRandomPrice
+} from '../utils/randomProductGenerator'
 
 const CrudCreate: React.FC = () => {
     const { crudProductRequest, setCrudProductRequest, create } =
         React.useContext(CrudProductContext) as ICrudProductContext;
 
-    function generateRandomPrice() {
-        var min = 1;
-        var max = 999;
-        let randomNumber;
-        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        return randomNumber; 
-    }
-    function generateRandomRating() {
-        var min = 1;
-        var max = 5;
-        let randomNumber;
-        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min; 
-        return randomNumber;
-    }
-
-    function generateRandomCategory() {
-        var categories = [
-            "Coats",
-            "Dresses",
-            "Sets",
-            "Jackets",
-            "T-shirts",
-            "Sweaters",
-            "Watches",
-            "Shoes",
-            "Jeans",
-            "Bags",
-            "Tops",
-            "Pants",
-        ];
-        const randomNumber = Math.floor(Math.random() * categories.length);
-        return categories[randomNumber];
-    }
-
-    function generateRandomName() {
-        var categories = [
-            "Black coat",
-            "Black dress",
-            "Brown watch",
-            "Stiletto shoes",
-            "Winter boots",
-            "Red dress",
-            "Black top & pants set",
-            "White top & black pants set",
-            "Blue hoody & pants",
-            "Jeans jacket & pants",
-            "Jeans dress",
-            "Blue jacket",
-            "Purple handbag",
-            "Red handbag",
-            "Blue t-shirt",
-            "Gray t-shirt",
-            "Multicolor t-shirt",
-            "Striped top",
-            "Brown sweater",
-            "Olive sweater",
-            "White seater",
-            "Striped pink pants",
-        ];
-        const randomNumber = Math.floor(Math.random() * categories.length);
-        return categories[randomNumber];
-    }
-    function generateRandomDescription() {
-        var categories = [
-            "Black",
-            "Blue",
-            "Green",
-            "Red",
-            "Yellow",
-            "Purple",
-            "White",
-            "Grey",
-            "Pink",
-            "Gold",
-            "Silver",
-            "Copper",
-            "Silk",
-            "Thick",
-            "Thinn",
-        ];
-        const randomNumber = Math.floor(Math.random() * categories.length);
-        return categories[randomNumber];
-    }
-
-    function valditeField(this: any) {
-        // check for letters, at least 3
-        if (typeof this.value !== 'string') {
-            this.setAttribute('aria-invalid', 'true');
-            alert(
-                'You entered an invalid value. Only text characters are allowed'
-            );
-        }
-    }
+    // function valditeField(this: any) {
+    //     // check for letters, at least 3
+    //     if (typeof this.value !== 'string') {
+    //         this.setAttribute('aria-invalid', 'true');
+    //         alert(
+    //             'You entered an invalid value. Only text characters are allowed'
+    //         );
+    //     }
+    // }
 
     return (
         <>
@@ -131,7 +54,6 @@ const CrudCreate: React.FC = () => {
                                     category: e.target.value,
                                 })
                             }
-                            onInput={() => valditeField()}
                             className="form-control "
                             list="categories"
                             placeholder="Choose an category"

@@ -6,7 +6,7 @@ const CrudSection: React.FC = () => {
     return (
         <>
             <div className="container">
-                <h1 className="my-5 text-center fw-bold">Create, Read, Update, Delete (CRUD)</h1>
+                <h1 className="my-5 text-center fw-bold">Create, Read, Update, Delete (Simulated)</h1>
                 <p className="text-center text-muted">"local database" which defaults to empty state at server restart.</p>
                 <p className="text-center text-muted">Hover items to update or delete. Use the dice button or enter values manually.</p>
                 <div className="container-forms d-flex justify-content-center gap-5 text-center mt-5">

@@ -20,11 +20,12 @@ import {
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContext";
 import CrudView from "./views/CrudView";
 import CrudProvider from "./contexts/CrudContext";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./utils/ScrollToTop";
 import CrudUpdateView from "./views/CrudUpdateView";
 import CrudDetailView from "./views/CrudDetailView";
 import ProductProvider from "./contexts/PredefinedProductContext";
 import MongoView from "./views/MongoView";
+import MongoProvider from "./contexts/MongoContext";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -85,6 +86,7 @@ function App() {
     return (
         <BrowserRouter>
             <ScrollToTop />
+            <MongoProvider>
             <CrudProvider>
                 <ProductProvider>
                     <ShoppingCartProvider>
@@ -156,7 +158,9 @@ function App() {
                     </ShoppingCartProvider>
                 </ProductProvider>
 
-            </CrudProvider>
+                </CrudProvider>
+            </MongoProvider>
+
         </BrowserRouter>
     );
 }
