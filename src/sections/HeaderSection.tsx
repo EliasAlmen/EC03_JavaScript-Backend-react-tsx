@@ -41,6 +41,10 @@ const HeaderSection: React.FC = () => {
                     </nav>
                     <nav className="nav-icons">
                         <NavIconComponent
+                            link="/mongo"
+                            icon="fa-regular fa-server"
+                        />
+                        <NavIconComponent
                             link="/crud"
                             icon="fa-regular fa-database"
                         />

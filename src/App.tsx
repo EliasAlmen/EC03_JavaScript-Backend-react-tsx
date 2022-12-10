@@ -24,6 +24,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import CrudUpdateView from "./views/CrudUpdateView";
 import CrudDetailView from "./views/CrudDetailView";
 import ProductProvider from "./contexts/PredefinedProductContext";
+import MongoView from "./views/MongoView";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -86,75 +87,73 @@ function App() {
             <ScrollToTop />
             <CrudProvider>
                 <ProductProvider>
-                <ShoppingCartProvider>
-                    <ProductContext.Provider value={productsAll}>
-                        <FeaturedContext.Provider value={featuredProducts}>
-                            <FlashsaleContext.Provider
-                                value={flashSaleProducts}
-                            >
-                                <RankingContext.Provider
-                                    value={rankingProducts}
-                                >
-                                    <RelatedContext.Provider
-                                        value={relatedProducts}
-                                    >
-                                        <Routes>
-                                            <Route
-                                                path="/"
-                                                element={<HomeView />}
-                                            />
-                                            <Route
-                                                path="/categories"
-                                                element={<CategoriesView />}
-                                            />
-                                            <Route
-                                                path="/products"
-                                                element={<ProductsView />}
-                                            />
-                                            <Route
-                                                path="/products/:id"
-                                                element={<ProductDetailsView />}
-                                            />
-                                            <Route
-                                                path="/contacts"
-                                                element={<ContactsView />}
-                                            />
+                    <ShoppingCartProvider>
+                        <ProductContext.Provider value={productsAll}>
+                            <FeaturedContext.Provider value={featuredProducts}>
+                                <FlashsaleContext.Provider value={flashSaleProducts}>
+                                    <RankingContext.Provider value={rankingProducts}>
+                                        <RelatedContext.Provider value={relatedProducts}>
+                                            <Routes>
+                                                <Route
+                                                    path="/"
+                                                    element={<HomeView />}
+                                                />
+                                                <Route
+                                                    path="/categories"
+                                                    element={<CategoriesView />}
+                                                />
+                                                <Route
+                                                    path="/products"
+                                                    element={<ProductsView />}
+                                                />
+                                                <Route
+                                                    path="/products/:id"
+                                                    element={<ProductDetailsView />}
+                                                />
+                                                <Route
+                                                    path="/contacts"
+                                                    element={<ContactsView />}
+                                                />
 
-                                            <Route
-                                                path="/crudupdate/:id"
-                                                element={<CrudUpdateView />}
-                                            />
-                                            <Route
-                                                path="/cruddetail/:id"
-                                                element={<CrudDetailView />}
-                                            />
-                                            <Route
-                                                path="/crud"
-                                                element={<CrudView />}
-                                            />
-                                            <Route
-                                                path="/search"
-                                                element={<SearchView />}
-                                            />
-                                            <Route
-                                                path="/compare"
-                                                element={<CompareView />}
-                                            />
-                                            <Route
-                                                path="/wishlist"
-                                                element={<WishListView />}
-                                            />
-                                            <Route
-                                                path="*"
-                                                element={<NotFoundView />}
-                                            />
-                                        </Routes>
-                                    </RelatedContext.Provider>
-                                </RankingContext.Provider>
-                            </FlashsaleContext.Provider>
-                        </FeaturedContext.Provider>
-                    </ProductContext.Provider>
-                </ShoppingCartProvider>
+                                                <Route
+                                                    path="/crudupdate/:id"
+                                                    element={<CrudUpdateView />}
+                                                />
+                                                <Route
+                                                    path="/cruddetail/:id"
+                                                    element={<CrudDetailView />}
+                                                />
+                                                <Route
+                                                    path="/crud"
+                                                    element={<CrudView />}
+                                                />
+                                                <Route
+                                                    path="/mongo"
+                                                    element={<MongoView />}
+                                                />
+                                                <Route
+                                                    path="/search"
+                                                    element={<SearchView />}
+                                                />
+                                                <Route
+                                                    path="/compare"
+                                                    element={<CompareView />}
+                                                />
+                                                <Route
+                                                    path="/wishlist"
+                                                    element={<WishListView />}
+                                                />
+                                                <Route
+                                                    path="*"
+                                                    element={<NotFoundView />}
+                                                />
+                                            </Routes>
+                                        </RelatedContext.Provider>
+                                    </RankingContext.Provider>
+                                </FlashsaleContext.Provider>
+                            </FeaturedContext.Provider>
+                        </ProductContext.Provider>
+                    </ShoppingCartProvider>
                 </ProductProvider>
 
             </CrudProvider>

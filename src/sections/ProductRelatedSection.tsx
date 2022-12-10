@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 // import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
-import { ProductItem } from "../models/PredefinedProductModel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";

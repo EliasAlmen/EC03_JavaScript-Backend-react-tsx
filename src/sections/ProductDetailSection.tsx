@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ExternalLinkIconComponent from "../components/ExternalLinkIconComponent";
-import ProductRelatedSection from "../sections/ProductRelatedSection";
 
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { useParams } from "react-router-dom";
