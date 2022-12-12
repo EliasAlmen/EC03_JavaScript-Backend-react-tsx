@@ -26,7 +26,8 @@ export interface MongoContextType {
     setMongoProductRequest: React.Dispatch<React.SetStateAction<MongoProductRequest>>;
     create: (e: React.FormEvent) => void;
     mongoProductRequest: MongoProductRequest;
-
+    update: (e: React.FormEvent) => void;
+    setProduct: React.Dispatch<React.SetStateAction<MongoProductItem>>;
 };
 
 export const MongoContext = createContext<MongoContextType | null>(null);
@@ -35,7 +36,7 @@ export const useMongoContext = () => { return useContext(MongoContext) };
 
 const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
     const baseUrl: string = 'http://localhost:5000/api/mongoproducts'
-    const empty_product: MongoProductItem = { tag: '', articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
+    const empty_product: MongoProductItem = { articleNumber: '', name: '', description: '', category: '', tag: '', price: 0, rating: 0, imageName: '' }
 
     const [product, setProduct] = useState<MongoProductItem>(empty_product)
     const [products, setProducts] = useState<MongoProductItem[]>([])
@@ -48,11 +49,14 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
     
     
     const mongoProductRequest_default: MongoProductRequest = {
+        articleNumber: "",
         name: "",
         description: "",
         category: "",
+        tag: "",
         price: 0,
         rating: 0,
+        imageName: ""
     };
 
     const [mongoProductRequest, setMongoProductRequest] = useState<MongoProductRequest>(mongoProductRequest_default);
@@ -135,6 +139,21 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
         }
     };
 
+    const update = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const result = await fetch(`${baseUrl}/update/${product.articleNumber}`, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(product),
+        });
+
+        if (result.status === 200) {
+            setProduct(await result.json());
+        }
+    };
+
     return (
         <MongoContext.Provider
             value={{
@@ -157,7 +176,9 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
                 remove,
                 create,
                 mongoProductRequest,
-                setMongoProductRequest
+                setMongoProductRequest,
+                update,
+                setProduct
             }}>
             {children}
         </MongoContext.Provider>

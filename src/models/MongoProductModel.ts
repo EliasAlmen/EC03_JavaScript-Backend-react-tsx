@@ -1,28 +1,32 @@
 export interface MongoProductItem {
-    tag: string;
     articleNumber: string;
-    description: string;
     name: string;
+    description: string;
     category: string;
+    tag: string;
     price: number;
     rating: number;
     imageName: string;
-    title?: string;
 }
 
 export interface MongoProductRequest {
+    articleNumber: string;
     name: string;
     description: string;
     category: string;
+    tag: string;
     price: number;
     rating: number;
+    imageName: string;
 }
 
 export interface MongoProduct {
-    id: number;
+    articleNumber: string;
     name: string;
     description: string;
     category: string;
+    tag: string;
     price: number;
     rating: number;
+    imageName: string;
 }

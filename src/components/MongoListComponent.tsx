@@ -1,32 +1,35 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
 import { MongoProductItem } from "../models/MongoProductModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
+// import ProductCardComponent from "./ProductCardComponent";
 
-const MongoListComponent = () => {
-    const {
-        getAll,
-        products,
-        remove
-    } = useMongoContext() as MongoContextType
 
-    useEffect(() => {
-        getAll();
-    }, [getAll]);
+interface ProductCardType {
+    items: MongoProductItem[]
+};
+
+const MongoListComponent: React.FC<ProductCardType> = ({ items = [] }) => {
+
+    const { remove } = useMongoContext() as MongoContextType;
+
 
     return (
         <>
             <div className="featured">
                 <div className="container-cards">
-                    {products.map((product: MongoProductItem) => (
+                    {/* {
+                        items.map(product => <ProductCardComponent key={product.articleNumber} item={product} />)
+                    } */}
+                    {items.map((product: MongoProductItem) => (
                         <React.Fragment key={product.articleNumber}>
                             <div className="card-product">
                                 <div className="img-container">
                                     <div className="quick-menu">
                                         <NavLink
                                             className="linkUpdate nav-icon"
-                                            to={`/crudupdate/${product.articleNumber}`}
+                                            to={`/mongo/update/${product.articleNumber}`}
                                         >
                                             <i className="fa-regular fa-gears"></i>
                                         </NavLink>
@@ -41,14 +44,14 @@ const MongoListComponent = () => {
                                     </div>
                                     <div className="quick-view">
                                         <NavLink
-                                            to={`/cruddetail/${product.articleNumber}`}
+                                            to={`/mongo/details/${product.articleNumber}`}
                                             className="button btn-hover bg-red"
                                         >
                                             QUICK VIEW
                                         </NavLink>
                                     </div>
                                     <img
-                                        src='https://via.placeholder.com/256x208'
+                                        src={product.imageName}
                                         alt={product.name}
                                     />
                                 </div>

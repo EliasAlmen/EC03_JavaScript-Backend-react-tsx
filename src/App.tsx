@@ -26,6 +26,8 @@ import CrudDetailView from "./views/CrudDetailView";
 import ProductProvider from "./contexts/PredefinedProductContext";
 import MongoView from "./views/MongoView";
 import MongoProvider from "./contexts/MongoContext";
+import MongoUpdateView from "./views/MongoUpdateView";
+import MongoDetailView from "./views/MongoDetailView";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -87,76 +89,83 @@ function App() {
         <BrowserRouter>
             <ScrollToTop />
             <MongoProvider>
-            <CrudProvider>
-                <ProductProvider>
-                    <ShoppingCartProvider>
-                        <ProductContext.Provider value={productsAll}>
-                            <FeaturedContext.Provider value={featuredProducts}>
-                                <FlashsaleContext.Provider value={flashSaleProducts}>
-                                    <RankingContext.Provider value={rankingProducts}>
-                                        <RelatedContext.Provider value={relatedProducts}>
-                                            <Routes>
-                                                <Route
-                                                    path="/"
-                                                    element={<HomeView />}
-                                                />
-                                                <Route
-                                                    path="/categories"
-                                                    element={<CategoriesView />}
-                                                />
-                                                <Route
-                                                    path="/products"
-                                                    element={<ProductsView />}
-                                                />
-                                                <Route
-                                                    path="/products/:id"
-                                                    element={<ProductDetailsView />}
-                                                />
-                                                <Route
-                                                    path="/contacts"
-                                                    element={<ContactsView />}
-                                                />
-
-                                                <Route
-                                                    path="/crudupdate/:id"
-                                                    element={<CrudUpdateView />}
-                                                />
-                                                <Route
-                                                    path="/cruddetail/:id"
-                                                    element={<CrudDetailView />}
-                                                />
-                                                <Route
-                                                    path="/crud"
-                                                    element={<CrudView />}
-                                                />
-                                                <Route
-                                                    path="/mongo"
-                                                    element={<MongoView />}
-                                                />
-                                                <Route
-                                                    path="/search"
-                                                    element={<SearchView />}
-                                                />
-                                                <Route
-                                                    path="/compare"
-                                                    element={<CompareView />}
-                                                />
-                                                <Route
-                                                    path="/wishlist"
-                                                    element={<WishListView />}
-                                                />
-                                                <Route
-                                                    path="*"
-                                                    element={<NotFoundView />}
-                                                />
-                                            </Routes>
-                                        </RelatedContext.Provider>
-                                    </RankingContext.Provider>
-                                </FlashsaleContext.Provider>
-                            </FeaturedContext.Provider>
-                        </ProductContext.Provider>
-                    </ShoppingCartProvider>
-                </ProductProvider>
+                <CrudProvider>
+                    <ProductProvider>
+                        <ShoppingCartProvider>
+                            <ProductContext.Provider value={productsAll}>
+                                <FeaturedContext.Provider value={featuredProducts}>
+                                    <FlashsaleContext.Provider value={flashSaleProducts}>
+                                        <RankingContext.Provider value={rankingProducts}>
+                                            <RelatedContext.Provider value={relatedProducts}>
+                                                <Routes>
+                                                    <Route
+                                                        path="/"
+                                                        element={<HomeView />}
+                                                    />
+                                                    <Route
+                                                        path="/categories"
+                                                        element={<CategoriesView />}
+                                                    />
+                                                    <Route
+                                                        path="/products"
+                                                        element={<ProductsView />}
+                                                    />
+                                                    <Route
+                                                        path="/products/:id"
+                                                        element={<ProductDetailsView />}
+                                                    />
+                                                    <Route
+                                                        path="/contacts"
+                                                        element={<ContactsView />}
+                                                    />
+                                                    <Route
+                                                        path="/crudupdate/:id"
+                                                        element={<CrudUpdateView />}
+                                                    />
+                                                    <Route
+                                                        path="/cruddetail/:id"
+                                                        element={<CrudDetailView />}
+                                                    />
+                                                    <Route
+                                                        path="/crud"
+                                                        element={<CrudView />}
+                                                    />
+                                                    <Route
+                                                        path="/mongo"
+                                                        element={<MongoView />}
+                                                    />
+                                                    <Route
+                                                        path="/mongo/details/:id"
+                                                        element={<MongoDetailView />}
+                                                    />
+                                                    <Route
+                                                        path="/mongo/update/:id"
+                                                        element={<MongoUpdateView />}
+                                                    />
+                                                    <Route
+                                                        path="/search"
+                                                        element={<SearchView />}
+                                                    />
+                                                    <Route
+                                                        path="/compare"
+                                                        element={<CompareView />}
+                                                    />
+                                                    <Route
+                                                        path="/wishlist"
+                                                        element={<WishListView />}
+                                                    />
+                                                    <Route
+                                                        path="*"
+                                                        element={<NotFoundView />}
+                                                    />
+                                                </Routes>
+                                            </RelatedContext.Provider>
+                                        </RankingContext.Provider>
+                                    </FlashsaleContext.Provider>
+                                </FeaturedContext.Provider>
+                            </ProductContext.Provider>
+                        </ShoppingCartProvider>
+                    </ProductProvider>
 
                 </CrudProvider>
             </MongoProvider>
