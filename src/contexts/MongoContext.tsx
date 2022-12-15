@@ -16,6 +16,7 @@ export interface MongoContextType {
     rankingThree: MongoProductItem[];
     get: (articleNumber?: string) => void;
     getAll: () => void;
+    getForUpdate: (articleNumber?: string) => void;
     getFeatured: (take?: number) => void;
     getFlashsaleOne: (take?: number) => void;
     getFlashsaleTwo: (take?: number) => void;
@@ -72,6 +73,12 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
     const getAll = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
+    }
+    const getForUpdate = async (articleNumber?: string) => {
+        if (articleNumber !== undefined) {
+            const res = await fetch(`${baseUrl}/mongo/details/${articleNumber}`)
+            setProduct(await res.json())
+        }
     }
     const getFeatured = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
@@ -141,7 +148,9 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
 
     const update = async (e: React.FormEvent) => {
         e.preventDefault();
-        const result = await fetch(`${baseUrl}/update/${product.articleNumber}`, {
+        console.log(product);
+        
+        const result = await fetch(`${baseUrl}/mongo/update/${product.articleNumber}`, {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -167,6 +176,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
                 rankingThree,
                 get,
                 getAll,
+                getForUpdate,
                 getFeatured,
                 getFlashsaleOne,
                 getFlashsaleTwo,

@@ -1,8 +1,13 @@
 import React from "react";
 import { ItemPropModel } from "../models/ItemPropModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 
-const CategoriesProductComponent: React.FC<ItemPropModel> = ({ item }) => {
+interface ProductCardType {
+    item: ProductItem
+};
+
+const CategoriesProductComponent: React.FC<ProductCardType> = ({ item }) => {
     return (
         <div className="categoriesProductContainer">
             <div className="image">

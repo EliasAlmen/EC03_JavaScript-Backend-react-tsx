@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { useProductContext, ProductContextType } from "../contexts/PredefinedProductContext";
+import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
+// import { useProductContext, ProductContextType } from "../contexts/PredefinedProductContext";
 // import { ProductContext } from "../contexts/SwaggerApicontexts";
 import BreadCrumbsSection from "../sections/BreadCrumbsSection";
 import FooterSection from "../sections/FooterSection";
@@ -14,7 +15,7 @@ const ProductsView: React.FC = () => {
         products,
         getAll
         
-    } = useProductContext() as ProductContextType
+    } = useMongoContext() as MongoContextType
     
     useEffect(() => {
         getAll()

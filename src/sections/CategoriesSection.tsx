@@ -1,8 +1,13 @@
 import React from "react";
 import CategoriesProductComponent from "../components/CategoriesProductComponent";
 import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
+import { ProductItem } from "../models/PredefinedProductModel";
 
-const CategoriesSection: React.FC<ItemPropArrayModel> = ({ items = [] }) => {
+interface ProductCardType {
+    items: ProductItem[]
+};
+
+const CategoriesSection: React.FC<ProductCardType> = ({ items = [] }) => {
     // Categories
     const cat1 = "coats";
     const cat2 = "dresses";

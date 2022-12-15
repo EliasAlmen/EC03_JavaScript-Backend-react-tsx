@@ -49,6 +49,7 @@ const HeaderSection: React.FC = () => {
                             icon="fa-regular fa-server"
                         />
                         <NavIconComponent
+                            hideOnMobile={true}
                             link="/search"
                             icon="fa-regular fa-magnifying-glass"
                         />

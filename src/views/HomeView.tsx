@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ProductContextType, useProductContext } from "../contexts/PredefinedProductContext";
 // import { FeaturedContext, FlashsaleContext, RankingContext, } from "../contexts/SwaggerApicontexts";
 import Banner1Section from "../sections/Banner1Section";
@@ -18,27 +18,31 @@ const HomeView: React.FC = () => {
     let currentPage = "Home";
     document.title = `${currentPage} || Fixxo`;
 
-    // const featuredContext: any = useContext(FeaturedContext);
-    // const flashsaleContext: any = useContext(FlashsaleContext);
-    // const rankingContext: any = useContext(RankingContext);
-
-    const { 
-        featured, 
+    const {
+        featured,
         flashsaleOne,
         flashsaleTwo,
         rankingOne,
+        rankingTwo,
+        rankingThree,
         getFeatured,
         getFlashsaleOne,
         getFlashsaleTwo,
         getRankingOne,
+        getRankingTwo,
+        getRankingThree
     } = useProductContext() as ProductContextType
 
     useEffect(() => {
-        getFeatured(8)
+        getFeatured(4)
         getFlashsaleOne(4)
         getFlashsaleTwo(4)
         getRankingOne(3)
+        getRankingTwo(3)
+        getRankingThree(3)
     }, [])
+
+
 
     return (
         <>
@@ -51,7 +55,7 @@ const HomeView: React.FC = () => {
             <FlashSaleLeftSection items={flashsaleOne} />
             <FlashSaleRightSection items={flashsaleTwo} />
             <Banner3Section />
-            <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} items={rankingOne} />
+            <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} itemsOne={rankingOne} itemsTwo={rankingTwo} itemsThree={rankingThree} />
             <PromisesSection />
             <FooterSection />
         </>

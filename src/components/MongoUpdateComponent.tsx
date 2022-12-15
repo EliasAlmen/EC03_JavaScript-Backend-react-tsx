@@ -10,14 +10,14 @@ const MongoUpdateComponent: React.FC = () => {
     // ) as ICrudProductContext;
 
     const {
-        get,
+        getForUpdate,
         update,
         product,
         setProduct
     } = useMongoContext() as MongoContextType
 
     useEffect(() => {
-        get(id);
+        getForUpdate(id);
     }, [setProduct]);
 
     return (
@@ -60,6 +60,19 @@ const MongoUpdateComponent: React.FC = () => {
                 placeholder="Description..."
             />
             <input
+                value={product.tag}
+                onChange={(e) =>
+                    setProduct({
+                        ...product,
+                        tag: e.target.value,
+                    })
+                }
+                type="text"
+                name="tag"
+                className="form-control"
+                placeholder="Tag..."
+            />
+            <input
                 value={product.price}
                 onChange={(e) =>
                     setProduct({
@@ -84,6 +97,19 @@ const MongoUpdateComponent: React.FC = () => {
                 name="rating"
                 className="form-control"
                 placeholder="Choose a rating..."
+            />
+            <input
+                value={product.imageName}
+                onChange={(e) =>
+                    setProduct({
+                        ...product,
+                        imageName: e.target.value,
+                    })
+                }
+                type="text"
+                name="imageName"
+                className="form-control"
+                placeholder="Image url..."
             />
             <button className="btn btn-primary btn-sm py-2 mt-3">
                 Update product
