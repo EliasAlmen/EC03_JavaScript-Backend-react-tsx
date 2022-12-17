@@ -8,21 +8,21 @@ interface MongoProviderType {
 export interface MongoContextType {
     product: MongoProductItem;
     products: MongoProductItem[];
-    featured: MongoProductItem[];
-    flashsaleOne: MongoProductItem[];
-    flashsaleTwo: MongoProductItem[];
-    rankingOne: MongoProductItem[];
-    rankingTwo: MongoProductItem[];
-    rankingThree: MongoProductItem[];
+    mongoFeatured: MongoProductItem[];
+    mongoFlashsaleOne: MongoProductItem[];
+    mongoFlashsaleTwo: MongoProductItem[];
+    mongoRankingOne: MongoProductItem[];
+    mongoRankingTwo: MongoProductItem[];
+    mongoRankingThree: MongoProductItem[];
     get: (articleNumber?: string) => void;
     getAll: () => void;
     getForUpdate: (articleNumber?: string) => void;
-    getFeatured: (take?: number) => void;
-    getFlashsaleOne: (take?: number) => void;
-    getFlashsaleTwo: (take?: number) => void;
-    getRankingOne: (take?: number) => void;
-    getRankingTwo: (take?: number) => void;
-    getRankingThree: (take?: number) => void;
+    mongoGetFeatured: (take?: number) => void;
+    mongoGetFlashsaleOne: (take?: number) => void;
+    mongoGetFlashsaleTwo: (take?: number) => void;
+    mongoGetRankingOne: (take?: number) => void;
+    mongoGetRankingTwo: (take?: number) => void;
+    mongoGetRankingThree: (take?: number) => void;
     remove: (articleNumber?: string) => void;
     setMongoProductRequest: React.Dispatch<React.SetStateAction<MongoProductRequest>>;
     create: (e: React.FormEvent) => void;
@@ -41,12 +41,12 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
 
     const [product, setProduct] = useState<MongoProductItem>(empty_product)
     const [products, setProducts] = useState<MongoProductItem[]>([])
-    const [featured, setFeatured] = useState<MongoProductItem[]>([])
-    const [flashsaleOne, setFlashsaleOne] = useState<MongoProductItem[]>([])
-    const [flashsaleTwo, setFlashsaleTwo] = useState<MongoProductItem[]>([])
-    const [rankingOne, setRankingOne] = useState<MongoProductItem[]>([])
-    const [rankingTwo, setRankingTwo] = useState<MongoProductItem[]>([])
-    const [rankingThree, setRankingThree] = useState<MongoProductItem[]>([])
+    const [mongoFeatured, mongoSetFeatured] = useState<MongoProductItem[]>([])
+    const [mongoFlashsaleOne, mongoSetFlashsaleOne] = useState<MongoProductItem[]>([])
+    const [mongoFlashsaleTwo, mongoSetFlashsaleTwo] = useState<MongoProductItem[]>([])
+    const [mongoRankingOne, mongoSetRankingOne] = useState<MongoProductItem[]>([])
+    const [mongoRankingTwo, mongoSetRankingTwo] = useState<MongoProductItem[]>([])
+    const [mongoRankingThree, mongoSetRankingThree] = useState<MongoProductItem[]>([])
     
     
     const mongoProductRequest_default: MongoProductRequest = {
@@ -80,51 +80,56 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
             setProduct(await res.json())
         }
     }
-    const getFeatured = async (take: number = 0) => {
+    const mongoGetFeatured = async (take: number = 0) => {
         let url = `${baseUrl}/featured`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setFeatured(await res.json())
+        mongoSetFeatured(await res.json())
     }
-    const getFlashsaleOne = async (take: number = 0) => {
+    const mongoGetFlashsaleOne = async (take: number = 0) => {
         let url = `${baseUrl}/flashone`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setFlashsaleOne(await res.json())
+        mongoSetFlashsaleOne(await res.json())
     }
-    const getFlashsaleTwo = async (take: number = 0) => {
+    const mongoGetFlashsaleTwo = async (take: number = 0) => {
         let url = `${baseUrl}/flashtwo`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setFlashsaleTwo(await res.json())
+        mongoSetFlashsaleTwo(await res.json())
     }
-    const getRankingOne = async (take: number = 0) => {
+    const mongoGetRankingOne = async (take: number = 0) => {
         let url = `${baseUrl}/rankingone`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setRankingOne(await res.json())
+        mongoSetRankingOne(await res.json())
     }
-    const getRankingTwo = async (take: number = 0) => {
+    const mongoGetRankingTwo = async (take: number = 0) => {
         let url = `${baseUrl}/rankingtwo`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setRankingTwo(await res.json())
+        mongoSetRankingTwo(await res.json())
     }
-    const getRankingThree = async (take: number = 0) => {
+    const mongoGetRankingThree = async (take: number = 0) => {
         let url = `${baseUrl}/rankingthree`
         if (take !== 0)
             url += `/${take}`
         const res = await fetch(url)
-        setRankingThree(await res.json())
+        mongoSetRankingThree(await res.json())
     }
 
     const remove = async (articleNumber?: string) => {
-        const result = await fetch(`${baseUrl}/${articleNumber}`, { method: "delete" });
+        const result = await fetch(`${baseUrl}/${articleNumber}`, {
+            method: "delete",
+            headers: {
+                "authorization": `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        });
 
         if (result.status === 204) {
             setProduct(empty_product);
@@ -137,6 +142,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
+                "authorization": `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(mongoProductRequest),
         });
@@ -154,6 +160,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
+                "authorization": `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(product),
         });
@@ -168,21 +175,21 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
             value={{
                 product,
                 products,
-                featured,
-                flashsaleOne,
-                flashsaleTwo,
-                rankingOne,
-                rankingTwo,
-                rankingThree,
+                mongoFeatured,
+                mongoFlashsaleOne,
+                mongoFlashsaleTwo,
+                mongoRankingOne,
+                mongoRankingTwo,
+                mongoRankingThree,
                 get,
                 getAll,
                 getForUpdate,
-                getFeatured,
-                getFlashsaleOne,
-                getFlashsaleTwo,
-                getRankingOne,
-                getRankingTwo,
-                getRankingThree,
+                mongoGetFeatured,
+                mongoGetFlashsaleOne,
+                mongoGetFlashsaleTwo,
+                mongoGetRankingOne,
+                mongoGetRankingTwo,
+                mongoGetRankingThree,
                 remove,
                 create,
                 mongoProductRequest,

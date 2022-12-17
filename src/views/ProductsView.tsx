@@ -27,7 +27,7 @@ const ProductsView: React.FC = () => {
         <>
             <HeaderSection />
             <BreadCrumbsSection />
-            <ProductAllSection title="All products" items={products} />
+            <ProductAllSection title="All products (mongoDB)" items={products} />
             <FooterSection />
         </>
     );

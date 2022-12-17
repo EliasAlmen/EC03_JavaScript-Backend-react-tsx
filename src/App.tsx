@@ -28,6 +28,7 @@ import MongoView from "./views/MongoView";
 import MongoProvider from "./contexts/MongoContext";
 import MongoUpdateView from "./views/MongoUpdateView";
 import MongoDetailView from "./views/MongoDetailView";
+import AuthView from "./views/AuthView";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -117,6 +118,10 @@ function App() {
                                                     <Route
                                                         path="/contacts"
                                                         element={<ContactsView />}
+                                                    />
+                                                    <Route
+                                                        path="/auth"
+                                                        element={<AuthView />}
                                                     />
                                                     <Route
                                                         path="/crudupdate/:id"

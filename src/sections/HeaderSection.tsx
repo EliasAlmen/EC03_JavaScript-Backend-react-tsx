@@ -40,14 +40,22 @@ const HeaderSection: React.FC = () => {
                         />
                     </nav>
                     <nav className="nav-icons">
-                        <NavIconComponent
-                            link="/mongo"
-                            icon="fa-regular fa-cloud"
-                        />
-                        <NavIconComponent
-                            link="/crud"
-                            icon="fa-regular fa-server"
-                        />
+                        <div className="dropdown nav-icon" id="nav-dropdown">
+                            <button className="nav-icon fs-5 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </button>
+                            <ul className="dropdown-menu">
+                                <li className="mb-2">
+                                    <NavIconComponent link="/auth" icon="fa-regular fa-key" />
+                                </li>
+                                <li className="mb-2">
+                                    <NavIconComponent link="/crud" icon="fa-regular fa-server" />
+                                </li>
+                                <li>
+                                    <NavIconComponent link="/mongo" icon="fa-regular fa-cloud" />
+                                </li>
+                            </ul>
+                        </div>
+                        
                         <NavIconComponent
                             hideOnMobile={true}
                             link="/search"

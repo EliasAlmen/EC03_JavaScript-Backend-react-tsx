@@ -29,7 +29,7 @@ const ProductRankingSection: React.FC<ProductCardType> = ({ title1, title2, titl
                     }
                 </div>
                 <div className="best">
-                    <h1>{title2}t</h1>
+                    <h1>{title2}</h1>
                     {
                         itemsTwo.map(product => <ProductCardComponent key={product.articleNumber} item={product} />)
                     }
