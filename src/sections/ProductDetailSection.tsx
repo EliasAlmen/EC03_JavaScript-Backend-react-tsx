@@ -3,17 +3,12 @@ import ExternalLinkIconComponent from "../components/ExternalLinkIconComponent";
 
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { useParams } from "react-router-dom";
-// import { RelatedContext } from "../contexts/SwaggerApicontexts";
 
 
 const ProductDetailSection: React.FC = () => {
     
     let currentPage = "Details";
     document.title = `${currentPage} || Fixxo`;
-
-    // Tried in many ways to use Swiper to generate dynamic amount of slides. No succsess.
-    // As of now I made a custom fetch for ?take=1
-    // const relatedContext: any = useContext(RelatedContext);
 
     // Function to add a specified amount of product in one click. Based on counter VALUE.
     const { incrementQuantityFromDetailed } = useShoppingCart();

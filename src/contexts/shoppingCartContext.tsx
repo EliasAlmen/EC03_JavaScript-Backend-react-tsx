@@ -27,7 +27,6 @@ interface IShoppingCartProductContext {
 }
 
 const ShoppingCartContext = createContext({} as IShoppingCartProductContext);
-//const ShoppingCartContext = createContext<IShoppingCartProductContext | null>(null)
 
 export const useShoppingCart = () => {
     return useContext(ShoppingCartContext);

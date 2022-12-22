@@ -3,6 +3,7 @@ import ExternalLinkIconComponent from "../components/ExternalLinkIconComponent";
 
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
 import { useParams } from "react-router-dom";
+import { useMongoContext, MongoContextType } from "../contexts/MongoContext";
 // import { RelatedContext } from "../contexts/SwaggerApicontexts";
 
 const MongoDetailSection: React.FC = () => {
@@ -23,28 +24,39 @@ const MongoDetailSection: React.FC = () => {
     // Used as placeholder to implement in fetch to get API according to articleNumber.
     const { id } = useParams();
 
-    // Product details stored in data array
-    const [data, setData] = React.useState<{ [key: string]: any }>({});
+    // // Product details stored in data array
+    // const [data, setData] = React.useState<{ [key: string]: any }>({});
 
-    // To populate data with array of products
+    // // To populate data with array of products
+    // useEffect(() => {
+    //     const fetchDetails = async () => {
+    //         await fetch(
+    //             `http://localhost:5000/api/mongoproducts/mongo/details/${id}`,
+    //             {
+    //                 headers: {
+    //                     Accept: "application/json",
+    //                     "Content-Type": "application/json",
+    //                 },
+    //             }
+    //         )
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 setData(data);
+    //             });
+    //     };
+    //     fetchDetails();
+    // }, [setData, id]);
+
+
+    const {
+        get,
+        product
+    } = useMongoContext() as MongoContextType
+
     useEffect(() => {
-        const fetchDetails = async () => {
-            await fetch(
-                `http://localhost:5000/api/mongoproducts/mongo/details/${id}`,
-                {
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                }
-            )
-                .then((res) => res.json())
-                .then((data) => {
-                    setData(data);
-                });
-        };
-        fetchDetails();
-    }, [setData, id]);
+        get(id)
+    }, [])
+
 
     //TABS
     // https://reactjsexample.com/react-simple-tabs-made-with-an-array-of-objects/
@@ -140,29 +152,29 @@ const MongoDetailSection: React.FC = () => {
                     <div className="image-shop">
                         <div className="images">
                             <div className="big-image">
-                                <img src={data.imageName} alt={data.name}></img>
+                                <img src={product.imageName} alt={product.name}></img>
                             </div>
                             <div id="small-1" className="small-image">
-                                <img src={data.imageName} alt={data.name}></img>
+                                <img src={product.imageName} alt={product.name}></img>
                             </div>
                             <div id="small-2" className="small-image">
-                                <img src={data.imageName} alt={data.name}></img>
+                                <img src={product.imageName} alt={product.name}></img>
                             </div>
                             <div id="small-3" className="small-image">
-                                <img src={data.imageName} alt={data.name}></img>
+                                <img src={product.imageName} alt={product.name}></img>
                             </div>
                         </div>
                         <div className="shop">
-                            <h1>{data.name}</h1>
+                            <h1>{product.name}</h1>
                             <p>
                                 SKU:{`\u00a0\u00a0`}
-                                {data.articleNumber}
+                                {product.articleNumber}
                             </p>
                             <p>
                                 CATEGORY:{`\u00a0\u00a0`}
-                                {data.category}
+                                {product.category}
                             </p>
-                            {Array(data.rating)
+                            {Array(product.rating)
                                 .fill(0)
                                 .map((_, i) => (
                                     <i
@@ -170,9 +182,9 @@ const MongoDetailSection: React.FC = () => {
                                         className="fa-sharp fa-solid fa-star"
                                     ></i>
                                 ))}
-                            <p className="price">${data.price}.00</p>
+                            <p className="price">${product.price}.00</p>
                             <p className="description">
-                                {data.description}Discovered had get considered
+                                {product.description}Discovered had get considered
                                 projection who favourable. Necessary up
                                 knowledge it tolerably. Unwilling departure
                                 education is be dashwoods or an. Use off
@@ -240,8 +252,8 @@ const MongoDetailSection: React.FC = () => {
                                             incrementQuantityFromDetailed(
                                                 {
                                                     articleNumber:
-                                                        data.articleNumber,
-                                                    product: data,
+                                                        product.articleNumber,
+                                                    product: product,
                                                     count: count,
                                                 },
                                                 setCount(1)

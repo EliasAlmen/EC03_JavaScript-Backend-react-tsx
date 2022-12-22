@@ -5,7 +5,9 @@ export interface ProductItem {
     name: string;
     category: string;
     price: number;
-    rating: number;
+    rating: any;
     imageName: string;
     title?: string;
+    _id?: string;
+    productGraphQL?: any;
 }

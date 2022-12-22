@@ -20,6 +20,7 @@ export const useCrudProductContext = () => {
     return useContext(CrudProductContext);
 };
 
+// THIS API is empty at start, "simulated database"
 const CrudProvider = ({ children }: CrudProviderProps) => {
     const baseUrl = "http://localhost:5000/api/crudproducts";
 

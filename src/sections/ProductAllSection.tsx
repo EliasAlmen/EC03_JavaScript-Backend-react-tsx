@@ -1,6 +1,5 @@
 import React from "react";
 import ProductCardComponent from "../components/ProductCardComponent";
-// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
 import { ProductItem } from "../models/PredefinedProductModel";
 
 interface ProductCardType {

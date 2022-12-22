@@ -5,12 +5,12 @@ import {
     generateRandomCategory,
     generateRandomDescription,
     generateRandomName,
-    generateRandomPrice
+    generateRandomPrice,
+    generateRandomTag,
+    generateRandomImageName
 } from '../utils/randomProductGenerator'
 
 const MongoCreateComponent = () => {
-    // const { mongoProductRequest, setMongoProductRequest, create } =
-    //     React.useContext(MongoProductContext) as IMongoProductContext;
 
     const {
         create,
@@ -111,6 +111,7 @@ const MongoCreateComponent = () => {
                             className="form-control"
                             placeholder="Price..."
                             required
+                            min={0}
                         />
                         <input
                             value={mongoProductRequest.rating || ""}
@@ -161,6 +162,8 @@ const MongoCreateComponent = () => {
                                         category: generateRandomCategory(),
                                         name: generateRandomName(),
                                         description: generateRandomDescription(),
+                                        tag: generateRandomTag(),
+                                        imageName: generateRandomImageName()
                                     })
                                 }
                             >

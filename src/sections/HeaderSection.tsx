@@ -48,10 +48,16 @@ const HeaderSection: React.FC = () => {
                                     <NavIconComponent link="/auth" icon="fa-regular fa-key" />
                                 </li>
                                 <li className="mb-2">
-                                    <NavIconComponent link="/crud" icon="fa-regular fa-server" />
-                                </li>
-                                <li>
                                     <NavIconComponent link="/mongo" icon="fa-regular fa-cloud" />
+                                </li>
+                                <li className="mb-2">
+                                    <NavIconComponent link="/predefinedproducts" icon="fa-regular fa-robot" />
+                                </li>
+                                <li className="mb-2">
+                                    <NavIconComponent link="/graphql" icon="fa-regular fa-chart-radar" />
+                                </li>
+                                <li className="mb-2">
+                                    <NavIconComponent link="/crud" icon="fa-regular fa-server" />
                                 </li>
                             </ul>
                         </div>

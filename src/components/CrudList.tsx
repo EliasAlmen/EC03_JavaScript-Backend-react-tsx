@@ -70,33 +70,6 @@ const CrudList = () => {
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="mb-3 crudList align-middle bg list-group-item">
-                    <NavLink
-                      className="linkUpdate button bg-white"
-                      to={`/crud/${crudProduct.id}`}
-                    >
-                      <i className="fa-regular fa-gears align-middle fw-bold text-dark fs-4 me-3"></i>
-                    </NavLink>
-                    <button
-                      className="removeItem button bg-red"
-                      onClick={() => {
-                        remove(crudProduct.id);
-                      }}
-                    >
-                      <i className="fa-regular fa-trash align-middle fw-bold text-dark fs-4 me-3"></i>
-                    </button>
-                    <span className="name">{crudProduct.name}</span>
-                    <span className="category">{crudProduct.category}</span>
-                    <span className="description">{crudProduct.description}</span>
-                    <span className="rating">
-                      {Array(crudProduct.rating)
-                        .fill(0)
-                        .map((_, i) => (
-                          <i key={i} className="fa-sharp fa-solid fa-star"></i>
-                        ))}
-                    </span>
-                    <span className="price">{crudProduct.price}</span>
-                  </div> */}
                         </React.Fragment>
                     ))}
                 </div>

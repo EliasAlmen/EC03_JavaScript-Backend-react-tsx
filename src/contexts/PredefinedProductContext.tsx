@@ -27,9 +27,9 @@ export interface ProductContextType {
 export const ProductContext = createContext<ProductContextType | null>(null);
 export const useProductContext = () => { return useContext(ProductContext) };
 
-
+// THIS PREDEFINED DATABASE HAS NO DELETE, CREATE, UPDATE functions
 const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
-    const baseUrl: string = 'http://localhost:5000/api/products'
+    const baseUrl: string = 'http://localhost:5000/api/predefinedproducts'
     const empty_product: ProductItem = { tag: '', articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
 
     const [product, setProduct] = useState<ProductItem>(empty_product)
@@ -43,7 +43,7 @@ const ProductProvider: React.FC<ProductProviderType> = ({ children }) => {
 
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const res = await fetch(`${baseUrl}/details/${articleNumber}`)
+            const res = await fetch(`${baseUrl}/${articleNumber}`)
             setProduct(await res.json())
         }
     }

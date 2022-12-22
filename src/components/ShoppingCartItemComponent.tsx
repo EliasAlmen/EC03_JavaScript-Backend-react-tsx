@@ -33,10 +33,7 @@ const ShoppingCartItemComponent: React.FC<ProductProp> = ({ item }) => {
             </div>
             <div className="item-info">
                 <div className="item-info-name">{item.product.name}</div>
-                {/* ADDED category */}
-                <div className="item-info-category">
-                    {item.product.category}
-                </div>
+                <div className="item-info-category">{item.product.category}</div>
                 <div className="item-info-quantity">
                     <div className="item-info-quantity-box">
                         <button

@@ -7,7 +7,7 @@ interface MongoProviderType {
 
 export interface MongoContextType {
     product: MongoProductItem;
-    products: MongoProductItem[];
+    mongoProducts: MongoProductItem[];
     mongoFeatured: MongoProductItem[];
     mongoFlashsaleOne: MongoProductItem[];
     mongoFlashsaleTwo: MongoProductItem[];
@@ -15,7 +15,7 @@ export interface MongoContextType {
     mongoRankingTwo: MongoProductItem[];
     mongoRankingThree: MongoProductItem[];
     get: (articleNumber?: string) => void;
-    getAll: () => void;
+    mongoGetAll: () => void;
     getForUpdate: (articleNumber?: string) => void;
     mongoGetFeatured: (take?: number) => void;
     mongoGetFlashsaleOne: (take?: number) => void;
@@ -40,7 +40,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
     const empty_product: MongoProductItem = { articleNumber: '', name: '', description: '', category: '', tag: '', price: 0, rating: 0, imageName: '' }
 
     const [product, setProduct] = useState<MongoProductItem>(empty_product)
-    const [products, setProducts] = useState<MongoProductItem[]>([])
+    const [mongoProducts, setProducts] = useState<MongoProductItem[]>([])
     const [mongoFeatured, mongoSetFeatured] = useState<MongoProductItem[]>([])
     const [mongoFlashsaleOne, mongoSetFlashsaleOne] = useState<MongoProductItem[]>([])
     const [mongoFlashsaleTwo, mongoSetFlashsaleTwo] = useState<MongoProductItem[]>([])
@@ -66,11 +66,11 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
 
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const res = await fetch(`${baseUrl}/details/${articleNumber}`)
+            const res = await fetch(`${baseUrl}/mongo/details/${articleNumber}`)
             setProduct(await res.json())
         }
     }
-    const getAll = async () => {
+    const mongoGetAll = async () => {
         const res = await fetch(baseUrl)
         setProducts(await res.json())
     }
@@ -122,7 +122,8 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
         const res = await fetch(url)
         mongoSetRankingThree(await res.json())
     }
-
+    
+    // Create, update and remove requires authorization.
     const remove = async (articleNumber?: string) => {
         const result = await fetch(`${baseUrl}/${articleNumber}`, {
             method: "delete",
@@ -174,7 +175,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
         <MongoContext.Provider
             value={{
                 product,
-                products,
+                mongoProducts,
                 mongoFeatured,
                 mongoFlashsaleOne,
                 mongoFlashsaleTwo,
@@ -182,7 +183,7 @@ const MongoProvider: React.FC<MongoProviderType> = ({ children }) => {
                 mongoRankingTwo,
                 mongoRankingThree,
                 get,
-                getAll,
+                mongoGetAll,
                 getForUpdate,
                 mongoGetFeatured,
                 mongoGetFlashsaleOne,

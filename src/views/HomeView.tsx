@@ -1,14 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
 import { ProductContextType, useProductContext } from "../contexts/PredefinedProductContext";
-// import { FeaturedContext, FlashsaleContext, RankingContext, } from "../contexts/SwaggerApicontexts";
+import { FeaturedContext, FlashsaleContext, RankingContext } from "../contexts/SwaggerApicontexts";
 import Banner1Section from "../sections/Banner1Section";
 import Banner2Section from "../sections/Banner2Section";
 import Banner3Section from "../sections/Banner3Section";
 import FlashSaleLeftSection from "../sections/FlashSaleLeftSection";
 import FlashSaleRightSection from "../sections/FlashSaleRightSection";
 import FooterSection from "../sections/FooterSection";
+import GraphQlFlashSaleLeftSection from "../sections/GraphQlFlashSaleLeftSection";
+import GraphQlFlashSaleRightSection from "../sections/GraphQlFlashSaleRightSection";
+import GraphQlProductFeaturedSection from "../sections/GraphQlProductFeaturedSection";
+import GraphQlProductRankingSection from "../sections/GraphQlProductRankingSection";
 import HeaderSection from "../sections/HeaderSection";
+import MongoFlashSaleLeftSection from "../sections/MongoFlashSaleLeftSection";
+import MongoFlashSaleRightSection from "../sections/MongoFlashSaleRightSection";
+import MongoProductFeaturedSection from "../sections/MongoProductFeaturedSection";
+import MongoProductRankingSection from "../sections/MongoProductRankingSection";
+import PredefinedFlashSaleLeftSection from "../sections/PredefinedFlashSaleLeftSection";
+import PredefinedFlashSaleRightSection from "../sections/PredefinedFlashSaleRightSection";
+import PredefinedProductFeaturedSection from "../sections/PredefinedProductFeaturedSection";
+import PredefinedProductRankingSection from "../sections/PredefinedProductRankingSection";
 import ProductFeaturedSection from "../sections/ProductFeaturedSection";
 import ProductRankingSection from "../sections/ProductRankingSection";
 import PromisesSection from "../sections/PromisesSection";
@@ -19,6 +31,12 @@ const HomeView: React.FC = () => {
     let currentPage = "Home";
     document.title = `${currentPage} || Fixxo`;
 
+    // SWAGGER API
+    const featuredContext: any = useContext(FeaturedContext);
+    const flashsaleContext: any = useContext(FlashsaleContext);
+    const rankingContext: any = useContext(RankingContext);
+
+    // Predefined API
     const {
         featured,
         flashsaleOne,
@@ -34,6 +52,7 @@ const HomeView: React.FC = () => {
         getRankingThree
     } = useProductContext() as ProductContextType
 
+    // MongoDB API
     const {
         mongoFeatured,
         mongoFlashsaleOne,
@@ -49,6 +68,7 @@ const HomeView: React.FC = () => {
         mongoGetRankingThree
     } = useMongoContext() as MongoContextType
 
+    // The actucal fetches
     useEffect(() => {
         getFeatured(4)
         getFlashsaleOne(4)
@@ -64,32 +84,67 @@ const HomeView: React.FC = () => {
         mongoGetRankingThree(2)
     }, [])
 
-    const [mongoDB, setMongoDB] = useState(false)
-    const [databaseButton, setdatabaseButton] = useState('mongoDB')
-    const handleClick = (e: any) => {
-        setMongoDB(!mongoDB)
-        setdatabaseButton(mongoDB ? 'mongoDB' : 'Simulated')
+    // States for buttons and which component to display!
+    const [displayA, setDisplayA] = useState(true);
+    const [displayB, setDisplayB] = useState(false);
+    const [displayC, setDisplayC] = useState(false);
+    const [displayD, setDisplayD] = useState(false);
+
+    const showA = () => {
+        setDisplayA(true);
+        setDisplayB(false);
+        setDisplayC(false);
+        setDisplayD(false);
+    }
+    const showB = () => {
+        setDisplayA(false);
+        setDisplayB(true);
+        setDisplayC(false);
+        setDisplayD(false);
+    };
+    const showC = () => {
+        setDisplayA(false);
+        setDisplayB(false);
+        setDisplayC(true);
+        setDisplayD(false);
+    };
+    const showD = () => {
+        setDisplayA(false);
+        setDisplayB(false);
+        setDisplayC(false);
+        setDisplayD(true);
     };
 
     return (
         <>
             <HeaderSection />
-            <span className="d-flex justify-content-center sticky-top"><button type="button" className="btn btn-secondary" onClick={handleClick}>{databaseButton}</button></span>
+            <span className="d-flex justify-content-center sticky-top">
+                <button type="button" className="btn btn-secondary" onClick={showA}>MongoDB</button>
+                <button type="button" className="btn btn-secondary" onClick={showB}>Predefined</button>
+                <button type="button" className="btn btn-secondary" onClick={showC}>GraphQL</button>
+                <button type="button" className="btn btn-secondary" onClick={showD}>Swagger</button>
+            </span>
             <ShowCaseSection />
             <Banner1Section />
-            {mongoDB ? <ProductFeaturedSection title={"Featured Products"} items={featured} /> : <ProductFeaturedSection title={"Featured Products"} items={mongoFeatured} />}
+            {displayA && <MongoProductFeaturedSection title={"Featured Products"} items={mongoFeatured} />}
+            {displayB && <PredefinedProductFeaturedSection title={"Featured Products"} items={featured} />}
+            {displayC && <GraphQlProductFeaturedSection title={"Featured Products"} />}
+            {displayD && <ProductFeaturedSection title={"Featured Products"} items={featuredContext} />}
             <Banner2Section />
             <SpecialitySection />
-            {mongoDB ? <FlashSaleLeftSection items={flashsaleTwo} /> : <FlashSaleLeftSection items={mongoFlashsaleOne} />}
-            {mongoDB ? <FlashSaleRightSection items={flashsaleOne} /> : <FlashSaleRightSection items={mongoFlashsaleTwo} />}
+            {displayA && <MongoFlashSaleLeftSection items={mongoFlashsaleOne} />}
+            {displayA && <MongoFlashSaleRightSection items={mongoFlashsaleTwo} />}
+            {displayB && <PredefinedFlashSaleLeftSection items={flashsaleTwo} /> }
+            {displayB && <PredefinedFlashSaleRightSection items={flashsaleOne} /> }
+            {displayC && <GraphQlFlashSaleLeftSection /> }
+            {displayC && <GraphQlFlashSaleRightSection /> }
+            {displayD && <FlashSaleLeftSection items={flashsaleContext} /> }
+            {displayD && <FlashSaleRightSection items={flashsaleContext} /> }
             <Banner3Section />
-            {
-                mongoDB ?
-                    <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} itemsOne={rankingOne} itemsTwo={rankingTwo} itemsThree={rankingThree} />
-                    :
-                    <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} itemsOne={mongoRankingThree} itemsTwo={mongoRankingOne} itemsThree={mongoRankingTwo} />
-            }
-            
+            {displayA && <MongoProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} itemsOne={mongoRankingThree} itemsTwo={mongoRankingOne} itemsThree={mongoRankingTwo} />}
+            {displayB && <PredefinedProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} itemsOne={rankingOne} itemsTwo={rankingTwo} itemsThree={rankingThree} />}
+            {displayC && <GraphQlProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} />}
+            {displayD && <ProductRankingSection title1={"Latest Product"} title2={"Best Selling Product"} title3={"Top Reacted Product"} items={rankingContext} />}
             <PromisesSection />
             <FooterSection />
         </>

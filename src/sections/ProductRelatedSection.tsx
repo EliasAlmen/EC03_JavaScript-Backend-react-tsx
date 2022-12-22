@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,9 +7,6 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper";
 import ProductRelatedComponent from "../components/ProductRelatedComponent";
 import { RelatedContext } from "../contexts/SwaggerApicontexts";
-// interface ProductCardType {
-//     items: ProductItem[]
-// };
 
 const ProductRelatedSection: React.FC = () => {
     

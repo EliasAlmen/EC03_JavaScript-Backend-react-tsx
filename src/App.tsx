@@ -29,6 +29,11 @@ import MongoProvider from "./contexts/MongoContext";
 import MongoUpdateView from "./views/MongoUpdateView";
 import MongoDetailView from "./views/MongoDetailView";
 import AuthView from "./views/AuthView";
+import GraphQlView from "./views/GraphQlView";
+import GraphQlDetailView from "./views/GraphQlDetailView";
+import GraphQlUpdateView from "./views/GraphQlUpdateView";
+import PredefinedProductDetailsView from "./views/PredefinedProductDetailsView";
+import PredefinedView from "./views/PredefinedView";
 
 function App() {
     // UseStates to fetch and set with data from API
@@ -122,6 +127,26 @@ function App() {
                                                     <Route
                                                         path="/auth"
                                                         element={<AuthView />}
+                                                    />
+                                                    <Route
+                                                        path="/predefinedproducts/"
+                                                        element={<PredefinedView />}
+                                                    />
+                                                    <Route
+                                                        path="/predefinedproducts/:id"
+                                                        element={<PredefinedProductDetailsView />}
+                                                    />
+                                                    <Route
+                                                        path="/graphql"
+                                                        element={<GraphQlView />}
+                                                    />
+                                                    <Route
+                                                        path="/graphql/:id"
+                                                        element={<GraphQlDetailView />}
+                                                    />
+                                                    <Route
+                                                        path="/graphql/update/:id"
+                                                        element={<GraphQlUpdateView />}
                                                     />
                                                     <Route
                                                         path="/crudupdate/:id"

@@ -3,12 +3,9 @@ import { useParams } from "react-router-dom";
 import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
 
 const MongoUpdateComponent: React.FC = () => {
+    
     const { id } = useParams();
-
-    // const { product, setProduct, get, update } = React.useContext(
-    //     CrudProductContext
-    // ) as ICrudProductContext;
-
+   
     const {
         getForUpdate,
         update,
@@ -35,6 +32,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="name"
                 className="form-control"
                 placeholder="Name..."
+                required
+                minLength={3}
             />
             <input
                 value={product.category}
@@ -45,6 +44,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="category"
                 className="form-control"
                 placeholder="Category..."
+                required
+                minLength={3}
             />
             <input
                 value={product.description}
@@ -58,6 +59,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="description"
                 className="form-control"
                 placeholder="Description..."
+                required
+                minLength={3}
             />
             <input
                 value={product.tag}
@@ -71,6 +74,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="tag"
                 className="form-control"
                 placeholder="Tag..."
+                required
+                minLength={3}
             />
             <input
                 value={product.price}
@@ -84,6 +89,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="price"
                 className="form-control"
                 placeholder="Price..."
+                required
+                minLength={1}
             />
             <input
                 value={product.rating}
@@ -97,6 +104,8 @@ const MongoUpdateComponent: React.FC = () => {
                 name="rating"
                 className="form-control"
                 placeholder="Choose a rating..."
+                required
+                minLength={1}
             />
             <input
                 value={product.imageName}
@@ -110,8 +119,10 @@ const MongoUpdateComponent: React.FC = () => {
                 name="imageName"
                 className="form-control"
                 placeholder="Image url..."
+                required
+                minLength={3}
             />
-            <button className="btn btn-primary btn-sm py-2 mt-3">
+            <button type="submit" className="btn btn-primary btn-sm py-2 mt-3">
                 Update product
             </button>
         </form>

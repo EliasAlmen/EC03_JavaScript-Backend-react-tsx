@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const LoginSection: React.FC = () => {
 
@@ -23,6 +23,7 @@ const LoginSection: React.FC = () => {
     localStorage.setItem('accessToken', data.accessToken)
 
     if (result.status === 200) {
+      // Set tokenstatus if response OK!
       setTokenStatus(true);
     }
 
@@ -30,6 +31,7 @@ const LoginSection: React.FC = () => {
 
   const [tokenStatus, setTokenStatus] = useState(Boolean)
 
+  // Checks if token was created
   useEffect(() => {
     if (localStorage.getItem('accessToken') !== null) {
       setTokenStatus(true)
@@ -38,7 +40,9 @@ const LoginSection: React.FC = () => {
       setTokenStatus(false)
     }
   }, [])
-  
+
+
+  // Delete token
   const deleteToken = () => {
     localStorage.removeItem('accessToken')
     if (localStorage.getItem('accessToken') !== null) {
@@ -56,8 +60,8 @@ const LoginSection: React.FC = () => {
       <div className="login p-3 m-3 border rounded">
         <form onSubmit={handleLogin} className="form-group">
           <h3>Login</h3>
-          <input type="text" className='form-control mb-1' placeholder='Enter username' />
-          <input type="password" className='form-control mb-1' placeholder='Enter password' />
+          <input autoComplete="username" type="text" className='form-control mb-1' placeholder='Enter username' />
+          <input autoComplete="current-password" type="password" className='form-control mb-1' placeholder='Enter password' />
           <button type='submit' className='button bg-red'>Login</button>
         </form>
       </div>

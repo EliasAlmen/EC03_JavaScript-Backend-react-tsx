@@ -1,5 +1,4 @@
 import React from "react";
-import { ItemPropModel } from "../models/ItemPropModel";
 import { ProductItem } from "../models/PredefinedProductModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
 

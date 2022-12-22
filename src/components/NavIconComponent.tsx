@@ -16,7 +16,7 @@ const NavIconComponent: React.FC<Props> = ({
 }) => {
     return (
         <NavLink
-            title="link"
+            title={link}
             className={`nav-icon ${hideOnMobile ? "hidden" : ""} `}
             to={link}
             end

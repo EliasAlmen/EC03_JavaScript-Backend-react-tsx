@@ -3,29 +3,28 @@ import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";
 import BreadCrumbsSection from "../sections/BreadCrumbsSection";
 import CategoriesSection from "../sections/CategoriesSection";
-// import { ProductContext } from "../contexts/SwaggerApicontexts";
 import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
 
 const CategoriesView: React.FC = () => {
     let currentPage = "Categories";
     document.title = `${currentPage} || Fixxo`;
-    // const productContext: any = useContext(ProductContext);
 
     const {
-        products,
-        getAll
+        mongoProducts,
+        mongoGetAll
 
     } = useMongoContext() as MongoContextType
 
     useEffect(() => {
-        getAll()
+        mongoGetAll()
     }, [])
 
     return (
         <>
             <HeaderSection />
             <BreadCrumbsSection />
-            <CategoriesSection items={products} />
+            <h3 className="text-center fw-bolder">(MongoDB)</h3>
+            <CategoriesSection items={mongoProducts} />
             <FooterSection />
         </>
     );

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { MongoContextType, useMongoContext } from "../contexts/MongoContext";
 import { MongoProductItem } from "../models/MongoProductModel";
 import { currencyFormatter } from "../utils/currencyFormatter";
-// import ProductCardComponent from "./ProductCardComponent";
 
 
 interface ProductCardType {
@@ -19,9 +18,6 @@ const MongoListComponent: React.FC<ProductCardType> = ({ items = [] }) => {
         <>
             <div className="featured">
                 <div className="container-cards">
-                    {/* {
-                        items.map(product => <ProductCardComponent key={product.articleNumber} item={product} />)
-                    } */}
                     {items.map((product: MongoProductItem) => (
                         <React.Fragment key={product.articleNumber}>
                             <div className="card-product">

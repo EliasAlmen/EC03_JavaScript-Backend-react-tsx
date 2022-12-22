@@ -30,8 +30,8 @@ const RegisterSection: React.FC = () => {
             <div className="register p-3 m-3 border rounded">
                 <form onSubmit={handleRegister} className="form-group">
                     <h3>Register user</h3>
-                    <input type="text" className='form-control mb-1' placeholder='Choose username' />
-                    <input type="password" className='form-control mb-1' placeholder='Choose password' />
+                    <input autoComplete="username" type="text" className='form-control mb-1' placeholder='Choose username' />
+                    <input autoComplete="current-password" type="password" className='form-control mb-1' placeholder='Choose password' />
                     <button type='submit' className='button bg-red'>Register</button>
                 </form>
             </div>

@@ -14,8 +14,6 @@ export const submitData = async (url: RequestInfo | URL, method: string, data: s
     return false
 }
 
-
-
 export const validate = (e: any, form?: any) => {
     if (e.type === 'submit') {
         const errors: any = {}

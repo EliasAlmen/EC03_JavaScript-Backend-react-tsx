@@ -5,11 +5,11 @@ import { MongoContextType, useMongoContext } from '../contexts/MongoContext';
 
 const MongoSection: React.FC = () => {
 
-    const { products, getAll } = useMongoContext() as MongoContextType;
+    const { mongoProducts, mongoGetAll } = useMongoContext() as MongoContextType;
 
     useEffect(() => {
-        getAll();
-    }, [getAll]);
+        mongoGetAll();
+    }, [mongoGetAll]);
 
     return (
         <>
@@ -23,7 +23,7 @@ const MongoSection: React.FC = () => {
                 <div className="read">
                     <h3 className="mb-2 mt-5 text-center fw-bold">Products list</h3>
                     <ul className="list-group mb-5">
-                        <MongoListComponent items={products} />
+                        <MongoListComponent items={mongoProducts} />
                     </ul>
                 </div>
             </div>

@@ -1,3 +1,6 @@
+// Some functions for fun...
+
+
 export function generateRandomPrice() {
     var min = 1;
     var max = 999;
@@ -30,6 +33,47 @@ export function generateRandomCategory() {
     ];
     const randomNumber = Math.floor(Math.random() * categories.length);
     return categories[randomNumber];
+}
+
+export function generateRandomTag() {
+    var tags = [
+        "featured",
+        "rankingthree",
+        "rankingtwo",
+        "rankingone",
+        "flashone",
+        "flashtwo"
+    ];
+    const randomNumber = Math.floor(Math.random() * tags.length);
+    return tags[randomNumber];
+}
+
+export function generateRandomImageName() {
+    var ImageNames = [
+        "https://win22imgstorage.blob.core.windows.net/images/black-coat.png",
+        "https://win22imgstorage.blob.core.windows.net/images/black-dress.png",
+        "https://win22imgstorage.blob.core.windows.net/images/black-set.png",
+        "https://win22imgstorage.blob.core.windows.net/images/black-white-set.png",
+        "https://win22imgstorage.blob.core.windows.net/images/blue-jacket.png",
+        "https://win22imgstorage.blob.core.windows.net/images/blue-tshirt.png",
+        "https://win22imgstorage.blob.core.windows.net/images/brown-sweater.png",
+        "https://win22imgstorage.blob.core.windows.net/images/brown-watch.png",
+        "https://win22imgstorage.blob.core.windows.net/images/gray-tshirt.png",
+        "https://win22imgstorage.blob.core.windows.net/images/jeans-dress.png",
+        "https://win22imgstorage.blob.core.windows.net/images/jeans-set.png",
+        "https://win22imgstorage.blob.core.windows.net/images/olive-sweater.png",
+        "https://win22imgstorage.blob.core.windows.net/images/multicolor-tshirt.png",
+        "https://win22imgstorage.blob.core.windows.net/images/purple-bag.png",
+        "https://win22imgstorage.blob.core.windows.net/images/red-bag.png",
+        "https://win22imgstorage.blob.core.windows.net/images/red-dress.png",
+        "https://win22imgstorage.blob.core.windows.net/images/striped-top.png",
+        "https://win22imgstorage.blob.core.windows.net/images/striped-pants.png",
+        "https://win22imgstorage.blob.core.windows.net/images/white-sweater.png",
+        "https://win22imgstorage.blob.core.windows.net/images/winter-boots.png",
+        "https://win22imgstorage.blob.core.windows.net/images/chrome-shoe.png"
+    ];
+    const randomNumber = Math.floor(Math.random() * ImageNames.length);
+    return ImageNames[randomNumber];
 }
 
 export function generateRandomName() {

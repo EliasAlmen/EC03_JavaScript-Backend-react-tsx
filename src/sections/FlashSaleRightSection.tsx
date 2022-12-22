@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ProductCardComponent from "../components/ProductCardComponent";
-// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
 import { ProductItem } from "../models/PredefinedProductModel";
 
 interface ProductCardType {

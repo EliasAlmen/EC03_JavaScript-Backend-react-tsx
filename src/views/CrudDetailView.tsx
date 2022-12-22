@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Banner4Section from "../sections/Banner4Section";
 import BreadCrumbsSection from "../sections/BreadCrumbsSection";
 import FooterSection from "../sections/FooterSection";
@@ -6,7 +6,6 @@ import HeaderSection from "../sections/HeaderSection";
 import { useParams } from "react-router-dom";
 import ExternalLinkIconComponent from "../components/ExternalLinkIconComponent";
 import ProductRelatedSection from "../sections/ProductRelatedSection";
-// import { RelatedContext } from "../contexts/SwaggerApicontexts";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,21 +13,10 @@ import "swiper/css/navigation";
 
 import { Pagination } from "swiper";
 import { useShoppingCart } from "../contexts/ShoppingCartContext";
-// import { ProductContextType, useProductContext } from "../contexts/PredefinedProductContext";
 
 const ProductDetailsView: React.FC = () => {
     let currentPage = "Details";
     document.title = `${currentPage} || Fixxo`;
-
-    // const {featured, getFeatured} = useProductContext() as ProductContextType
-
-    // useEffect(() => {
-    //     getFeatured(2)
-    // }, [])
-
-    // Tried in many ways to use Swiper to generate dynamic amount of slides. No succsess.
-    // As of now I made a custom fetch for ?take=1
-    // const relatedContext: any = useContext(RelatedContext);
 
     // Function to add a specified amount of product in one click. Based on counter VALUE.
     const { incrementQuantityFromDetailed } = useShoppingCart();
@@ -340,30 +328,6 @@ const ProductDetailsView: React.FC = () => {
                             modules={[Pagination]}
                             className="mySwiper"
                         >
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <ProductRelatedSection />
-                            </SwiperSlide>
                             <SwiperSlide>
                                 <ProductRelatedSection />
                             </SwiperSlide>

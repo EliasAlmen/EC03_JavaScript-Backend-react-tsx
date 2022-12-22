@@ -15,16 +15,6 @@ const CrudCreate: React.FC = () => {
     const { crudProductRequest, setCrudProductRequest, create } =
         React.useContext(CrudProductContext) as ICrudProductContext;
 
-    // function valditeField(this: any) {
-    //     // check for letters, at least 3
-    //     if (typeof this.value !== 'string') {
-    //         this.setAttribute('aria-invalid', 'true');
-    //         alert(
-    //             'You entered an invalid value. Only text characters are allowed'
-    //         );
-    //     }
-    // }
-
     return (
         <>
             <div className="container">

@@ -1,8 +1,6 @@
 import React from "react";
 import ProductCardComponent from "../components/ProductCardComponent";
 import { ProductItem } from "../models/PredefinedProductModel";
-// import { ItemPropArrayModel } from "../models/ItemPropArrayModel";
-// import { ProductItem } from "../models/PredefinedProductModel";
 
 interface ProductCardType {
     title: string;
